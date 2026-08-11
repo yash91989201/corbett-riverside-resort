@@ -5,9 +5,12 @@
   "scripts": {
     "dev": "bun run dev.ts",
     "build": "bun run build.ts",
-    "preview": "ROOT=dist bun run dev.ts"
+    "preview": "ROOT=dist bun run dev.ts",
+    "format": "prettier --write \"src/**/*.{html,css,js}\"",
+    "format:check": "prettier --check \"src/**/*.{html,css,js}\""
   },
   "devDependencies": {
-    "html-minifier-terser": "^7.2.0"
+    "html-minifier-terser": "^7.2.0",
+    "prettier": "^3.9.6"
   }
 }
