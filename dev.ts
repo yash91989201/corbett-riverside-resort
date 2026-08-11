@@ -7,10 +7,13 @@
 
 import { watch } from "node:fs";
 import { readFileSync, existsSync } from "node:fs";
-import { resolve } from "node:path";
+import { resolve, join } from "node:path";
 
 const PORT = Number(process.env.PORT) || 3000;
-const ROOT = import.meta.dir;
+const ROOT = process.env.ROOT
+  ? resolve(process.env.ROOT)
+  : join(import.meta.dir, "src");
+const DEV = !process.env.ROOT; // hot-reload only in dev
 
 // ── MIME types ──────────────────────────────────────────────
 const MIME: Record<string, string> = {
@@ -76,14 +79,17 @@ watch(ROOT, { recursive: true }, (event, filename) => {
 
 // ── Resolve & validate request path ─────────────────────────
 function resolvePath(urlPath: string): string | null {
-  let rel = urlPath === "/" ? "/index.html" : urlPath;
+  const rel = urlPath === "/" ? "/index.html" : urlPath;
   if (rel.includes("..")) return null;
 
-  const abs = resolve(ROOT, "." + rel);
-  if (!abs.startsWith(ROOT)) return null;
-  if (!existsSync(abs)) return null;
+  // Try exact path, then .html, then /index.html (matches .htaccess pretty URLs)
+  const candidates = [rel, rel + ".html", rel + "/index.html"];
 
-  return abs;
+  for (const c of candidates) {
+    const abs = resolve(ROOT, "." + c);
+    if ((abs === ROOT || abs.startsWith(ROOT + "/")) && existsSync(abs)) return abs;
+  }
+  return null;
 }
 
 // ── Server ──────────────────────────────────────────────────
@@ -107,19 +113,19 @@ const server = Bun.serve({
     const mime = MIME[ext] ?? "application/octet-stream";
     const headers = { "Content-Type": mime, "Cache-Control": "no-cache" };
 
-    // For HTML: read, append hot-reload client, return
+    // For HTML: read, optionally inject hot-reload, return
     if (ext === ".html") {
-      const html = readFileSync(filePath, "utf-8");
-      // Try </body> or </html> first; fall back to appending at end
-      let injected: string;
-      if (html.includes("</body>")) {
-        injected = html.replace(/<\/body>/i, HOT_CLIENT + "\n</body>");
-      } else if (html.includes("</html>")) {
-        injected = html.replace(/<\/html>/i, HOT_CLIENT + "\n</html>");
-      } else {
-        injected = html + "\n" + HOT_CLIENT;
+      let html = readFileSync(filePath, "utf-8");
+      if (DEV) {
+        if (html.includes("</body>")) {
+          html = html.replace(/<\/body>/i, HOT_CLIENT + "\n</body>");
+        } else if (html.includes("</html>")) {
+          html = html.replace(/<\/html>/i, HOT_CLIENT + "\n</html>");
+        } else {
+          html += "\n" + HOT_CLIENT;
+        }
       }
-      return new Response(injected, { headers });
+      return new Response(html, { headers });
     }
 
     // For everything else: stream from disk

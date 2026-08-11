@@ -1,0 +1,13 @@
+{
+  "name": "corbett-riverside-resort",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run dev.ts",
+    "build": "bun run build.ts",
+    "preview": "ROOT=dist bun run dev.ts"
+  },
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0"
+  }
+}
