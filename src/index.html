@@ -825,6 +825,8 @@
       display: inline-block;
       color: #2a2a2a;
       text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
       font-size: .85rem;
       letter-spacing: 2px;
       font-weight: 600;
@@ -858,6 +860,32 @@
 
     .about-story-btn:hover::before {
       width: 100%
+    }
+
+    .about-more {
+      width: 100%;
+      margin-top: 25px
+    }
+
+    .about-more h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      color: #2a2a2a;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      margin: 28px 0 12px;
+      line-height: 1.3;
+      text-align: left
+    }
+
+    .about-more h3:first-child {
+      margin-top: 0
+    }
+
+    .about-more p {
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      text-align: justify
     }
 
     .about-image {
@@ -2466,6 +2494,9 @@
       <a href="/disclaimer">Disclaimer</a>
     </nav>
   </amp-sidebar>
+  <amp-state id="sanctuaryState">
+    <script type="application/json">{"expanded": false}</script>
+  </amp-state>
   <main>
     <section class="section section-cream">
       <div class="about-section">
@@ -2513,7 +2544,15 @@
             <strong>Stay close to nature, stay close to adventure — only at a
               riverside resort in Corbett</strong>
           </p>
-          <a href="#resorts" class="about-story-btn">read OUR STORY</a>
+          <button type="button" class="about-story-btn" on="tap:AMP.setState({sanctuaryState: {expanded: !sanctuaryState.expanded}})" aria-expanded="false" [aria-expanded]="sanctuaryState.expanded ? 'true' : 'false'">
+            <span [text]="sanctuaryState.expanded ? 'Minimize' : 'read OUR STORY'">read OUR STORY</span>
+          </button>
+          <div class="about-more" hidden [hidden]="!sanctuaryState.expanded">
+            <h3>Luxury Resorts with World-Class Experiences</h3>
+            <p>The luxury resorts in the Jim Corbett region, including Tarangi Ramganga Resort, Namah Corbett, Solluna Resort, Jim Corbett Marriott Resort, Corbett River View Retreat, and Corbett Hideaway, offer an excellent combination of luxury, comfort, nature, and wildlife experiences. These properties feature sprawling landscaped lawns, riverside decks, attractive restaurants, large swimming pools, beautifully appointed rooms with contemporary amenities, and spa and wellness facilities, providing guests with a comfortable and relaxing stay. One of their key strengths is their strategic location close to the natural surroundings of Corbett, with several properties offering scenic riverfront settings and easy access to major safari areas such as Dhikala and Bijrani. These resorts also have in-house naturalists with extensive knowledge of the flora and fauna of Corbett National Park, who enhance the guest experience by providing valuable insights into wildlife, birds, vegetation, and the park's ecosystem. Guests can also enjoy activities such as jungle safaris, nature walks, birdwatching, and other outdoor experiences. In addition, spacious lawns, banquet facilities, and outdoor venues make these resorts suitable for destination weddings, corporate events, conferences, family gatherings, and group tours. Although there are other luxury resorts in Corbett, such as Aahana Resort and The Bagh, the combination of strategic riverside locations, proximity to major safari zones, experienced naturalists, extensive resort facilities, luxury accommodation, and accessibility for large groups gives these properties a distinctive competitive advantage in the Jim Corbett hospitality market.</p>
+            <h3>Riverside Retreats by the Water's Edge</h3>
+            <p>Nestled along the serene riverbanks of Jim Corbett, properties like Bel-la Monde Riverside Resort, Tarangi Ramganga Resort, Corbett River Creek, and Camp Riverwild offer an authentic riverside retreat where guests can unwind right along the water's edge. Beyond expansive shorelines, these destinations stand out for their open-air dining and riverside grill houses, where visitors can savor meals accompanied by the soothing sounds of running water and panoramic views of the shimmering river. Adding to the charm, many properties feature accommodations positioned directly along the bank—most notably the riverfront rooms at Bel-la Monde Riverside Resort, which boast a uniquely immersive location. These rooms offer unobstructed vistas of the flowing riverbed right from private balconies and glass windows, combining luxurious indoor comfort with direct visual and auditory access to nature.</p>
+          </div>
         </div>
         <div class="about-image">
           <amp-img alt="Corbett Riverside Resort View" height="400"
