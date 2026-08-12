@@ -717,6 +717,161 @@
           padding: 20px;
         }
       }
+
+      /* Megamenu - Resorts */
+      .nav-dropdown {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-dropdown-toggle {
+        color: #e0e0e0;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 10px 0;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .nav-dropdown-toggle .caret {
+        margin-left: 6px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid currentColor;
+        transition: transform 0.3s ease;
+      }
+      .nav-dropdown:hover .nav-dropdown-toggle,
+      .nav-dropdown:focus-within .nav-dropdown-toggle {
+        color: #e8b923;
+      }
+      .nav-dropdown:hover .nav-dropdown-toggle::after,
+      .nav-dropdown:focus-within .nav-dropdown-toggle::after {
+        width: 100%;
+      }
+      .nav-dropdown:hover .nav-dropdown-toggle .caret {
+        transform: rotate(180deg);
+      }
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translateY(12px);
+        min-width: 720px;
+        background: rgba(34, 34, 34, 0.97);
+        border-top: 3px solid #e8b923;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 30px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease,
+          visibility 0.3s;
+        z-index: 1002;
+      }
+      .nav-dropdown:hover .mega-menu,
+      .nav-dropdown:focus-within .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .mega-col h4 {
+        font-family: Georgia, serif;
+        color: #e8b923;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 0 0 15px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(232, 185, 35, 0.3);
+        font-weight: 400;
+      }
+      .mega-col a {
+        display: block;
+        color: #cfcfcf;
+        font-size: 0.82rem;
+        letter-spacing: 0.5px;
+        padding: 7px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition:
+          color 0.25s ease,
+          padding-left 0.25s ease;
+      }
+      .mega-col a:hover {
+        color: #e8b923;
+        padding-left: 6px;
+      }
+      @media (max-width: 1024px) {
+        .nav-dropdown .mega-menu {
+          display: none;
+        }
+      }
+
+      /* Sidebar Resorts dropdown (mobile) */
+      .sidebar-resorts {
+        width: 100%;
+      }
+      .sb-resorts-toggle {
+        display: none;
+      }
+      .sb-resorts-label {
+        display: block;
+        color: #ccc;
+        padding: 15px 30px;
+        border-bottom: 1px solid #333;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+      .sb-resorts-label:hover {
+        color: #e8b923;
+        padding-left: 35px;
+        background: #2a2a2a;
+      }
+      .sb-resorts-label .caret {
+        margin-left: 8px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid currentColor;
+        display: inline-block;
+        vertical-align: middle;
+        transition: transform 0.3s ease;
+      }
+      .sb-resorts-toggle:checked ~ .sb-resorts-label .caret {
+        transform: rotate(180deg);
+      }
+      .sb-resorts-panel {
+        display: none;
+      }
+      .sb-resorts-toggle:checked ~ .sb-resorts-panel {
+        display: block;
+      }
+      .sidebar-group-title {
+        color: #8a9a5b;
+        font-size: 0.68rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 14px 30px 6px;
+        margin: 0;
+      }
+      .sb-resorts-panel a {
+        display: block;
+        color: #ccc;
+        padding: 10px 30px 10px 46px;
+        border-bottom: 1px solid #2a2a2a;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+      }
+      .sb-resorts-panel a:hover {
+        color: #e8b923;
+        padding-left: 52px;
+        background: #2a2a2a;
+      }
     </style>
 
     <!-- Preload hero image -->
@@ -756,7 +911,106 @@
       </button>
       <nav class="nav-left">
         <a href="/">Home</a>
-        <a href="/resorts">Resorts</a>
+        <div class="nav-dropdown">
+          <a href="/resorts" class="nav-dropdown-toggle"
+            >Resorts <span class="caret"></span
+          ></a>
+          <div class="mega-menu">
+            <div class="mega-col">
+              <h4>5-Star Resorts</h4>
+              <a href="https://corbettriversideresort.com/taj-corbett"
+                >Taj Corbett</a
+              >
+              <a
+                href="https://corbettriversideresort.com/tarangi-ramganga-resort"
+                >WelcomHeritage Tarangi Ramganga</a
+              >
+              <a
+                href="https://corbettriversideresort.com/tarangi-resort-and-spa"
+                >Tarangi Resort and Spa</a
+              >
+              <a href="https://corbettriversideresort.com/namah-corbett"
+                >Namah Corbett</a
+              >
+              <a
+                href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel"
+                >Voco Jim Corbett, IHG</a
+              >
+              <a href="https://corbettriversideresort.com/solluna-resort"
+                >Solluna Resort</a
+              >
+              <a
+                href="https://corbettriversideresort.com/jim-corbett-marriott-resort"
+                >Jim Corbett Marriott</a
+              >
+              <a href="https://corbettriversideresort.com/hridyesh-resort"
+                >Hridyesh Resort</a
+              >
+              <a href="https://corbettriversideresort.com/river-heritage-resort"
+                >River Heritage Resort</a
+              >
+            </div>
+            <div class="mega-col">
+              <h4>4-Star Resorts</h4>
+              <a href="https://corbettriversideresort.com/corbett-rivercreek"
+                >Corbett River Creek</a
+              >
+              <a href="https://corbettriversideresort.com/riverview-retreat"
+                >Riverview Retreat</a
+              >
+              <a
+                href="https://corbettriversideresort.com/bellmond-riverside-resort"
+                >Bel-la Monde Riverside</a
+              >
+              <a href="https://corbettriversideresort.com/club-mahindra-resort"
+                >Club Mahindra Corbett</a
+              >
+              <a href="https://corbettriversideresort.com/infinity-resort"
+                >Infinity Resort</a
+              >
+              <a href="https://corbettriversideresort.com/lemon-tree-corbett"
+                >Lemon Tree Premier Corbett</a
+              >
+              <a
+                href="https://corbettriversideresort.com/corbett-river-valley-resort"
+                >Corbett River Valley</a
+              >
+              <a href="https://corbettriversideresort.com/wood-castle-resort"
+                >Wood Castle Spa &amp; Resort</a
+              >
+              <a href="https://corbettriversideresort.com/tiger-camp-corbett"
+                >Tiger Camp Corbett</a
+              >
+              <a href="https://corbettriversideresort.com/nadiya-parao-resort"
+                >Nadiya Parao Resort</a
+              >
+            </div>
+            <div class="mega-col">
+              <h4>3-Star Resorts</h4>
+              <a
+                href="https://corbettriversideresort.com/kabeela-tashree-resort"
+                >Kabeela Tashree Resort</a
+              >
+              <a href="https://corbettriversideresort.com/river-heritage-resort"
+                >Manu Maharani Corbett</a
+              >
+              <a href="https://corbettriversideresort.com/camp-riverwild"
+                >Camp Riverwild</a
+              >
+              <a href="https://corbettriversideresort.com/la-perle-resort"
+                >La Perle River Resort</a
+              >
+              <a
+                href="https://corbettriversideresort.com/mango-bloom-river-resort"
+                >Mango Bloom River Resort</a
+              >
+              <a
+                href="https://corbettriversideresort.com/tusker-riverside-resort"
+                >Tusker Riverside Resort</a
+              >
+            </div>
+          </div>
+        </div>
         <a href="/activities">Activities</a>
       </nav>
       <a href="/" class="logo"> Corbett Riverside Resort </a>
@@ -772,7 +1026,97 @@
       <button class="sidebar-close" on="tap:sidebar.close">✕</button>
       <nav>
         <a href="/">Home</a>
-        <a href="/resorts">Resorts</a>
+        <div class="sidebar-resorts">
+          <input type="checkbox" id="sb-resorts" class="sb-resorts-toggle" />
+          <label for="sb-resorts" class="sb-resorts-label"
+            >Resorts <span class="caret"></span
+          ></label>
+          <div class="sb-resorts-panel">
+            <p class="sidebar-group-title">5-Star Resorts</p>
+            <a href="https://corbettriversideresort.com/taj-corbett"
+              >Taj Corbett</a
+            >
+            <a href="https://corbettriversideresort.com/tarangi-ramganga-resort"
+              >WelcomHeritage Tarangi Ramganga</a
+            >
+            <a href="https://corbettriversideresort.com/tarangi-resort-and-spa"
+              >Tarangi Resort and Spa</a
+            >
+            <a href="https://corbettriversideresort.com/namah-corbett"
+              >Namah Corbett</a
+            >
+            <a
+              href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel"
+              >Voco Jim Corbett, IHG</a
+            >
+            <a href="https://corbettriversideresort.com/solluna-resort"
+              >Solluna Resort</a
+            >
+            <a
+              href="https://corbettriversideresort.com/jim-corbett-marriott-resort"
+              >Jim Corbett Marriott</a
+            >
+            <a href="https://corbettriversideresort.com/hridyesh-resort"
+              >Hridyesh Resort</a
+            >
+            <a href="https://corbettriversideresort.com/river-heritage-resort"
+              >River Heritage Resort</a
+            >
+            <p class="sidebar-group-title">4-Star Resorts</p>
+            <a href="https://corbettriversideresort.com/corbett-rivercreek"
+              >Corbett River Creek</a
+            >
+            <a href="https://corbettriversideresort.com/riverview-retreat"
+              >Riverview Retreat</a
+            >
+            <a
+              href="https://corbettriversideresort.com/bellmond-riverside-resort"
+              >Bel-la Monde Riverside</a
+            >
+            <a href="https://corbettriversideresort.com/club-mahindra-resort"
+              >Club Mahindra Corbett</a
+            >
+            <a href="https://corbettriversideresort.com/infinity-resort"
+              >Infinity Resort</a
+            >
+            <a href="https://corbettriversideresort.com/lemon-tree-corbett"
+              >Lemon Tree Premier Corbett</a
+            >
+            <a
+              href="https://corbettriversideresort.com/corbett-river-valley-resort"
+              >Corbett River Valley</a
+            >
+            <a href="https://corbettriversideresort.com/wood-castle-resort"
+              >Wood Castle Spa &amp; Resort</a
+            >
+            <a href="https://corbettriversideresort.com/tiger-camp-corbett"
+              >Tiger Camp Corbett</a
+            >
+            <a href="https://corbettriversideresort.com/nadiya-parao-resort"
+              >Nadiya Parao Resort</a
+            >
+            <p class="sidebar-group-title">3-Star Resorts</p>
+            <a href="https://corbettriversideresort.com/kabeela-tashree-resort"
+              >Kabeela Tashree Resort</a
+            >
+            <a href="https://corbettriversideresort.com/river-heritage-resort"
+              >Manu Maharani Corbett</a
+            >
+            <a href="https://corbettriversideresort.com/camp-riverwild"
+              >Camp Riverwild</a
+            >
+            <a href="https://corbettriversideresort.com/la-perle-resort"
+              >La Perle River Resort</a
+            >
+            <a
+              href="https://corbettriversideresort.com/mango-bloom-river-resort"
+              >Mango Bloom River Resort</a
+            >
+            <a href="https://corbettriversideresort.com/tusker-riverside-resort"
+              >Tusker Riverside Resort</a
+            >
+          </div>
+        </div>
         <a href="/activities">Activities</a>
         <a href="/safari">Safari</a>
         <a href="/contact-us">Contact</a>
@@ -912,7 +1256,9 @@
         <a href="/disclaimer">Disclaimer</a>
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms-and-conditions">Terms & Conditions</a>
-        <a href="/destination-wedding-planning-in-corbett-park">Destination Wedding Planning</a>
+        <a href="/destination-wedding-planning-in-corbett-park"
+          >Destination Wedding Planning</a
+        >
       </nav>
       <p class="copyright">
         © 2025 <a href="/">Corbett Riverside Resort</a>. All Rights Reserved.
