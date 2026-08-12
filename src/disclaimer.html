@@ -273,7 +273,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: clamp(20px, 3vw, 50px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
@@ -322,8 +322,8 @@
         text-align: center;
         color: #fff;
         font-family: Georgia, serif;
-        max-width: 200px;
-        font-size: 1.5rem;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        max-width: 24ch;
         font-weight: 700;
         letter-spacing: 0.5px;
         line-height: 1.2;
@@ -640,7 +640,6 @@
         .logo {
           text-align: left;
           min-width: auto;
-          max-width: 200px;
         }
         .logo-text {
           font-size: 1rem;
@@ -1012,7 +1011,7 @@
         </div>
         <a href="/activities">Activities</a>
       </nav>
-      <a href="/" class="logo"> Corbett Riverside Resorts </a>
+      <a href="/" class="logo"> Jim Corbett Riverside Resorts </a>
       <nav class="nav-right">
         <a href="/safari">Safari</a>
         <a href="/contact-us">Contact</a>
@@ -1264,7 +1263,7 @@
         >
       </nav>
       <p class="copyright">
-        © 2025 <a href="/">Corbett Riverside Resorts</a>. All Rights Reserved.
+        © 2025 <a href="/">Jim Corbett Riverside Resorts</a>. All Rights Reserved.
       </p>
     </footer>
   </body>
