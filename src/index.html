@@ -160,6 +160,7 @@
     custom-element="amp-position-observer"></script>
   <script async="" src="https://cdn.ampproject.org/v0/amp-recaptcha-input-0.1.js"
     custom-element="amp-recaptcha-input"></script>
+  <script async="" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js" custom-element="amp-lightbox"></script>
   <style amp-boilerplate="">
     body {
       -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -326,7 +327,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 1001;
+      z-index: 999;
       font-size: .9rem;
       border-bottom: 2px solid #e8b923;
       transition: transform .3s ease
@@ -2271,6 +2272,192 @@
       padding-left: 52px;
       background: #2a2a2a;
     }
+
+    /* ── Resort Comparison Section ── */
+    .comparison-section {
+      padding: 90px 20px;
+      background: #f5f0e9;
+    }
+
+    .comparison-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .comparison-title .comparison-subtitle {
+      font-size: .75rem;
+      letter-spacing: 3px;
+      color: #e8b923;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .comparison-title h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #2a2a2a;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .star-group {
+      margin-bottom: 55px;
+      text-align: center;
+    }
+
+    .star-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .star-group h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e8b923;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 20px;
+    }
+
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table.compare-table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 10px 40px rgba(0,0,0,.06);
+    }
+
+    table.compare-table th {
+      background: #3a3027;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      padding: 14px 16px;
+      text-align: center;
+      border-bottom: 2px solid #e8b923;
+      font-size: .8rem;
+    }
+
+    table.compare-table td {
+      padding: 12px 16px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    table.compare-table tbody tr:nth-child(even) {
+      background: #fdfcf8;
+    }
+
+    table.compare-table tbody tr:hover {
+      background: #f5f0e9;
+    }
+
+    table.compare-table td:first-child {
+      font-weight: 600;
+      color: #2a2a2a;
+    }
+
+    @media (max-width:768px) {
+      .comparison-section {
+        padding: 60px 15px;
+      }
+    }
+
+    @media (max-width:480px) {
+      .star-group h3 {
+        font-size: .9rem;
+        letter-spacing: 2px;
+      }
+
+      table.compare-table th {
+        font-size: .7rem;
+        padding: 10px 12px;
+      }
+
+      table.compare-table td {
+        font-size: .8rem;
+        padding: 10px 12px;
+      }
+
+      .room-thumb {
+        width: 64px;
+        height: 45px;
+      }
+    }
+
+    /* ── Room Image Thumbnails ── */
+    .room-thumb {
+      width: 80px;
+      height: 56px;
+      object-fit: cover;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .room-thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+      border-color: #e8b923;
+    }
+    amp-img.room-thumb img {
+      object-fit: cover;
+    }
+
+    /* ── Room Image Lightbox (amp-lightbox) ── */
+    .room-lightbox { background: rgba(0, 0, 0, .92); }
+    .lightbox-backdrop {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-stage {
+      position: relative;
+      width: 80vw;
+      height: 80vh;
+      max-width: 1100px;
+      max-height: 80vh;
+    }
+    .lightbox-img { width: 100%; height: 100%; }
+    .lightbox-img img { object-fit: contain; }
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(232, 185, 35, .92);
+      color: #2a2a2a;
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
+    }
+    .lightbox-close:hover { background: #e8b923; }
   </style>
   <link href="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" rel="preload"
     as="image" />
@@ -2568,6 +2755,170 @@
         </div>
       </div>
     </section>
+    <section class="comparison-section">
+      <div class="container">
+        <div class="comparison-title">
+          <span class="comparison-subtitle">Resort Comparison</span>
+          <h2>Compare Jim Corbett Resorts by Star Rating</h2>
+        </div>
+
+        <div class="star-group">
+          <h3>5-Star Resorts</h3>
+          <div class="table-scroll">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Resort</th>
+                  <th>Resort Area</th>
+                  <th>No. of Rooms</th>
+                  <th>Starting Tariff</th>
+                  <th>Child Policy</th>
+                  <th>Room Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Taj Corbett</td>
+                  <td>11 acres</td>
+                  <td>75</td>
+                  <td>₹20K</td>
+                  <td>Comp. till 5 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Taj Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Marriot Jim Corbett</td>
+                  <td>7 acres</td>
+                  <td>99</td>
+                  <td>₹20K</td>
+                  <td>Comp. till 8 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Marriot Jim Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Tarangi Kosi</td>
+                  <td>13 acres</td>
+                  <td>101</td>
+                  <td>₹9.5K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Tarangi Kosi room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="star-group">
+          <h3>4-Star Resorts</h3>
+          <div class="table-scroll">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Resort</th>
+                  <th>Resort Area</th>
+                  <th>No. of Rooms</th>
+                  <th>Starting Tariff</th>
+                  <th>Child Policy</th>
+                  <th>Room Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Manu Maharani</td>
+                  <td>11 acres</td>
+                  <td>64</td>
+                  <td>₹12K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Manu Maharani room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Lemon Tree Premier</td>
+                  <td>6.5 acres</td>
+                  <td>68</td>
+                  <td>₹13K</td>
+                  <td>Comp. till 5 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Lemon Tree Premier room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Bel - La Monde Riverside Resort</td>
+                  <td>21 acres</td>
+                  <td>52</td>
+                  <td>₹9K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Bel La Monde Riverside Resort room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Corbett River Creek</td>
+                  <td>6 acres</td>
+                  <td>32</td>
+                  <td>₹8K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Corbett River Creek room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="star-group">
+          <h3>3-Star Resorts</h3>
+          <div class="table-scroll">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Resort</th>
+                  <th>Resort Area</th>
+                  <th>No. of Rooms</th>
+                  <th>Starting Tariff</th>
+                  <th>Child Policy</th>
+                  <th>Room Image</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mango Bloom</td>
+                  <td>4.5 acres</td>
+                  <td>48</td>
+                  <td>₹7K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Mango Bloom room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>La Perle</td>
+                  <td>7.5 acres</td>
+                  <td>59</td>
+                  <td>₹7.5K</td>
+                  <td>Comp. till 6 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="La Perle room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+                <tr>
+                  <td>Tiger Camp</td>
+                  <td>7 acres</td>
+                  <td>37</td>
+                  <td>₹6K</td>
+                  <td>Comp. till 5 years</td>
+                  <td><amp-img class="room-thumb" src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" width="80" height="56" layout="fixed" alt="Tiger Camp room" on="tap:AMP.setState({roomLightboxSrc:'https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <amp-lightbox id="roomLightbox" layout="nodisplay" class="room-lightbox">
+      <div class="lightbox-backdrop" role="button" tabindex="0" on="tap:roomLightbox.close">
+        <button class="lightbox-close" type="button" aria-label="Close image" on="tap:roomLightbox.close">×</button>
+        <div class="lightbox-stage">
+          <amp-img class="lightbox-img"
+            src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto"
+            [src]="roomLightboxSrc"
+            layout="fill" alt="Room image large view"></amp-img>
+        </div>
+      </div>
+    </amp-lightbox>
+    <amp-state id="roomLightboxState">
+      <script type="application/json">
+      {"roomLightboxSrc": "https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto"}
+      </script>
+    </amp-state>
     <section class="section section-white" id="resorts">
       <div class="resorts-header">
         <div class="resorts-subtitle">CURATED STAYS</div>
