@@ -229,7 +229,8 @@
       }
     </style>
   </noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap">
   <style amp-custom="">
     * {
       box-sizing: border-box;
@@ -361,8 +362,8 @@
       padding-left: 100%;
       animation: topbar-marquee 50s linear infinite
     }
- 
-    .top-bar-marquee + .top-bar-marquee {
+
+    .top-bar-marquee+.top-bar-marquee {
       border-top: 1px solid rgba(232, 185, 35, .45);
       margin-top: 3px
     }
@@ -439,7 +440,7 @@
       width: 100%
     }
 
-    .nav-left > a:first-child {
+    .nav-left>a:first-child {
       color: #e8b923
     }
 
@@ -1626,6 +1627,7 @@
     .form-submit-wrapper {
       text-align: left
     }
+
     .form-consent {
       margin: 10px 0 0;
       font-size: .82rem;
@@ -1780,6 +1782,91 @@
       padding-top: 20px;
       font-size: .82rem;
       color: #bbb
+    }
+
+    .footer-company {
+      border: 1px solid rgba(232, 185, 35, .3);
+      background: rgba(255, 255, 255, .03);
+      padding: 30px;
+      margin-bottom: 40px;
+      border-left: 4px solid #e8b923;
+      text-align: left
+    }
+
+    .footer-company-title {
+      color: #e8b923;
+      font-family: Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .95rem;
+      margin-bottom: 20px
+    }
+
+    .footer-company-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px 30px
+    }
+
+    .footer-company-item {
+      display: flex;
+      flex-direction: column;
+      text-align: left
+    }
+
+    .footer-company-item-wide {
+      grid-column: 1 / -1
+    }
+
+    .footer-company-label {
+      color: #e8b923;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 4px
+    }
+
+    .footer-company-value {
+      color: #f0f0f0;
+      font-size: .9rem;
+      line-height: 1.6
+    }
+
+    .footer-company-value a {
+      color: #cfcfcf;
+      text-decoration: none
+    }
+
+    .footer-company-value a:hover {
+      color: #e8b923
+    }
+
+    .footer-legal-note {
+      border-top: 1px solid rgba(255, 255, 255, .15);
+      margin-top: 30px;
+      padding-top: 20px;
+      font-size: .78rem;
+      color: #bbb;
+      line-height: 1.7;
+      text-align: left
+    }
+
+    .footer-legal-note p {
+      margin-bottom: 12px
+    }
+
+    .footer-legal-note p:last-child {
+      margin-bottom: 0
+    }
+
+    @media (max-width: 768px) {
+      .footer-company-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-company {
+        padding: 22px 18px
+      }
     }
 
     @media (max-width: 1024px) {
@@ -2490,7 +2577,7 @@
       border-collapse: collapse;
       background: #fff;
       border: 1px solid #e5e5e5;
-      box-shadow: 0 10px 40px rgba(0,0,0,.06);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .06);
     }
 
     table.compare-table th {
@@ -2566,17 +2653,22 @@
       display: inline-block;
       transition: transform .25s ease, box-shadow .25s ease;
     }
+
     .room-thumb:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
       border-color: #e8b923;
     }
+
     amp-img.room-thumb img {
       object-fit: cover;
     }
 
     /* ── Room Image Lightbox (amp-lightbox) ── */
-    .room-lightbox { background: rgba(0, 0, 0, .92); }
+    .room-lightbox {
+      background: rgba(0, 0, 0, .92);
+    }
+
     .lightbox-backdrop {
       position: relative;
       width: 100%;
@@ -2585,6 +2677,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .lightbox-stage {
       position: relative;
       width: 68vw;
@@ -2592,8 +2685,16 @@
       max-width: 935px;
       max-height: 68vh;
     }
-    .lightbox-img { width: 100%; height: 100%; }
-    .lightbox-img img { object-fit: contain; }
+
+    .lightbox-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .lightbox-img img {
+      object-fit: contain;
+    }
+
     .lightbox-close {
       position: absolute;
       top: 18px;
@@ -2614,7 +2715,10 @@
       justify-content: center;
       box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
     }
-    .lightbox-close:hover { background: #e8b923; }
+
+    .lightbox-close:hover {
+      background: #e8b923;
+    }
   </style>
   <link href="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto" rel="preload"
     as="image" />
@@ -2646,8 +2750,12 @@
   <amp-position-observer intersection-ratios="1" layout="nodisplay"
     on="enter:AMP.setState({headerScrolled: false}); exit:AMP.setState({headerScrolled: true})"></amp-position-observer>
   <div class="top-bar" [class]="headerScrolled ? 'top-bar hide' : 'top-bar'">
-    <div class="top-bar-marquee" data-text="https://www.corbettriversideresort.com/ is an independent, private travel portal operated by The Indian Voyage (A Unit of Green View Voyage Pvt. Ltd.) and is not the official website of any of resort mentioned in this website."></div>
-    <div class="top-bar-marquee" data-text="Booking of safari and night stay at forest rest house are subject to availability by official website for corbett tiger reserve"></div>
+    <div class="top-bar-marquee"
+      data-text="https://www.corbettriversideresort.com/ is an independent, private travel portal operated by The Indian Voyage (A Unit of Green View Voyage Pvt. Ltd.) and is not the official website of any of resort mentioned in this website.">
+    </div>
+    <div class="top-bar-marquee"
+      data-text="Booking of safari and night stay at forest rest house are subject to availability by official website for corbett tiger reserve">
+    </div>
   </div>
   <header [class]="headerScrolled ? 'header scrolled' : 'header'" class="header">
     <button class="hamburger" aria-label="Toggle navigation" on="tap:sidebar.toggle">
@@ -2681,7 +2789,8 @@
             <a href="https://corbettriversideresort.com/tarangi-ramganga-resort">WelcomHeritage Tarangi Ramganga</a>
             <a href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel">Voco Jim Corbett, IHG</a>
             <a href="https://corbettriversideresort.com/manu-maharani-corbett">Manu Maharani Corbett</a>
-            <a href="https://corbettriversideresort.com/nadiya-parao-resort">Nadiya Parao - A Club Mahindra Associate Resort, Corbett</a>
+            <a href="https://corbettriversideresort.com/nadiya-parao-resort">Nadiya Parao - A Club Mahindra Associate
+              Resort, Corbett</a>
           </div>
           <div class="mega-col">
             <h4>3-Star Resorts</h4>
@@ -2824,7 +2933,8 @@
           <a href="https://corbettriversideresort.com/tarangi-ramganga-resort">WelcomHeritage Tarangi Ramganga</a>
           <a href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel">Voco Jim Corbett, IHG</a>
           <a href="https://corbettriversideresort.com/manu-maharani-corbett">Manu Maharani Corbett</a>
-          <a href="https://corbettriversideresort.com/nadiya-parao-resort">Nadiya Parao - A Club Mahindra Associate Resort, Corbett</a>
+          <a href="https://corbettriversideresort.com/nadiya-parao-resort">Nadiya Parao - A Club Mahindra Associate
+            Resort, Corbett</a>
           <p class="sidebar-group-title">3-Star Resorts</p>
           <a href="https://corbettriversideresort.com/infinity-resort">Infinity Resort</a>
           <a href="https://corbettriversideresort.com/kabeela-tashree-resort">Kabeela Tashree Resort</a>
@@ -2893,14 +3003,40 @@
             <strong>Stay close to nature, stay close to adventure — only at a
               riverside resort in Corbett</strong>
           </p>
-          <button type="button" class="about-story-btn" on="tap:AMP.setState({sanctuaryState: {expanded: !sanctuaryState.expanded}})" aria-expanded="false" [aria-expanded]="sanctuaryState.expanded ? 'true' : 'false'">
+          <button type="button" class="about-story-btn"
+            on="tap:AMP.setState({sanctuaryState: {expanded: !sanctuaryState.expanded}})" aria-expanded="false"
+            [aria-expanded]="sanctuaryState.expanded ? 'true' : 'false'">
             <span [text]="sanctuaryState.expanded ? 'Minimize' : 'Read More'">Read More</span>
           </button>
           <div class="about-more" hidden [hidden]="!sanctuaryState.expanded">
             <h3>Luxury Resorts with World-Class Experiences</h3>
-            <p>The luxury resorts in the Jim Corbett region, including Tarangi Ramganga Resort, Namah Corbett, Solluna Resort, Jim Corbett Marriott Resort, Corbett River View Retreat, and Corbett Hideaway, offer an excellent combination of luxury, comfort, nature, and wildlife experiences. These properties feature sprawling landscaped lawns, riverside decks, attractive restaurants, large swimming pools, beautifully appointed rooms with contemporary amenities, and spa and wellness facilities, providing guests with a comfortable and relaxing stay. One of their key strengths is their strategic location close to the natural surroundings of Corbett, with several properties offering scenic riverfront settings and easy access to major safari areas such as Dhikala and Bijrani. These resorts also have in-house naturalists with extensive knowledge of the flora and fauna of Corbett National Park, who enhance the guest experience by providing valuable insights into wildlife, birds, vegetation, and the park's ecosystem. Guests can also enjoy activities such as jungle safaris, nature walks, birdwatching, and other outdoor experiences. In addition, spacious lawns, banquet facilities, and outdoor venues make these resorts suitable for destination weddings, corporate events, conferences, family gatherings, and group tours. Although there are other luxury resorts in Corbett, such as Aahana Resort and The Bagh, the combination of strategic riverside locations, proximity to major safari zones, experienced naturalists, extensive resort facilities, luxury accommodation, and accessibility for large groups gives these properties a distinctive competitive advantage in the Jim Corbett hospitality market.</p>
+            <p>The luxury resorts in the Jim Corbett region, including Tarangi Ramganga Resort, Namah Corbett, Solluna
+              Resort, Jim Corbett Marriott Resort, Corbett River View Retreat, and Corbett Hideaway, offer an excellent
+              combination of luxury, comfort, nature, and wildlife experiences. These properties feature sprawling
+              landscaped lawns, riverside decks, attractive restaurants, large swimming pools, beautifully appointed
+              rooms with contemporary amenities, and spa and wellness facilities, providing guests with a comfortable
+              and relaxing stay. One of their key strengths is their strategic location close to the natural
+              surroundings of Corbett, with several properties offering scenic riverfront settings and easy access to
+              major safari areas such as Dhikala and Bijrani. These resorts also have in-house naturalists with
+              extensive knowledge of the flora and fauna of Corbett National Park, who enhance the guest experience by
+              providing valuable insights into wildlife, birds, vegetation, and the park's ecosystem. Guests can also
+              enjoy activities such as jungle safaris, nature walks, birdwatching, and other outdoor experiences. In
+              addition, spacious lawns, banquet facilities, and outdoor venues make these resorts suitable for
+              destination weddings, corporate events, conferences, family gatherings, and group tours. Although there
+              are other luxury resorts in Corbett, such as Aahana Resort and The Bagh, the combination of strategic
+              riverside locations, proximity to major safari zones, experienced naturalists, extensive resort
+              facilities, luxury accommodation, and accessibility for large groups gives these properties a distinctive
+              competitive advantage in the Jim Corbett hospitality market.</p>
             <h3>Riverside Retreats by the Water's Edge</h3>
-            <p>Nestled along the serene riverbanks of Jim Corbett, properties like Bel-la Monde Riverside Resort, Tarangi Ramganga Resort, Corbett River Creek, and Camp Riverwild offer an authentic riverside retreat where guests can unwind right along the water's edge. Beyond expansive shorelines, these destinations stand out for their open-air dining and riverside grill houses, where visitors can savor meals accompanied by the soothing sounds of running water and panoramic views of the shimmering river. Adding to the charm, many properties feature accommodations positioned directly along the bank—most notably the riverfront rooms at Bel-la Monde Riverside Resort, which boast a uniquely immersive location. These rooms offer unobstructed vistas of the flowing riverbed right from private balconies and glass windows, combining luxurious indoor comfort with direct visual and auditory access to nature.</p>
+            <p>Nestled along the serene riverbanks of Jim Corbett, properties like Bel-la Monde Riverside Resort,
+              Tarangi Ramganga Resort, Corbett River Creek, and Camp Riverwild offer an authentic riverside retreat
+              where guests can unwind right along the water's edge. Beyond expansive shorelines, these destinations
+              stand out for their open-air dining and riverside grill houses, where visitors can savor meals accompanied
+              by the soothing sounds of running water and panoramic views of the shimmering river. Adding to the charm,
+              many properties feature accommodations positioned directly along the bank—most notably the riverfront
+              rooms at Bel-la Monde Riverside Resort, which boast a uniquely immersive location. These rooms offer
+              unobstructed vistas of the flowing riverbed right from private balconies and glass windows, combining
+              luxurious indoor comfort with direct visual and auditory access to nature.</p>
           </div>
         </div>
         <div class="about-image">
@@ -2941,7 +3077,11 @@
                   <td>75</td>
                   <td>₹20K</td>
                   <td>Comp. till 5 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/taj-corbett.jpg?_t=1786802694" width="80" height="56" layout="fixed" alt="Taj Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/taj-corbett.jpg?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/taj-corbett.jpg?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Taj Corbett room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/taj-corbett.jpg?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Jim Corbett Marriott Resort</td>
@@ -2949,7 +3089,11 @@
                   <td>99</td>
                   <td>₹20K</td>
                   <td>Comp. till 8 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/jim-corbett-mariott.jpg?_t=1786802694" width="80" height="56" layout="fixed" alt="Jim Corbett Marriott Resort room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/jim-corbett-mariott.jpg?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/jim-corbett-mariott.jpg?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Jim Corbett Marriott Resort room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/jim-corbett-mariott.jpg?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Tarangi Resort and Spa</td>
@@ -2957,7 +3101,11 @@
                   <td>101</td>
                   <td>₹9.5K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tarangi-kosi-resort-and-spa.jpg?_t=1786802694" width="80" height="56" layout="fixed" alt="Tarangi Resort and Spa room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tarangi-kosi-resort-and-spa.jpg?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tarangi-kosi-resort-and-spa.jpg?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Tarangi Resort and Spa room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tarangi-kosi-resort-and-spa.jpg?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
               </tbody>
             </table>
@@ -2985,7 +3133,11 @@
                   <td>64</td>
                   <td>₹12K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/manu-maharani.png?_t=1786802694" width="80" height="56" layout="fixed" alt="Manu Maharani Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/manu-maharani.png?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/manu-maharani.png?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Manu Maharani Corbett room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/manu-maharani.png?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Lemon Tree Corbett</td>
@@ -2993,7 +3145,11 @@
                   <td>68</td>
                   <td>₹13K</td>
                   <td>Comp. till 5 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/lemon-tree.webp?_t=1786802694" width="80" height="56" layout="fixed" alt="Lemon Tree Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/lemon-tree.webp?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/lemon-tree.webp?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Lemon Tree Corbett room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/lemon-tree.webp?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Bel-la Monde Riverside Resort</td>
@@ -3001,7 +3157,11 @@
                   <td>52</td>
                   <td>₹9K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/bel-la-monde.png?_t=1786802694" width="80" height="56" layout="fixed" alt="Bel-la Monde Riverside Resort room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/bel-la-monde.png?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/bel-la-monde.png?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Bel-la Monde Riverside Resort room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/bel-la-monde.png?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Corbett River Creek</td>
@@ -3009,7 +3169,11 @@
                   <td>32</td>
                   <td>₹8K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/corbett-river-creek.png?_t=1786802694" width="80" height="56" layout="fixed" alt="Corbett River Creek room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/corbett-river-creek.png?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/corbett-river-creek.png?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Corbett River Creek room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/corbett-river-creek.png?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
               </tbody>
             </table>
@@ -3037,7 +3201,11 @@
                   <td>48</td>
                   <td>₹7K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/mango-bloom.jpg?_t=1786802694" width="80" height="56" layout="fixed" alt="Mango Bloom River Resort room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/mango-bloom.jpg?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/mango-bloom.jpg?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Mango Bloom River Resort room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/mango-bloom.jpg?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>La Perle Resort</td>
@@ -3045,7 +3213,11 @@
                   <td>59</td>
                   <td>₹7.5K</td>
                   <td>Comp. till 6 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/la-perle.webp?_t=1786802694" width="80" height="56" layout="fixed" alt="La Perle Resort room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/la-perle.webp?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/la-perle.webp?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="La Perle Resort room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/la-perle.webp?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
                 <tr>
                   <td>Tiger Camp Corbett</td>
@@ -3053,7 +3225,11 @@
                   <td>37</td>
                   <td>₹6K</td>
                   <td>Comp. till 5 years</td>
-                  <td><amp-img class="room-thumb" src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tiger-camp.png?_t=1786802694" width="80" height="56" layout="fixed" alt="Tiger Camp Corbett room" on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tiger-camp.png?_t=1786802694'}), roomLightbox.open" role="button" tabindex="0"></amp-img></td>
+                  <td><amp-img class="room-thumb"
+                      src="https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tiger-camp.png?_t=1786802694"
+                      width="80" height="56" layout="fixed" alt="Tiger Camp Corbett room"
+                      on="tap:AMP.setState({roomLightboxSrc:'https://corbettriversideresort.com/wp-content/uploads/home-resort-comparison/tiger-camp.png?_t=1786802694'}), roomLightbox.open"
+                      role="button" tabindex="0"></amp-img></td>
                 </tr>
               </tbody>
             </table>
@@ -3067,8 +3243,7 @@
         <div class="lightbox-stage">
           <amp-img class="lightbox-img"
             src="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto"
-            [src]="roomLightboxSrc"
-            layout="fill" alt="Room image large view"></amp-img>
+            [src]="roomLightboxSrc" layout="fill" alt="Room image large view"></amp-img>
         </div>
       </div>
     </amp-lightbox>
@@ -3929,8 +4104,8 @@
         <h3>Important Note on Hotel Ratings and HRACC Classification</h3>
         <p>
           The <strong>Hotel and Restaurant Approval and Classification Committee
-          (HRACC)</strong> is a central body under the <strong>Ministry of Tourism,
-          Government of India</strong>, responsible for the official inspection,
+            (HRACC)</strong> is a central body under the <strong>Ministry of Tourism,
+            Government of India</strong>, responsible for the official inspection,
           approval, and classification of hotels and heritage properties under the
           prescribed standards, ranging from <strong>1-Star to 5-Star Deluxe</strong>.
         </p>
@@ -3974,10 +4149,17 @@
         </div>
         <div class="company-intro text-center">
           <p>
-            CorbettRiversideResort.com is an independent resort discovery and a package booking platform dedicated to helping travelers plan the ultimate trip. This website is not a resort website of any resort mentioned in this website. We make trip planning effortless by allowing you to discover and compare top riverside resorts, stay options, and amenities side-by-side—including pool facilities, riverfront views, and proximity to major safari gates.
+            CorbettRiversideResort.com is an independent resort discovery and a package booking platform dedicated to
+            helping travelers plan the ultimate trip. This website is not a resort website of any resort mentioned in
+            this website. We make trip planning effortless by allowing you to discover and compare top riverside
+            resorts, stay options, and amenities side-by-side—including pool facilities, riverfront views, and proximity
+            to major safari gates.
           </p>
           <p>
-            Beyond resort comparisons, our primary goal is to help you build the perfect wildlife package for Jim Corbett National Park including stay, safari, transfers, or any other travel-related service. Whether you need an action-packed weekend or a customized long holiday, our platform lets you evaluate options and book complete, hassle-free wilderness experiences all in one place.
+            Beyond resort comparisons, our primary goal is to help you build the perfect wildlife package for Jim
+            Corbett National Park including stay, safari, transfers, or any other travel-related service. Whether you
+            need an action-packed weekend or a customized long holiday, our platform lets you evaluate options and book
+            complete, hassle-free wilderness experiences all in one place.
           </p>
         </div>
       </div>
@@ -4439,7 +4621,9 @@
           <div class="form-consent">
             <label class="consent-label" for="consent">
               <input type="checkbox" id="consent" name="consent" />
-              <span>I agree to the <a href="https://www.dhikala-corbett.com/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> and allow The Indian Voyage Unit of Green View Voyage Private Limited to contact me regarding my travel request.</span>
+              <span>I agree to the <a href="https://www.dhikala-corbett.com/privacy-policy.html" target="_blank"
+                  rel="noopener">Privacy Policy</a> and allow The Indian Voyage Unit of Green View Voyage Private
+                Limited to contact me regarding my travel request.</span>
             </label>
           </div>
           <div class="form-submit-wrapper">
@@ -4468,7 +4652,6 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
-
         <div class="footer-brand">
           <a href="/" class="footer-logo">Jim Corbett Riverside Resorts</a>
           <p>An independent travel portal comparing riverside resorts near Jim Corbett National Park, Uttarakhand.</p>
@@ -4506,14 +4689,72 @@
           <h4>Popular Resorts</h4>
           <ul>
             <li><a href="https://corbettriversideresort.com/taj-corbett">Taj Corbett Resort &amp; Spa</a></li>
-            <li><a href="https://corbettriversideresort.com/jim-corbett-marriott-resort">Jim Corbett Marriott Resort</a></li>
+            <li><a href="https://corbettriversideresort.com/jim-corbett-marriott-resort">Jim Corbett Marriott Resort</a>
+            </li>
             <li><a href="https://corbettriversideresort.com/tarangi-ramganga-resort">Tarangi Resort and Spa</a></li>
-            <li><a href="https://corbettriversideresort.com/bellmond-riverside-resort">Bel-la Monde Riverside Resort</a></li>
+            <li><a href="https://corbettriversideresort.com/bellmond-riverside-resort">Bel-la Monde Riverside Resort</a>
+            </li>
             <li><a href="https://corbettriversideresort.com/corbett-rivercreek">Corbett River Creek</a></li>
             <li><a href="https://corbettriversideresort.com/mango-bloom-river-resort">Mango Bloom River Resort</a></li>
           </ul>
         </div>
+      </div>
 
+      <div class="footer-company">
+        <h4 class="footer-company-title">Company &amp; Legal Information</h4>
+        <div class="footer-company-grid">
+          <div class="footer-company-item">
+            <span class="footer-company-label">Trade Name</span>
+            <span class="footer-company-value">The Indian Voyage</span>
+          </div>
+          <div class="footer-company-item">
+            <span class="footer-company-label">Registered Company Name</span>
+            <span class="footer-company-value">Green View Voyage Private Limited</span>
+          </div>
+          <div class="footer-company-item">
+            <span class="footer-company-label">CIN (Corporate Identification Number)</span>
+            <span class="footer-company-value">U63040DL2010PTC201816</span>
+          </div>
+          <div class="footer-company-item">
+            <span class="footer-company-label">GST Number</span>
+            <span class="footer-company-value">09AADCG7959A1ZH</span>
+          </div>
+          <div class="footer-company-item footer-company-item-wide">
+            <span class="footer-company-label">Head Office Address</span>
+            <span class="footer-company-value">Floor No 7, 701, Tower-1, Assotech Business Cresterra, Plot No 22,
+              Sector-135, Noida, Uttar Pradesh - 201305</span>
+          </div>
+          <div class="footer-company-item">
+            <span class="footer-company-label">Customer Support Email</span>
+            <span class="footer-company-value"><a
+                href="mailto:tours@theindianvoyage.com">tours@theindianvoyage.com</a></span>
+          </div>
+          <div class="footer-company-item footer-company-item-wide">
+            <span class="footer-company-label">Phone Number</span>
+            <span class="footer-company-value">
+              Pardeep Kapoor <a href="tel:+919268565534">+91 9268565534</a><br>
+              Saurabh Agrawal <a href="tel:+919990349246">+91 9990349246</a>
+            </span>
+          </div>
+          <div class="footer-company-item">
+            <span class="footer-company-label">Business Hours</span>
+            <span class="footer-company-value">Monday – Saturday, 10:00 AM – 6:30 PM (IST)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal-note">
+        <p>https://www.corbettriversideresort.com/ is owned and operated by The Indian Voyage trade name of Green View
+          Voyage Private Limited and is a privately managed travel website.This website is not the official website of
+          any of resort mentioned in this website or any affiliated with, endorsed by, authorised by, or operated by the
+          Uttarakhand Forest Department, Corbett Tiger Reserve, or any other government authority.</p>
+        <p>We specialise in designing and operating complete, end-to-end wildlife tour packages that may include resort
+          accommodation, jungle safari permits, local transportation, sightseeing, and other travel-related services.
+          Rather than offering standalone bookings for resorts or standalone safari permit bookings, we arrange these
+          services as integral components of our comprehensive tour packages, providing our guests with a seamless
+          wildlife travel experience.</p>
+        <p>All tour packages featured on this website are independently curated and managed by The Indian Voyage. All
+          booking inquiries, package customization, customer support, payment processing, and legal contracts are
+          handled exclusively by Green View Voyage Pvt. Ltd. (CIN: U63040DL2010PTC201816).</p>
       </div>
 
       <div class="footer-bottom">
