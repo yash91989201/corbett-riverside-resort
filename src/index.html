@@ -318,11 +318,13 @@
     .top-bar {
       background: #3a3027;
       color: #fff;
-      padding: 0;
-      height: 40px;
+      padding: 6px 0;
+      height: auto;
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      overflow: hidden;
       position: sticky;
       top: 0;
       left: 0;
@@ -338,33 +340,48 @@
       transform: translateY(-100%)
     }
 
-    .top-bar a {
-      color: #fff;
-      padding: 0 40px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      background: #8a9a5b;
-      font-weight: 600;
-      letter-spacing: .5px;
+    .top-bar-marquee {
+      width: 100%;
+      height: 18px;
       position: relative;
-      border-left: 15px solid transparent;
-      clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%)
+      overflow: hidden;
+      white-space: nowrap;
+      color: #fff;
+      font-size: .82rem;
+      letter-spacing: .3px
     }
 
-    .top-bar a:hover {
-      background: #9aaa6b
+    .top-bar-marquee::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: 100%;
+      animation: topbar-marquee 50s linear infinite
+    }
+ 
+    .top-bar-marquee + .top-bar-marquee {
+      border-top: 1px solid rgba(232, 185, 35, .45);
+      margin-top: 3px
     }
 
-    .top-bar a span {
-      display: inline-block
+    @keyframes topbar-marquee {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-100%)
+      }
     }
 
     .header {
       background: rgba(40, 40, 40, .8);
       padding: 15px 30px;
       position: sticky;
-      top: 40px;
+      top: 52px;
       left: 0;
       right: 0;
       z-index: 1000;
@@ -1881,7 +1898,7 @@
         justify-content: center;
         height: auto;
         padding: 10px 0;
-        display: none
+        display: flex
       }
 
       .header {
@@ -2489,7 +2506,8 @@
   <amp-position-observer intersection-ratios="1" layout="nodisplay"
     on="enter:AMP.setState({headerScrolled: false}); exit:AMP.setState({headerScrolled: true})"></amp-position-observer>
   <div class="top-bar" [class]="headerScrolled ? 'top-bar hide' : 'top-bar'">
-    <a href="tel:+91 9990349246"><span>📞 +91 9990349246</span></a>
+    <div class="top-bar-marquee" data-text="https://www.corbettriversideresort.com/ is an independent, private travel portal operated by The Indian Voyage (A Unit of Green View Voyage Pvt. Ltd.) and is not the official website of any of resort mentioned in this website."></div>
+    <div class="top-bar-marquee" data-text="Booking of safari and night stay at forest rest house are subject to availability by official website for corbett tiger reserve"></div>
   </div>
   <header [class]="headerScrolled ? 'header scrolled' : 'header'" class="header">
     <button class="hamburger" aria-label="Toggle navigation" on="tap:sidebar.toggle">
