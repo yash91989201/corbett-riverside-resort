@@ -599,43 +599,281 @@
       }
 
       /* ==================== FOOTER ==================== */
-      .footer {
-        background: #3a3027;
-        color: #fff;
-        padding: 50px 20px 30px;
-        text-align: center;
-        font-size: 0.9rem;
+    .footer {
+      background: #3a3027 url('https://corbettriversideresort.com/wp-content/uploads/footer-bg.png?_t=1787223388') center/cover no-repeat;
+      position: relative;
+      color: #fff;
+      padding: 60px 20px 30px;
+      font-size: .9rem
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(58, 48, 39, .88);
+      pointer-events: none
+    }
+
+    .footer>* {
+      position: relative;
+      z-index: 1
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      text-align: left
+    }
+
+    .footer-col h4 {
+      color: #e8b923;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .85rem;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(232, 185, 35, .3)
+    }
+
+    .footer-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px
+    }
+
+    .footer-logo-ring {
+      flex-shrink: 0
+    }
+
+    .footer-logo-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: #e8b923;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-decoration: none
+    }
+
+    .footer-logo-text small {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: .6rem;
+      letter-spacing: 3px;
+      color: #a88a20;
+      font-weight: 400;
+      margin-top: 2px
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .footer-contact-item {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      font-size: .82rem;
+      color: #cfcfcf;
+      line-height: 1.55
+    }
+
+    .footer-contact-label {
+      color: #e8b923;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 1px;
+      display: block
+    }
+
+    .footer-contact-item a {
+      color: #cfcfcf;
+      text-decoration: none;
+      transition: color .3s
+    }
+
+    .footer-contact-item a:hover {
+      color: #e8b923
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px
+    }
+
+    .footer-col ul li a {
+      color: #cfcfcf;
+      text-decoration: none;
+      font-size: .85rem;
+      transition: color .3s, padding-left .3s
+    }
+
+    .footer-col ul li a:hover {
+      color: #e8b923;
+      padding-left: 6px
+    }
+
+    .footer-review-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      text-align: center
+    }
+
+    .footer-review-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 8px
+    }
+
+    .footer-review-google-text {
+      font-size: .95rem;
+      font-weight: 600;
+      color: #333
+    }
+
+    .footer-review-stars {
+      color: #e8b923;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 4px
+    }
+
+    .footer-review-text {
+      font-size: .78rem;
+      color: #555
+    }
+
+    .footer-review-micro {
+      font-size: .6rem;
+      color: #999;
+      margin-top: 4px
+    }
+
+    .footer-social-heading {
+      color: #e8b923;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .85rem;
+      margin-bottom: 12px
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 12px
+    }
+
+    .footer-social-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      text-decoration: none;
+      transition: background .3s
+    }
+
+    .footer-social-icon:hover {
+      background: #e8b923
+    }
+
+    .footer-social-icon svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .footer-disclaimer {
+      max-width: 960px;
+      margin: 40px auto 0;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px 36px;
+      color: #333;
+      font-size: .82rem;
+      line-height: 1.75;
+      text-align: left
+    }
+
+    .footer-disclaimer p {
+      margin-bottom: 14px
+    }
+
+    .footer-disclaimer p:last-child {
+      margin-bottom: 0
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      margin-top: 40px;
+      padding-top: 20px;
+      font-size: .82rem;
+      color: #bbb;
+      text-align: center
+    }
+
+    @media (max-width: 1024px) {
+      .footer-top {
+        grid-template-columns: 1fr 1fr
       }
-      .footer h2 {
-        color: #fff;
-        font-size: 1.5rem;
-        margin-bottom: 25px;
+
+      .footer-col-brand {
+        grid-column: 1 / -1
       }
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-        flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .footer-disclaimer {
+        padding: 24px 20px
       }
-      .footer-links a {
-        color: #fff;
-        letter-spacing: 1px;
-        font-size: 0.85rem;
-        transition: color 0.3s;
+    }
+
+    @media (max-width: 600px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px
       }
-      .footer-links a:hover {
-        color: #e8b923;
+
+      .footer-contact {
+        columns: 1
       }
-      .copyright {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 20px;
-        margin-top: 15px;
-        color: #fff;
+
+      .footer-disclaimer {
+        margin-left: 12px;
+        margin-right: 12px
       }
-      .copyright a, .footer > a {
-        font-family: 'Cormorant Garamond', Georgia, serif;
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
       }
+    }
 
       /* ==================== RESPONSIVE ==================== */
       @media (max-width: 1024px) {
@@ -1270,26 +1508,123 @@
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
-      <h2>Quick Links</h2>
-      <nav class="footer-links">
-        <a href="/">Home</a>
-        <a href="/about-us">About Us</a>
-        <a href="/about-jim-corbett">About Jim Corbett</a>
-        <a href="/activities">Activities</a>
-        <a href="/how-to-reach">How To Reach</a>
-        <a href="/blog">Blog</a>
-        <a href="/our-team">Team</a>
-        <a href="/contact-us">Contact Us</a>
-        <a href="/disclaimer">Disclaimer</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-and-conditions">Terms & Conditions</a>
-        <a href="/destination-wedding-planning-in-corbett-park"
-          >Destination Wedding Planning</a
-        >
-      </nav>
-      <p class="copyright">
-        © 2025 <a href="/">Jim Corbett Riverside Resorts</a>. All Rights Reserved.
-      </p>
+      <div class="footer-inner">
+        <div class="footer-top">
+
+          <!-- Column 1 — Company info & contact -->
+          <div class="footer-col footer-col-brand">
+            <div class="footer-logo-wrap">
+              <svg class="footer-logo-ring" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+                <circle cx="23" cy="23" r="18" fill="none" stroke="#e8b923" stroke-width="5" />
+              </svg>
+              <div class="footer-logo-text">
+                THE INDIAN<br>VOYAGE
+                <small>WILDERNESS UNPLUGGED</small>
+              </div>
+            </div>
+
+            <ul class="footer-contact">
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Trade Name</span>
+                The Indian Voyage
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Registered Company Name</span>
+                Green View Voyage Private Limited
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">CIN</span>
+                U63040DL2010PTC201816
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">GST Number</span>
+                09AADCG7959A1ZH
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Address</span>
+                Floor No 7, 701, Tower-1, Assotech Business Cresterra, Plot No 22, Sector-135, Noida, Uttar Pradesh -
+                201305
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+919268565534">+91 9268565534</a><br>
+                <a href="tel:+919990349246">+91 9990349246</a>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:tours@theindianvoyage.com">tours@theindianvoyage.com</a>
+              </li>
+              <li class="footer-contact-item">
+                <span class="footer-contact-label">Business Hours</span>
+                Monday – Saturday : 10:00 AM – 6:30 PM (IST)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2 — Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about-us">About Us</a></li>
+              <li><a href="/about-jim-corbett">About Jim Corbett</a></li>
+              <li><a href="/activities">Activities</a></li>
+              <li><a href="/how-to-reach">How To Reach</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/our-team">Team</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
+              <li><a href="/disclaimer">Disclaimer</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+              <li><a href="/destination-wedding-planning-in-corbett-park">Destination Wedding Planning</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4 — Reviews & Social -->
+          <div class="footer-col">
+            <h4>Our Reviews</h4>
+            <div class="footer-review-card">
+              <div class="footer-review-top">
+                <svg width="22" height="22" viewBox="0 0 48 48" aria-label="Google">
+                  <path fill="#EA4335"
+                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                  <path fill="#4285F4"
+                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                  <path fill="#FBBC05"
+                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                  <path fill="#34A853"
+                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                </svg>
+                <span class="footer-review-google-text">Google Reviews</span>
+              </div>
+              <div class="footer-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="footer-review-text">4.9 Stars | 305 reviews</div>
+              <div class="footer-review-micro">Provided by review-widget.net</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered disclaimer box -->
+        <div class="footer-disclaimer">
+          <p>We are not the official website of Corbett Tiger Reserve, Forest Department of Uttarakhand, or any Government
+            authority. The Indian Voyage (a unit of Green View Voyage Pvt. Ltd.) is an independent private travel company
+            and does not represent, operate, or act on behalf of any government agency, wildlife reserve, or statutory
+            authority.</p>
+          <p>We specialise in designing and operating complete, end-to-end wildlife tour packages that may include resort
+            accommodation, jungle safari permits, local transportation, sightseeing, and other travel-related services.
+            Rather than offering standalone resort bookings or standalone safari permit bookings, we arrange these
+            services as integral components of our comprehensive tour packages, providing our guests with a seamless
+            wildlife travel experience.</p>
+          <p>All tour packages featured on this website are independently curated and managed by The Indian Voyage. All
+            booking inquiries, package customization, customer support, payment processing, and legal contracts are
+            handled exclusively by Green View Voyage Pvt. Ltd. (CIN: U63040DL2010PTC201816).</p>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <span>&copy; Copyright 2026 The Indian Voyage U/O Green View Voyage Pvt Ltd.</span>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
