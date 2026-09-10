@@ -132,11 +132,6 @@
     ></script>
     <script
       async
-      src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"
-      custom-element="amp-position-observer"
-    ></script>
-    <script
-      async
       src="https://cdn.ampproject.org/v0/amp-recaptcha-input-0.1.js"
       custom-element="amp-recaptcha-input"
     ></script>
@@ -279,106 +274,73 @@
       }
       /* ==================== TOP BAR ==================== */
       .top-bar {
-        background: #3a3027;
-        color: #fff;
-        padding: 6px 0;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-        overflow: hidden;
-        position: sticky;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
+        background: #e8b923;
+        color: #1a1a1a;
+        padding: 8px 0;
         font-size: 0.9rem;
-        border-bottom: 2px solid #e8b923;
-        transition: transform 0.3s ease;
       }
-
-      .top-bar.hide {
-        position: fixed;
-        transform: translateY(-100%);
-      }
-
-      .top-bar-marquee {
+      .top-bar-inner {
+        display: flex;
+        align-items: center;
         width: 100%;
-        height: 18px;
-        position: relative;
-        overflow: hidden;
-        white-space: nowrap;
-        color: #fff;
-        font-size: 0.82rem;
+      }
+      .top-bar-links {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+      .top-bar-links a {
+        color: #1a1a1a;
+        font-size: 0.72rem;
+        font-weight: 600;
         letter-spacing: 0.3px;
-      }
-
-      .top-bar-marquee::after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
         white-space: nowrap;
-        display: inline-block;
-        padding-left: 100%;
-        animation: topbar-marquee 50s linear infinite;
       }
-
-      .top-bar-marquee + .top-bar-marquee {
-        border-top: 1px solid rgba(232, 185, 35, 0.45);
-        margin-top: 3px;
-      }
-
-      @keyframes topbar-marquee {
-        0% {
-          transform: translateX(0);
-        }
-
-        100% {
-          transform: translateX(-100%);
-        }
+      .top-bar-links a:hover {
+        text-decoration: underline;
       }
 
       /* ==================== HEADER ==================== */
       .header {
-        background: rgba(40, 40, 40, 0.8);
-        padding: 15px 30px;
+        background: #2f3a1c;
+        padding: 14px 0;
         position: sticky;
-        top: 52px;
+        top: 0;
         left: 0;
         right: 0;
         z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: clamp(20px, 3vw, 50px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
         transition: all 0.3s ease;
       }
-      .header.scrolled {
-        position: fixed;
-        top: 0;
-        padding: 10px 30px;
-        background: rgba(34, 34, 34, 0.8);
-      }
-      .nav-left,
-      .nav-right {
+      .header-inner {
+        position: relative;
         display: flex;
-        gap: 30px;
+        justify-content: space-between;
         align-items: center;
+        gap: clamp(16px, 3vw, 40px);
+        width: 100%;
       }
-      .nav-left a,
-      .nav-right a {
-        color: #e0e0e0;
-        font-size: 0.85rem;
+      .nav {
+        position: relative;
+        display: flex;
+        gap: clamp(16px, 2vw, 32px);
+        align-items: center;
+        margin-left: auto;
+      }
+      .nav > a,
+      .nav .nav-dropdown-toggle {
+        color: #fff;
+        font-size: 0.86rem;
         letter-spacing: 1px;
         font-weight: 600;
+        text-transform: uppercase;
         padding: 10px 0;
         position: relative;
       }
-      .nav-left a::after,
-      .nav-right a::after {
+      .nav > a::after,
+      .nav .nav-dropdown-toggle::after {
         content: "";
         position: absolute;
         bottom: 5px;
@@ -388,38 +350,64 @@
         background: #e8b923;
         transition: width 0.3s;
       }
-      .nav-left a:hover,
-      .nav-right a:hover {
+      .nav > a:hover,
+      .nav .nav-dropdown-toggle:hover {
         color: #e8b923;
       }
-      .nav-left a:hover::after,
-      .nav-right a:hover::after {
+      .nav > a:hover::after,
+      .nav .nav-dropdown-toggle:hover::after {
         width: 100%;
       }
+      .nav > a:first-child {
+        color: #e8b923;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
       .logo {
-        display: block;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         color: #fff;
         font-family: "Cormorant Garamond", Georgia, serif;
-        font-size: clamp(1rem, 4vw, 1.5rem);
-        max-width: 24ch;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        line-height: 1.2;
       }
-      .logo-text {
-        font-size: 2rem;
-        display: block;
-        line-height: 1.2;
-        font-weight: 700;
-        letter-spacing: 0.5px;
+      .logo-ring {
+        flex-shrink: 0;
       }
-      .logo span {
-        font-size: 0.65rem;
-        letter-spacing: 4px;
+      .logo-word {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .logo-line {
+        font-size: clamp(1rem, 1.6vw, 1.4rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: 1.5px;
         color: #e8b923;
-        margin-top: 6px;
-        font-family: sans-serif;
+      }
+      .logo-line-alt {
+        color: #fff;
+      }
+      .logo-rule {
+        width: 100%;
+        max-width: 160px;
+        height: 1px;
+        background: #e8b923;
+        margin: 6px 0 5px;
+      }
+      .logo-tagline {
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 0.58rem;
+        letter-spacing: 3.5px;
+        color: #cfd6bd;
+      }
+      .brand-owned {
+        font-size: 0.62rem;
+        line-height: 1.35;
+        color: rgba(255, 255, 255, 0.72);
       }
       .hamburger {
         display: none;
@@ -1130,7 +1118,7 @@
         color: #999;
       }
 
-      /* ==================== FOOTER ==================== */
+      /* ── Footer ── */
       .footer {
         background: #3a3027
           url("https://corbettriversideresort.com/wp-content/uploads/footer-bg.png?_t=1787223388")
@@ -1162,7 +1150,7 @@
 
       .footer-top {
         display: grid;
-        grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+        grid-template-columns: 1.1fr 1fr 1.7fr;
         gap: 40px;
         text-align: left;
       }
@@ -1178,34 +1166,140 @@
         border-bottom: 1px solid rgba(232, 185, 35, 0.3);
       }
 
-      .footer-logo-wrap {
+      .footer-contact-head {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .footer-contact-head h4 {
+        color: #fff;
+        font-family: Georgia, "Times New Roman", serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.15rem;
+        font-weight: 400;
+        margin-bottom: 12px;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .footer-contact-head span {
+        display: block;
+        width: 70px;
+        height: 3px;
+        background: #e8b923;
+        margin: 0 auto;
+      }
+
+      .footer-contact-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .footer-contact-card {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 28px 22px;
+        text-align: center;
+      }
+
+      .footer-contact-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #fff;
+        color: #3a3027;
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 18px;
+        justify-content: center;
+        margin: 0 auto 14px;
       }
 
-      .footer-logo-ring {
-        flex-shrink: 0;
+      .footer-contact-icon svg {
+        width: 24px;
+        height: 24px;
       }
 
-      .footer-logo-text {
-        font-family: "Cormorant Garamond", Georgia, serif;
+      .footer-contact-card h5 {
         color: #e8b923;
-        font-size: 1.3rem;
-        font-weight: 700;
-        line-height: 1.25;
-        text-decoration: none;
+        font-family: Georgia, "Times New Roman", serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 10px;
       }
 
-      .footer-logo-text small {
+      .footer-contact-card p {
+        color: #cfcfcf;
+        font-size: 0.82rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .footer-contact-card a {
+        color: #cfcfcf;
+      }
+
+      .footer-contact-card a:hover {
+        color: #e8b923;
+      }
+
+      .footer-listings {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .footer-listing {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-badge {
+        flex-shrink: 0;
+        width: 54px;
+        height: 54px;
+        border-radius: 6px;
+        background: #fff;
+        border: 1px solid rgba(232, 185, 35, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        overflow: hidden;
+      }
+
+      .footer-badge amp-img {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .footer-badge amp-img img {
+        object-fit: contain;
+      }
+
+      .footer-listing-title {
         display: block;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.6rem;
-        letter-spacing: 3px;
-        color: #a88a20;
-        font-weight: 400;
-        margin-top: 2px;
+        color: #e8b923;
+        font-size: 0.82rem;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .footer-listing-sub {
+        display: block;
+        color: #cfcfcf;
+        font-size: 0.74rem;
+        line-height: 1.5;
+      }
+
+      .footer-divider {
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+        margin: 40px 0;
       }
 
       .footer-contact {
@@ -1263,46 +1357,6 @@
       .footer-col ul li a:hover {
         color: #e8b923;
         padding-left: 6px;
-      }
-
-      .footer-review-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 16px 18px;
-        margin-bottom: 22px;
-        text-align: center;
-      }
-
-      .footer-review-top {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        margin-bottom: 8px;
-      }
-
-      .footer-review-google-text {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: #333;
-      }
-
-      .footer-review-stars {
-        color: #e8b923;
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-        margin-bottom: 4px;
-      }
-
-      .footer-review-text {
-        font-size: 0.78rem;
-        color: #555;
-      }
-
-      .footer-review-micro {
-        font-size: 0.6rem;
-        color: #999;
-        margin-top: 4px;
       }
 
       .footer-social-heading {
@@ -1363,7 +1417,7 @@
 
       .footer-bottom {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 10px;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -1371,7 +1425,10 @@
         padding-top: 20px;
         font-size: 0.82rem;
         color: #bbb;
-        text-align: center;
+      }
+
+      .footer-credit a {
+        color: #e8b923;
       }
 
       @media (max-width: 1024px) {
@@ -1381,6 +1438,10 @@
 
         .footer-col-brand {
           grid-column: 1 / -1;
+        }
+
+        .footer-contact-cards {
+          grid-template-columns: 1fr 1fr;
         }
       }
 
@@ -1394,6 +1455,11 @@
         .footer-top {
           grid-template-columns: 1fr;
           gap: 30px;
+        }
+
+        .footer-contact-cards,
+        .footer-listings {
+          grid-template-columns: 1fr;
         }
 
         .footer-contact {
@@ -1414,15 +1480,26 @@
       /* ==================== RESPONSIVE ==================== */
       @media (max-width: 1024px) {
         .header {
-          gap: 20px;
-          padding: 15px;
+          padding: 12px 0;
         }
-        .logo-text {
-          font-size: 1rem;
-          line-height: 1.1;
+        .header-inner {
+          gap: 16px;
         }
-        .nav-left,
-        .nav-right {
+        .logo-line {
+          font-size: 1.05rem;
+          letter-spacing: 1px;
+        }
+        .nav {
+          display: none;
+        }
+        .brand-owned {
+          display: none;
+        }
+        .logo-tagline {
+          font-size: 0.5rem;
+          letter-spacing: 2px;
+        }
+        .nav-dropdown .mega-menu {
           display: none;
         }
         .hamburger {
@@ -1434,19 +1511,6 @@
           width: 22px;
           height: 2px;
           margin: 5px 0;
-        }
-        .logo {
-          text-align: left;
-          min-width: auto;
-        }
-        .logo-text {
-          font-size: 1rem;
-          line-height: 1.1;
-        }
-        .logo span {
-          font-size: 0.5rem;
-          letter-spacing: 2px;
-          margin-top: 3px;
         }
         .hero-section {
           height: 40vh;
@@ -1468,20 +1532,20 @@
 
       @media (max-width: 768px) {
         .top-bar {
-          position: relative;
-          text-align: center;
-          justify-content: center;
-          height: auto;
-          padding: 10px 0;
           display: none;
         }
         .header {
-          justify-content: space-between;
-          padding: 10px 15px;
-          top: 0;
+          padding: 10px 0;
         }
-        .header.scrolled {
-          top: 0;
+        .nav {
+          display: none;
+        }
+        .logo-line {
+          font-size: 1rem;
+        }
+        .logo-tagline {
+          font-size: 0.48rem;
+          letter-spacing: 1.5px;
         }
         .hero-section {
           height: 35vh;
@@ -1584,48 +1648,20 @@
 
       /* Megamenu - Resorts */
       .nav-dropdown {
-        position: relative;
         display: flex;
         align-items: center;
-      }
-      .nav-dropdown-toggle {
-        color: #e0e0e0;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        padding: 10px 0;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-      }
-      .nav-dropdown-toggle .caret {
-        margin-left: 6px;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 5px solid currentColor;
-        transition: transform 0.3s ease;
-      }
-      .nav-dropdown:hover .nav-dropdown-toggle,
-      .nav-dropdown:focus-within .nav-dropdown-toggle {
-        color: #e8b923;
-      }
-      .nav-dropdown:hover .nav-dropdown-toggle::after,
-      .nav-dropdown:focus-within .nav-dropdown-toggle::after {
-        width: 100%;
-      }
-      .nav-dropdown:hover .nav-dropdown-toggle .caret {
-        transform: rotate(180deg);
       }
       .mega-menu {
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         transform: translateY(12px);
-        min-width: 720px;
+        min-width: min(920px, calc(100vw - 80px));
         background: rgba(34, 34, 34, 0.97);
         border-top: 3px solid #e8b923;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px;
         padding: 30px;
         opacity: 0;
@@ -1746,150 +1782,179 @@
   </head>
 
   <body>
-    <!-- Position Observer for scroll effects -->
-    <amp-position-observer
-      intersection-ratios="1"
-      layout="nodisplay"
-      on="enter:AMP.setState({headerScrolled: false}); exit:AMP.setState({headerScrolled: true})"
-    ></amp-position-observer>
-
     <!-- ==================== TOP BAR ==================== -->
-    <div class="top-bar" [class]="headerScrolled ? 'top-bar hide' : 'top-bar'">
-      <div
-        class="top-bar-marquee"
-        data-text="https://www.corbettriversideresort.com/ is an independent, private travel portal operated by The Indian Voyage (A Unit of Green View Voyage Pvt. Ltd.) and is not the official website of any of resort mentioned in this website."
-      ></div>
-      <div
-        class="top-bar-marquee"
-        data-text="Booking of safari and night stay at forest rest house are subject to availability by official website for corbett tiger reserve"
-      ></div>
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <nav class="top-bar-links" aria-label="Policies">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-and-conditions#pricing">Cancellation Policy</a>
+          <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+        </nav>
+      </div>
     </div>
 
     <!-- ==================== HEADER ==================== -->
-    <header
-      [class]="headerScrolled ? 'header scrolled' : 'header'"
-      class="header"
-    >
-      <button
-        class="hamburger"
-        aria-label="Toggle navigation"
-        on="tap:sidebar.toggle"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav-left">
-        <a href="/">Home</a>
-        <div class="nav-dropdown">
-          <a href="/resorts" class="nav-dropdown-toggle"
-            >Resorts <span class="caret"></span
-          ></a>
-          <div class="mega-menu">
-            <div class="mega-col">
-              <h4>5-Star Resorts</h4>
-              <a href="https://corbettriversideresort.com/taj-corbett"
-                >Taj Corbett</a
-              >
-              <a
-                href="https://corbettriversideresort.com/tarangi-resort-and-spa"
-                >Tarangi Resort and Spa</a
-              >
-              <a href="https://corbettriversideresort.com/namah-corbett"
-                >Namah Corbett</a
-              >
-              <a href="https://corbettriversideresort.com/solluna-resort"
-                >Solluna Resort</a
-              >
-              <a
-                href="https://corbettriversideresort.com/jim-corbett-marriott-resort"
-                >Jim Corbett Marriott</a
-              >
-              <a href="https://corbettriversideresort.com/riverview-retreat"
-                >Riverview Retreat</a
-              >
-              <a href="https://corbettriversideresort.com/corbett-hideaway"
-                >Corbett Hideaway</a
-              >
-            </div>
-            <div class="mega-col">
-              <h4>4-Star Resorts</h4>
-              <a href="https://corbettriversideresort.com/corbett-rivercreek"
-                >Corbett River Creek</a
-              >
-              <a
-                href="https://corbettriversideresort.com/bellmond-riverside-resort"
-                >Bel-la Monde Riverside</a
-              >
-              <a href="https://corbettriversideresort.com/lemon-tree-corbett"
-                >Lemon Tree Premier Corbett</a
-              >
-              <a href="https://corbettriversideresort.com/wood-castle-resort"
-                >Wood Castle Spa &amp; Resort</a
-              >
-              <a href="https://corbettriversideresort.com/river-heritage-resort"
-                >River Heritage Resort</a
-              >
-              <a href="https://corbettriversideresort.com/hridyesh-resort"
-                >Hridyesh Resort</a
-              >
-              <a
-                href="https://corbettriversideresort.com/tarangi-ramganga-resort"
-                >WelcomHeritage Tarangi Ramganga</a
-              >
-              <a
-                href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel"
-                >Voco Jim Corbett, IHG</a
-              >
-              <a href="https://corbettriversideresort.com/manu-maharani-corbett"
-                >Manu Maharani Corbett</a
-              >
-              <a href="https://corbettriversideresort.com/nadiya-parao-resort"
-                >Nadiya Parao - A Club Mahindra Associate Resort, Corbett</a
-              >
-            </div>
-            <div class="mega-col">
-              <h4>3-Star Resorts</h4>
-              <a href="https://corbettriversideresort.com/infinity-resort"
-                >Infinity Resort</a
-              >
-              <a
-                href="https://corbettriversideresort.com/kabeela-tashree-resort"
-                >Kabeela Tashree Resort</a
-              >
-              <a href="https://corbettriversideresort.com/camp-riverwild"
-                >Camp Riverwild</a
-              >
-              <a href="https://corbettriversideresort.com/la-perle-resort"
-                >La Perle River Resort</a
-              >
-              <a
-                href="https://corbettriversideresort.com/mango-bloom-river-resort"
-                >Mango Bloom River Resort</a
-              >
-              <a
-                href="https://corbettriversideresort.com/tusker-riverside-resort"
-                >Tusker Riverside Resort</a
-              >
-              <a href="https://corbettriversideresort.com/tiger-camp-corbett"
-                >Tiger Camp Corbett</a
-              >
-              <a
-                href="https://corbettriversideresort.com/corbett-river-valley-resort"
-                >Corbett River Valley</a
-              >
+    <header class="header">
+      <div class="container header-inner">
+        <button
+          class="hamburger"
+          aria-label="Toggle navigation"
+          on="tap:sidebar.toggle"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="brand">
+          <a
+            href="/"
+            class="logo"
+            aria-label="Jim Corbett Riverside Resorts home"
+          >
+            <svg
+              class="logo-ring"
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              aria-hidden="true"
+            >
+              <circle
+                cx="23"
+                cy="23"
+                r="18"
+                fill="none"
+                stroke="#e8b923"
+                stroke-width="5"
+              />
+            </svg>
+            <span class="logo-word">
+              <span class="logo-line">Jim Corbett</span>
+              <span class="logo-line logo-line-alt">Riverside Resorts</span>
+              <span class="logo-rule"></span>
+              <span class="logo-tagline">Wilderness Unplugged</span>
+            </span>
+          </a>
+          <p class="brand-owned">
+            Owned and managed by<br />Green View Voyage Private Limited
+          </p>
+        </div>
+        <nav class="nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about-us">About Us</a>
+          <div class="nav-dropdown">
+            <a href="/resorts" class="nav-dropdown-toggle"
+              >Tour Packages <span class="caret"></span
+            ></a>
+            <div class="mega-menu">
+              <div class="mega-col">
+                <h4>5-Star Resorts</h4>
+                <a href="https://corbettriversideresort.com/taj-corbett"
+                  >Taj Corbett</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/tarangi-resort-and-spa"
+                  >Tarangi Resort and Spa</a
+                >
+                <a href="https://corbettriversideresort.com/namah-corbett"
+                  >Namah Corbett</a
+                >
+                <a href="https://corbettriversideresort.com/solluna-resort"
+                  >Solluna Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/jim-corbett-marriott-resort"
+                  >Jim Corbett Marriott</a
+                >
+                <a href="https://corbettriversideresort.com/riverview-retreat"
+                  >Riverview Retreat</a
+                >
+                <a href="https://corbettriversideresort.com/corbett-hideaway"
+                  >Corbett Hideaway</a
+                >
+              </div>
+              <div class="mega-col">
+                <h4>4-Star Resorts</h4>
+                <a href="https://corbettriversideresort.com/corbett-rivercreek"
+                  >Corbett River Creek</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/bellmond-riverside-resort"
+                  >Bel-la Monde Riverside</a
+                >
+                <a href="https://corbettriversideresort.com/lemon-tree-corbett"
+                  >Lemon Tree Premier Corbett</a
+                >
+                <a href="https://corbettriversideresort.com/wood-castle-resort"
+                  >Wood Castle Spa &amp; Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/river-heritage-resort"
+                  >River Heritage Resort</a
+                >
+                <a href="https://corbettriversideresort.com/hridyesh-resort"
+                  >Hridyesh Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/tarangi-ramganga-resort"
+                  >WelcomHeritage Tarangi Ramganga</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/voco-jim-corbett-an-ihg-hotel"
+                  >Voco Jim Corbett, IHG</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/manu-maharani-corbett"
+                  >Manu Maharani Corbett</a
+                >
+                <a href="https://corbettriversideresort.com/nadiya-parao-resort"
+                  >Nadiya Parao - A Club Mahindra Associate Resort, Corbett</a
+                >
+              </div>
+              <div class="mega-col">
+                <h4>3-Star Resorts</h4>
+                <a href="https://corbettriversideresort.com/infinity-resort"
+                  >Infinity Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/kabeela-tashree-resort"
+                  >Kabeela Tashree Resort</a
+                >
+                <a href="https://corbettriversideresort.com/camp-riverwild"
+                  >Camp Riverwild</a
+                >
+                <a href="https://corbettriversideresort.com/la-perle-resort"
+                  >La Perle River Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/mango-bloom-river-resort"
+                  >Mango Bloom River Resort</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/tusker-riverside-resort"
+                  >Tusker Riverside Resort</a
+                >
+                <a href="https://corbettriversideresort.com/tiger-camp-corbett"
+                  >Tiger Camp Corbett</a
+                >
+                <a
+                  href="https://corbettriversideresort.com/corbett-river-valley-resort"
+                  >Corbett River Valley</a
+                >
+              </div>
+              <div class="mega-col">
+                <h4>Experiences</h4>
+                <a href="/safari">Corbett Safari Booking</a>
+                <a href="/activities">Activities in Corbett</a>
+                <a href="/destination-wedding-planning-in-corbett-park"
+                  >Destination Wedding</a
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <a href="/activities">Activities</a>
-      </nav>
-      <a href="/" class="logo"> Jim Corbett Riverside Resorts </a>
-      <nav class="nav-right">
-        <a href="/safari">Safari</a>
-        <a href="/contact-us">Contact</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-and-conditions">T&amp;C's</a>
-      </nav>
+          <a href="/contact-us">Pay Online</a>
+          <a href="/contact-us">Contact Us</a>
+        </nav>
+      </div>
     </header>
 
     <!-- ==================== SIDEBAR ==================== -->
@@ -1897,10 +1962,11 @@
       <button class="sidebar-close" on="tap:sidebar.close">✕</button>
       <nav>
         <a href="/">Home</a>
+        <a href="/about-us">About Us</a>
         <div class="sidebar-resorts">
           <input type="checkbox" id="sb-resorts" class="sb-resorts-toggle" />
           <label for="sb-resorts" class="sb-resorts-label"
-            >Resorts <span class="caret"></span
+            >Tour Packages <span class="caret"></span
           ></label>
           <div class="sb-resorts-panel">
             <p class="sidebar-group-title">5-Star Resorts</p>
@@ -1990,9 +2056,8 @@
         </div>
         <a href="/activities">Activities</a>
         <a href="/safari">Safari</a>
-        <a href="/contact-us">Contact</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-and-conditions">T&amp;C's</a>
+        <a href="/contact-us">Pay Online</a>
+        <a href="/contact-us">Contact Us</a>
       </nav>
     </amp-sidebar>
 
@@ -2458,32 +2523,96 @@
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
       <div class="footer-inner">
+        <!-- Contact Info -->
+        <div class="footer-contact-head">
+          <h4>Contact Info</h4>
+          <span></span>
+        </div>
+
+        <div class="footer-contact-cards">
+          <div class="footer-contact-card">
+            <span class="footer-contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 21.5s7-5.9 7-11.5a7 7 0 1 0-14 0c0 5.6 7 11.5 7 11.5z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="2.6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </span>
+            <h5>Address</h5>
+            <p>
+              The Indian Voyage U/O Green View Voyage Pvt. Ltd. Floor No 7, 701,
+              Tower-1, Assotech Business Cresterra, Plot No 22, Sector-135,
+              Noida, Uttar Pradesh - 201305
+            </p>
+          </div>
+
+          <div class="footer-contact-card">
+            <span class="footer-contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M6.6 3.5h3l1.5 3.9-2 1.4a11.6 11.6 0 0 0 5.1 5.1l1.4-2 3.9 1.5v3c0 1-.9 1.8-1.9 1.7C10.7 17.6 6.3 13.2 4.9 5.4 4.8 4.4 5.6 3.5 6.6 3.5z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <h5>Phone Number</h5>
+            <p>
+              <a href="tel:+919268565534">+91 9268565534</a><br /><a
+                href="tel:+919990349246"
+                >+91 9990349246</a
+              >
+            </p>
+          </div>
+
+          <div class="footer-contact-card">
+            <span class="footer-contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="14"
+                  rx="2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M3.5 6.8 12 13l8.5-6.2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </span>
+            <h5>Email Address</h5>
+            <p>
+              <a href="mailto:tours@theindianvoyage.com"
+                >tours@theindianvoyage.com</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
         <div class="footer-top">
           <!-- Column 1 — Company info & contact -->
           <div class="footer-col footer-col-brand">
-            <div class="footer-logo-wrap">
-              <svg
-                class="footer-logo-ring"
-                width="46"
-                height="46"
-                viewBox="0 0 46 46"
-                aria-hidden="true"
-              >
-                <circle
-                  cx="23"
-                  cy="23"
-                  r="18"
-                  fill="none"
-                  stroke="#e8b923"
-                  stroke-width="5"
-                />
-              </svg>
-              <div class="footer-logo-text">
-                THE INDIAN<br />VOYAGE
-                <small>WILDERNESS UNPLUGGED</small>
-              </div>
-            </div>
-
             <ul class="footer-contact">
               <li class="footer-contact-item">
                 <span class="footer-contact-label">Trade Name</span>
@@ -2504,31 +2633,76 @@
                 09AADCG7959A1ZH
               </li>
               <li class="footer-contact-item">
-                <span class="footer-contact-label">Address</span>
-                Floor No 7, 701, Tower-1, Assotech Business Cresterra, Plot No
-                22, Sector-135, Noida, Uttar Pradesh - 201305
-              </li>
-              <li class="footer-contact-item">
-                <span class="footer-contact-label">Phone</span>
-                <a href="tel:+919268565534">+91 9268565534</a><br />
-                <a href="tel:+919990349246">+91 9990349246</a>
-              </li>
-              <li class="footer-contact-item">
-                <span class="footer-contact-label">Email</span>
-                <a href="mailto:tours@theindianvoyage.com"
-                  >tours@theindianvoyage.com</a
-                >
-              </li>
-              <li class="footer-contact-item">
                 <span class="footer-contact-label">Business Hours</span>
                 Monday – Saturday : 10:00 AM – 6:30 PM (IST)
               </li>
             </ul>
+
+            <div class="footer-social-heading">Follow Us :-</div>
+            <div class="footer-social-icons">
+              <a
+                class="footer-social-icon"
+                href="https://www.facebook.com/TheindianvoyageTIV"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.4V13h2.7v8h3.4z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="footer-social-icon"
+                href="https://www.instagram.com/the.indianvoyage/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                class="footer-social-icon"
+                href="https://www.youtube.com/@travel.theindianvoyage"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M21.6 7.5c-.2-1-.9-1.7-1.8-1.9C18.1 5.2 12 5.2 12 5.2s-6.1 0-7.8.4c-.9.2-1.6.9-1.8 1.9C2 9.2 2 12 2 12s0 2.8.4 4.5c.2 1 .9 1.7 1.8 1.9 1.7.4 7.8.4 7.8.4s6.1 0 7.8-.4c.9-.2 1.6-.9 1.8-1.9.4-1.7.4-4.5.4-4.5s0-2.8-.4-4.5zM10.2 15.3V8.7l5.4 3.3-5.4 3.3z"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <!-- Column 2 — Quick Links -->
+          <!-- Column 2 — Useful Links -->
           <div class="footer-col">
-            <h4>Quick Links</h4>
+            <h4>Useful Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about-us">About Us</a></li>
@@ -2551,42 +2725,141 @@
             </ul>
           </div>
 
-          <!-- Column 4 — Reviews & Social -->
+          <!-- Column 3 — Memberships, Registrations & Reviews -->
           <div class="footer-col">
-            <h4>Our Reviews</h4>
-            <div class="footer-review-card">
-              <div class="footer-review-top">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 48 48"
-                  aria-label="Google"
+            <h4>Membership , Registration &amp; Review Listings</h4>
+            <div class="footer-listings">
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://www.tripadvisor.com/Attraction_Review-g644043-d16801210-Reviews-The_Indian_Voyage-Noida_Gautam_Buddha_Nagar_District_Uttar_Pradesh.html"
+                  target="_blank"
+                  rel="noopener"
                 >
-                  <path
-                    fill="#EA4335"
-                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
-                  />
-                  <path
-                    fill="#4285F4"
-                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
-                  />
-                </svg>
-                <span class="footer-review-google-text">Google Reviews</span>
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/affilations-2.png"
+                    width="88"
+                    height="88"
+                    layout="fixed"
+                    alt="TripAdvisor Certificate of Excellence"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title">TripAdvisor</span>
+                  <span class="footer-listing-sub"
+                    >TripAdvisor Reviews &amp; Ratings</span
+                  >
+                </span>
               </div>
-              <div class="footer-review-stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://theindianvoyage.com/wp-content/uploads/2026/05/Nidhi-Certificate.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/nidhi-150x150.png"
+                    width="150"
+                    height="150"
+                    layout="fixed"
+                    alt="NIDHI Govt. Registration Certificate"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title">NIDHI</span>
+                  <span class="footer-listing-sub"
+                    >NIDHI Govt. Registration Certificate</span
+                  >
+                </span>
               </div>
-              <div class="footer-review-text">4.9 Stars | 305 reviews</div>
-              <div class="footer-review-micro">
-                Provided by review-widget.net
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://theindianvoyage.com/wp-content/uploads/2026/05/iato-membership-1.jpg"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/affilations-4.png"
+                    width="88"
+                    height="88"
+                    layout="fixed"
+                    alt="IATO Membership Certificate"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title">IATO Membership</span>
+                  <span class="footer-listing-sub"
+                    >Certificate (Member ID: ALD240912)</span
+                  >
+                </span>
+              </div>
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://theindianvoyage.com/wp-content/uploads/2026/08/gst-gvvpl.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/gst-registration-services-150x150.png"
+                    width="150"
+                    height="150"
+                    layout="fixed"
+                    alt="GST Registration Certificate"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title"
+                    >GST Registration Certificate</span
+                  >
+                  <span class="footer-listing-sub">(09AADCG7959A1ZH)</span>
+                </span>
+              </div>
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://theindianvoyage.com/wp-content/uploads/2026/05/MSME-Udyam-Registration-Certificate-GVVPL-NEW-1.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/affilations-3.png"
+                    width="88"
+                    height="88"
+                    layout="fixed"
+                    alt="Udyam Registration Certificate"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title">Udyam Registration</span>
+                  <span class="footer-listing-sub"
+                    >Certificate (UDYAM-UP-28-0044227)</span
+                  >
+                </span>
+              </div>
+              <div class="footer-listing">
+                <a
+                  class="footer-badge"
+                  href="https://search.google.com/local/reviews?placeid=ChIJVVVVFanmDDkRZHG6ho5JEoY"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <amp-img
+                    src="https://theindianvoyage.com/wp-content/uploads/2025/08/Google-Review-Logo-300x169.png"
+                    width="300"
+                    height="169"
+                    layout="fixed"
+                    alt="Google Reviews"
+                  ></amp-img>
+                </a>
+                <span>
+                  <span class="footer-listing-title">Google Reviews</span>
+                  <span class="footer-listing-sub"
+                    >4.9 Stars | 305 reviews on Google Business Profile</span
+                  >
+                </span>
               </div>
             </div>
           </div>
@@ -2625,6 +2898,15 @@
           <span
             >&copy; Copyright 2026 The Indian Voyage U/O Green View Voyage Pvt
             Ltd.</span
+          >
+          <span class="footer-credit"
+            >Developed &amp; Promoted by :-
+            <a
+              href="https://techvisionindia.com/"
+              target="_blank"
+              rel="noopener"
+              >Techvision India</a
+            ></span
           >
         </div>
       </div>
