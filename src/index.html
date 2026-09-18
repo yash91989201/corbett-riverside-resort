@@ -304,2599 +304,2605 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap"
     />
     <style amp-custom="">
-      * {
-        box-sizing: border-box;
-        outline: 0;
-        margin: 0;
-        padding: 0
-      }
+            * {
+              box-sizing: border-box;
+              outline: 0;
+              margin: 0;
+              padding: 0
+            }
 
-      body,
-      html {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0
-      }
+            body,
+            html {
+              overflow-x: hidden;
+              margin: 0;
+              padding: 0
+            }
 
-      body {
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        color: #444;
-        line-height: 1.7;
-        background: #fff;
-        font-size: 16px;
-        margin: 0;
-        padding: 0
-      }
+            body {
+              font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+              color: #444;
+              line-height: 1.7;
+              background: #fff;
+              font-size: 16px;
+              margin: 0;
+              padding: 0
+            }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        transition: all .3s ease
-      }
+            a {
+              text-decoration: none;
+              color: inherit;
+              transition: all .3s ease
+            }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0
-      }
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0
+            }
 
-      img {
-        max-width: 100%;
-        height: auto
-      }
+            img {
+              max-width: 100%;
+              height: auto
+            }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: Georgia, 'Times New Roman', serif;
-        font-weight: 400;
-        color: #222;
-        margin-bottom: 15px;
-        line-height: 1.3
-      }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+              font-family: Georgia, 'Times New Roman', serif;
+              font-weight: 400;
+              color: #222;
+              margin-bottom: 15px;
+              line-height: 1.3
+            }
 
-      h1 {
-        font-size: clamp(1.8rem, 4vw, 3.2rem);
-        font-style: italic
-      }
+            h1 {
+              font-size: clamp(1.8rem, 4vw, 3.2rem);
+              font-style: italic
+            }
 
-      h2 {
-        font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-        margin-bottom: 25px;
-        position: relative;
-        display: inline-block
-      }
+            h2 {
+              font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+              margin-bottom: 25px;
+              position: relative;
+              display: inline-block
+            }
 
-      h3 {
-        font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-        margin-bottom: 10px
-      }
+            h3 {
+              font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+              margin-bottom: 10px
+            }
 
-      p {
-        margin-bottom: 15px
-      }
+            p {
+              margin-bottom: 15px
+            }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px
-      }
+            .container {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px
+            }
 
-      .text-center {
-        text-align: center
-      }
+            .text-center {
+              text-align: center
+            }
 
-      .top-bar {
-        background: #e8b923;
-        color: #1a1a1a;
-        padding: 8px 0;
-        font-size: .9rem
-      }
+            .top-bar {
+              background: #e8b923;
+              color: #1a1a1a;
+              padding: 8px 0;
+              font-size: .9rem
+            }
 
-      .top-bar-inner {
-        display: flex;
-        align-items: center;
-        width: 100%
-      }
+            .top-bar-inner {
+              display: flex;
+              align-items: center;
+              width: 100%
+            }
 
-      .top-bar-links {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-left: auto;
-        flex-shrink: 0
-      }
+            .top-bar-links {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-left: auto;
+              flex-shrink: 0
+            }
 
-      .top-bar-links a {
-        color: #1a1a1a;
+            .top-bar-links a {
+              color: #1a1a1a;
+              font-size: .72rem;
+              font-weight: 600;
+              letter-spacing: .3px;
+              white-space: nowrap
+            }
+
+            .top-bar-links a:hover {
+              text-decoration: underline
+            }
+
+      .notice-bar {
+        background: #111;
+        color: #fff;
+        text-align: center;
         font-size: .72rem;
-        font-weight: 600;
-        letter-spacing: .3px;
-        white-space: nowrap
+        line-height: 1.5;
+        padding: 7px 12px;
+        margin-top: 10px;
       }
-
-      .top-bar-links a:hover {
-        text-decoration: underline
-      }
-
       .header {
-        background: #2f3a1c;
-        padding: 14px 0;
-        position: sticky;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
-        transition: all .3s ease
-      }
-
-      .header-inner {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: clamp(16px, 3vw, 40px);
-        width: 100%
-      }
-
-      .nav {
-        position: relative;
-        display: flex;
-        gap: clamp(16px, 2vw, 32px);
-        align-items: center;
-        margin-left: auto
-      }
-
-      .nav>a,
-      .nav .nav-dropdown-toggle {
-        color: #fff;
-        font-size: .86rem;
-        letter-spacing: 1px;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 10px 0;
-        position: relative
-      }
-
-      .nav>a::after,
-      .nav .nav-dropdown-toggle::after {
-        content: '';
-        position: absolute;
-        bottom: 5px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background: #e8b923;
-        transition: width .3s
-      }
-
-      .nav>a:hover,
-      .nav .nav-dropdown-toggle:hover {
-        color: #e8b923
-      }
-
-      .nav>a:hover::after,
-      .nav .nav-dropdown-toggle:hover::after {
-        width: 100%
-      }
-
-      .nav>a:first-child {
-        color: #e8b923
-      }
-
-      .brand {
-        display: flex;
-        flex-direction: column;
-        gap: 5px
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: #fff;
-        font-family: 'Cormorant Garamond', Georgia, serif
-      }
-
-      .logo-ring {
-        flex-shrink: 0
-      }
-
-      .logo-word {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start
-      }
-
-      .logo-line {
-        font-size: clamp(1rem, 1.6vw, 1.4rem);
-        font-weight: 700;
-        line-height: 1.05;
-        letter-spacing: 1.5px;
-        color: #e8b923
-      }
-
-      .logo-line-alt {
-        color: #fff
-      }
-
-      .logo-rule {
-        width: 100%;
-        max-width: 160px;
-        height: 1px;
-        background: #e8b923;
-        margin: 6px 0 5px
-      }
-
-      .logo-tagline {
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        font-size: .58rem;
-        letter-spacing: 3.5px;
-        color: #cfd6bd
-      }
-
-      .brand-owned {
-        font-size: .62rem;
-        line-height: 1.35;
-        color: rgba(255, 255, 255, .72)
-      }
-
-      .hamburger {
-        display: none;
-        background: 0 0;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        position: absolute;
-        right: 20px
-      }
-
-      .hamburger span {
-        display: block;
-        width: 26px;
-        height: 2px;
-        background: #e8b923;
-        margin: 6px 0;
-        transition: .3s
-      }
-
-      amp-sidebar {
-        width: 300px;
-        background: #222;
-        padding: 40px 0
-      }
-
-      amp-sidebar .sidebar-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 1.5rem;
-        color: #e8b923;
-        padding: 10px;
-        background: 0 0;
-        border: none;
-        cursor: pointer
-      }
-
-      amp-sidebar nav {
-        display: flex;
-        flex-direction: column
-      }
-
-      amp-sidebar nav a {
-        color: #ccc;
-        padding: 15px 30px;
-        border-bottom: 1px solid #333;
-        font-size: .95rem;
-        letter-spacing: 1px
-      }
-
-      amp-sidebar nav a:hover {
-        color: #e8b923;
-        padding-left: 35px;
-        background: #2a2a2a
-      }
-
-      .hero-section {
-        position: relative;
-        margin-top: 0;
-        height: 75vh;
-        min-height: 345px;
-        max-height: 620px;
-        overflow: hidden;
-        width: 100%
-      }
-
-      amp-carousel {
-        height: 100%;
-        width: 100%;
-        position: relative
-      }
-
-      .hero-slide {
-        height: 100%;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #1a1a1a
-      }
-
-      .hero-slide amp-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: transform .8s cubic-bezier(.4, 0, .2, 1);
-        transform: scale(1);
-        will-change: transform
-      }
-
-      .hero-slide amp-img img {
-        object-fit: cover;
-        object-position: center 50%;
-        width: 100%;
-        height: 100%;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: auto;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden
-      }
-
-      .voco-slide amp-img img {
-        object-position: center 50%
-      }
-
-      amp-carousel [aria-hidden=false] .hero-slide amp-img {
-        transform: scale(1.03);
-        transition: transform 12s cubic-bezier(.23, 1, .32, 1)
-      }
-
-      .slide-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding-bottom: clamp(50px, 8vh, 90px);
-        text-align: center;
-        background: linear-gradient(to top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .2) 38%, transparent 100%);
-        opacity: 0;
-        transition: opacity .6s cubic-bezier(.23, 1, .32, 1);
-        pointer-events: none
-      }
-
-      amp-carousel [aria-hidden=false] .slide-overlay {
-        opacity: 1;
-        transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
-      }
-
-      .slide-title {
-        color: #fff;
-        font-size: clamp(1.4rem, 3vw, 3.2rem);
-        font-weight: 400;
-        font-style: normal;
-        text-shadow: 0 8px 32px rgba(0, 0, 0, .7), 0 4px 16px rgba(0, 0, 0, .5), 0 2px 8px rgba(0, 0, 0, .3);
-        letter-spacing: 1.5px;
-        padding: 0 20px;
-        opacity: 0;
-        will-change: transform, opacity;
-        max-width: 90%;
-        line-height: 1.3
-      }
-
-      amp-carousel [aria-hidden=false] .slide-title {
-        animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
-        animation-delay: .2s
-      }
-
-      amp-carousel [aria-hidden=true] .slide-title {
-        opacity: 0;
-        transform: translateY(20px)
-      }
-
-      @keyframes fadeInTitle {
-        0% {
-          opacity: 0;
-          transform: translateY(20px)
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0)
-        }
-      }
-
-      amp-carousel button[class*=amp-carousel-button] {
-        background: rgba(232, 185, 35, .75);
-        border-radius: 50%;
-        width: clamp(45px, 5vw, 55px);
-        height: clamp(45px, 5vw, 55px);
-        font-size: 0;
-        color: transparent;
-        transition: all .4s cubic-bezier(.4, 0, .2, 1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
-        backdrop-filter: blur(4px)
-      }
-
-      amp-carousel button[class*=amp-carousel-button]:hover {
-        background: rgba(232, 185, 35, .95);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
-        transform: scale(1.1)
-      }
-
-      amp-carousel button[class*=amp-carousel-button]:active {
-        transform: scale(.95);
-        transition: all .1s ease
-      }
-
-      amp-carousel button[class*=amp-carousel-button]::before {
-        content: '';
-        display: block;
-        width: clamp(10px, 1.2vw, 14px);
-        height: clamp(10px, 1.2vw, 14px);
-        border-top: 3px solid #fff;
-        border-right: 3px solid #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%
-      }
-
-      amp-carousel button[class*=amp-carousel-button]::after {
-        content: none
-      }
-
-      amp-carousel button[class*=amp-carousel-button-prev]::before {
-        transform: translate(-30%, -50%) rotate(-135deg)
-      }
-
-      amp-carousel button[class*=amp-carousel-button-next]::before {
-        transform: translate(-70%, -50%) rotate(45deg)
-      }
-
-      amp-carousel button[class*=amp-carousel-button] svg,
-      amp-carousel button[class*=amp-carousel-button]>* {
-        display: none
-      }
-
-      amp-carousel .amp-carousel-button::before {
-        display: block
-      }
-
-      .carousel-indicators {
-        position: absolute;
-        bottom: clamp(16px, 3vh, 28px);
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 8px;
-        z-index: 100;
-        padding: 0;
-        background: 0 0;
-        pointer-events: auto
-      }
-
-      .carousel-indicator {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, .45);
-        border: 1px solid rgba(255, 255, 255, .2);
-        cursor: pointer;
-        transition: all .3s cubic-bezier(.23, 1, .32, 1);
-        padding: 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
-        backdrop-filter: blur(2px)
-      }
-
-      .carousel-indicator:hover {
-        background: rgba(255, 255, 255, .8);
-        border-color: rgba(255, 255, 255, .5);
-        transform: scale(1.15)
-      }
-
-      .carousel-indicator[selected] {
-        background: rgba(255, 255, 255, .98);
-        border-color: rgba(255, 255, 255, .6);
-        transform: scale(1.3);
-        box-shadow: 0 3px 12px rgba(255, 255, 255, .3)
-      }
-
-      .carousel-indicator:active {
-        transform: scale(1.05)
-      }
-
-      amp-selector.carousel-indicators {
-        display: flex
-      }
-
-      .section {
-        padding: 40px 20px;
-        position: relative
-      }
-
-      .section-cream {
-        background: #fdfcf8;
-        position: relative;
-        overflow: hidden
-      }
-
-      .section-white {
-        background: #fff
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 40px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto
-      }
-
-      .section-title h2 {
-        font-size: clamp(1.3rem, 4vw, 2.4rem);
-        color: #222;
-        margin-bottom: 20px;
-        line-height: 1.4
-      }
-
-      .decorative {
-        display: flex;
-        justify-content: center;
-        margin: 20px 0
-      }
-
-      .decorative amp-img {
-        width: 80px opacity: 1
-      }
-
-      .company-intro {
-        max-width: 800px;
-        margin: 0 auto;
-        color: #666;
-        font-size: 1.05rem;
-        line-height: 1.8
-      }
-
-      .about-section {
-        display: flex;
-        gap: 60px;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto
-      }
-
-      .about-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start
-      }
-
-      .content-dash {
-        width: 60px;
-        height: 3px;
-        background-color: #e8b923;
-        display: block
-      }
-
-      .about-content h2 {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        font-family: Georgia, serif;
-        font-weight: 400;
-        color: #2a2a2a;
-        margin-bottom: 25px;
-        line-height: 1.3;
-        text-align: left
-      }
-
-      .about-content p {
-        color: #666;
-        font-size: 1.05rem;
-        margin-bottom: 20px;
-        text-align: justify
-      }
-
-      .about-content p:first-of-type::first-letter {
-        font-size: 4.5rem;
-        font-weight: 400;
-        line-height: .85;
-        float: left;
-        margin: .1em .15em 0 0;
-        font-family: Georgia, serif;
-        color: #e8b923
-      }
-
-      .about-content strong {
-        font-weight: 600
-      }
-
-      .about-story-btn {
-        display: inline-block;
-        color: #2a2a2a;
-        text-decoration: none;
-        font-family: inherit;
-        cursor: pointer;
-        font-size: .85rem;
-        letter-spacing: 2px;
-        font-weight: 600;
-        margin-top: 25px;
-        padding: 14px 35px;
-        border: 1px solid #e8b923;
-        background: 0 0;
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-        transition: color .4s ease;
-        text-transform: uppercase
-      }
-
-      .about-story-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background: #e8b923;
-        z-index: -1;
-        transition: width .4s cubic-bezier(.4, 0, .2, 1)
-      }
-
-      .about-story-btn:hover {
-        color: #fff;
-        border-color: #e8b923
-      }
-
-      .about-story-btn:hover::before {
-        width: 100%
-      }
-
-      .about-more {
-        width: 100%;
-        margin-top: 25px
-      }
-
-      .about-more h3 {
-        font-family: Georgia, serif;
-        font-weight: 400;
-        color: #2a2a2a;
-        font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-        margin: 28px 0 12px;
-        line-height: 1.3;
-        text-align: left
-      }
-
-      .about-more h3:first-child {
-        margin-top: 0
-      }
-
-      .about-more p {
-        color: #666;
-        font-size: 1.05rem;
-        margin-bottom: 18px;
-        text-align: justify
-      }
-
-      .about-image {
-        flex: 1;
-        position: relative;
-        overflow: visible;
-        margin-top: 20px
-      }
-
-      .about-image amp-img {
-        border-radius: 0;
-        box-shadow: none
-      }
-
-      .about-image-caption {
-        position: absolute;
-        z-index: 10;
-        background: rgba(42, 42, 42, .95);
-        color: #fff;
-        line-height: 1.4;
-        bottom: 20px;
-        left: 20px;
-        padding: 20px;
-        max-width: 220px;
-        font-size: 1.1rem;
-        font-weight: 700
-      }
-
-      @media (min-width:900px) {
-        .about-image-caption {
-          bottom: 0;
-          left: 0;
-          transform: translate(-15%, 15%);
-          padding: 30px;
-          max-width: 300px;
-          font-size: 1.3rem;
-          box-shadow: 0 15px 40px rgba(0, 0, 0, .2)
-        }
-      }
-
-      .about-image::before {
-        display: none
-      }
-
-      .resorts-header {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto 80px
-      }
-
-      .resorts-subtitle {
-        font-size: .75rem;
-        letter-spacing: 3px;
-        color: #999;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-bottom: 15px
-      }
-
-      .resorts-header h2 {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        font-family: Georgia, serif;
-        font-weight: 400;
-        color: #2a2a2a;
-        margin-bottom: 0
-      }
-
-      .resorts-header p {
-        display: none
-      }
-
-      .resorts-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        align-items: start
-      }
-
-      .resorts-grid .resort-card:nth-child(2) {
-        margin-top: 40px
-      }
-
-      .resorts-grid .resort-card:nth-child(n+4):nth-child(3n+1),
-      .resorts-grid .resort-card:nth-child(n+6):nth-child(3n) {
-        margin-top: -40px
-      }
-
-      .resort-card {
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        overflow: hidden;
-        transition: all .3s ease;
-        display: flex;
-        flex-direction: column;
-        min-height: 500px
-      }
-
-      .resort-card:hover {
-        box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
-        transform: translateY(-5px)
-      }
-
-      .resort-card amp-img {
-        width: 100%;
-        height: 320px;
-        display: block;
-        flex-shrink: 0
-      }
-
-      .resort-card amp-img img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%
-      }
-
-      .resort-info {
-        padding: 30px 25px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0
-      }
-
-      .resort-info h3 {
-        font-size: 1.4rem;
-        font-family: Georgia, serif;
-        font-weight: 600;
-        margin: 0 0 15px 0;
-        line-height: 1.3;
-        color: #2a2a2a
-      }
-
-      .resort-info h3 a {
-        color: #2a2a2a;
-        transition: color .3s
-      }
-
-      .resort-info h3a:hover {
-        color: #5e6d23
-      }
-
-      .resort-info p {
-        display: block;
-        color: #666;
-        font-size: .9rem;
-        margin-bottom: 20px;
-        text-align: center;
-        padding: 0 5px
-      }
-
-      .resort-card-carousel {
-        width: 100%;
-        height: 360px;
-        position: relative;
-        overflow: hidden
-      }
-
-      .resort-card-carousel amp-carousel {
-        width: 100%;
-        height: 100%
-      }
-
-      .resort-card-carousel .carousel-slide {
-        height: 100%;
-        width: 100%;
-        position: relative;
-        overflow: hidden
-      }
-
-      .resort-card-carousel .carousel-slide amp-img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0
-      }
-
-      .resort-card-carousel .carousel-slide amp-img img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button] {
-        background: rgba(232, 185, 35, .75);
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        font-size: 0;
-        color: transparent;
-        transition: all .3s cubic-bezier(.4, 0, .2, 1);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, .2)
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button]:hover {
-        background: rgba(232, 185, 35, .95);
-        transform: scale(1.1)
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button]::before {
-        content: '';
-        display: block;
-        width: 8px;
-        height: 8px;
-        border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button]::after {
-        content: none
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button-prev]::before {
-        transform: translate(-40%, -50%) rotate(-135deg)
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button-next]::before {
-        transform: translate(-60%, -50%) rotate(45deg)
-      }
-
-      .resort-card-carousel button[class*=amp-carousel-button] svg,
-      .resort-card-carousel button[class*=amp-carousel-button]>* {
-        display: none
-      }
-
-      .resort-card-carousel .amp-carousel-button::before {
-        display: block
-      }
-
-      .resort-card-carousel .carousel-indicators {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 6px;
-        z-index: 10;
-        padding: 0;
-        background: 0 0
-      }
-
-      .resort-card-carousel .carousel-indicator {
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, .5);
-        border: 1px solid rgba(255, 255, 255, .3);
-        cursor: pointer;
-        transition: all .3s ease;
-        padding: 0
-      }
-
-      .resort-card-carousel .carousel-indicator:hover {
-        background: rgba(255, 255, 255, .8);
-        transform: scale(1.1)
-      }
-
-      .resort-card-carousel .carousel-indicator[selected] {
-        background: rgba(255, 255, 255, .95);
-        transform: scale(1.2)
-      }
-
-      .resort-card-carousel amp-selector.carousel-indicators {
-        display: flex
-      }
-
-      .btn {
-        display: inline-block;
-        color: #2a2a2a;
-        background: 0 0;
-        padding: 12px 28px;
-        border: none;
-        border-bottom: 2px solid #2a2a2a;
-        font-size: .85rem;
-        letter-spacing: 1.5px;
-        font-weight: 600;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all .3s;
-        margin-top: 0
-      }
-
-      .btn:hover {
-        color: #5e6d23;
-        border-bottom-color: #5e6d23;
-        background: 0 0
-      }
-
-      .faq-section {
-        max-width: 1100px;
-        margin: 0 auto
-      }
-
-      amp-accordion section {
-        border: none;
-        border-bottom: 1px solid #eee;
-        background: #f5f0e9;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        overflow: hidden
-      }
-
-      amp-accordion section h4 {
-        padding: 20px 40px 20px 20px;
-        background: #f5f0e9;
-        border: none;
-        font-size: 1.1rem;
-        color: #333;
-        font-weight: 500;
-        cursor: pointer;
-        position: relative;
-        margin: 0
-      }
-
-      amp-accordion section h4:hover {
-        color: #d4af37
-      }
-
-      amp-accordion section h4::after {
-        content: '+';
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        color: #e8b923;
-        font-weight: 300
-      }
-
-      amp-accordion section[expanded] h4 {
-        color: #d4af37
-      }
-
-      amp-accordion section[expanded] h4::after {
-        content: '-'
-      }
-
-      amp-accordion section p {
-        padding: 20px;
-        color: #666;
-        line-height: 1.8;
-        background: #f8f8f8;
-        margin: 0
-      }
-
-      amp-accordion section ul {
-        padding: 20px 20px 20px 45px;
-        background: #f8f8f8;
-        color: #666;
-        line-height: 1.8;
-        margin: 0
-      }
-
-      amp-accordion section ul li {
-        margin-bottom: 12px
-      }
-
-      amp-accordion section ul li:last-child {
-        margin-bottom: 0
-      }
-
-      .wedding-section-wrapper {
-        position: relative;
-        min-height: 65vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        margin-bottom: 24px
-      }
-
-      .wedding-section-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url(https://corbettriversideresort.com/wp-content/uploads/2025/06/Untitled-design-2025-06-16T160321.397.jpg) center/cover no-repeat;
-        z-index: 1
-      }
-
-      .wedding-content-card {
-        position: relative;
-        z-index: 3;
-        background: rgba(42, 80, 42, .92);
-        padding: 60px 40px;
-        max-width: 800px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, .3)
-      }
-
-      .wedding-content-card h2 {
-        color: #d4af37;
-        font-family: Georgia, serif;
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        margin-bottom: 20px;
-        font-weight: 400
-      }
-
-      .wedding-content-card .separator {
-        width: 80px;
-        height: 3px;
-        background-color: #d4af37;
-        margin: 0 auto 30px
-      }
-
-      .wedding-content-card p {
-        color: #fff;
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        margin-bottom: 30px;
-        line-height: 1.8
-      }
-
-      .wedding-content-card .btn {
-        color: #fff;
-        border: 2px solid #fff;
-        padding: 14px 40px;
-        font-size: 1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all .3s ease
-      }
-
-      .wedding-content-card .btn:hover {
-        background: #fff;
-        color: #2a502a
-      }
-
-      @media (max-width:1024px) {
-        .wedding-section-wrapper {
-          min-height: 75vh
-        }
-
-        .wedding-content-card {
-          padding: 50px 30px;
-          max-width: 700px
-        }
-
-        .resorts-grid {
-          grid-template-columns: 1fr;
-          gap: 20px
-        }
-
-        .resorts-grid .resort-card:nth-child(2) {
-          margin-top: 0
-        }
-
-        .resorts-grid .resort-card:nth-child(n+4):nth-child(3n+1),
-        .resorts-grid .resort-card:nth-child(n+6):nth-child(3n) {
-          margin-top: 0
-        }
-      }
-
-      @media (max-width:900px) {
-        .about-section {
-          flex-direction: column;
-          gap: 40px
-        }
-
-        .about-content {
-          width: 100%
-        }
-
-        .about-image {
-          width: 100%;
-          margin-top: 10px
-        }
-
-        .about-image-caption {
-          max-width: 300px;
-          padding: 25px
-        }
-
-        .wedding-section-wrapper {
-          min-height: 65vh
-        }
-
-        .wedding-content-card {
-          padding: 40px 25px;
-          max-width: 600px;
-          width: 95%
-        }
-
-        .wedding-content-card h2 {
-          font-size: clamp(1.8rem, 6vw, 2.8rem)
-        }
-
-        .wedding-content-card .btn {
-          padding: 12px 30px;
-          font-size: .9rem
-        }
-      }
-
-      @media (max-width:768px) {
-        .wedding-section-wrapper {
-          min-height: 60vh
-        }
-
-        .wedding-content-card {
-          padding: 40px 20px;
-          max-width: 500px;
-          width: 95%
-        }
-
-        .wedding-content-card h2 {
-          font-size: clamp(1.6rem, 5vw, 2.4rem)
-        }
-
-        .wedding-content-card p {
-          font-size: clamp(.85rem, 2.5vw, 1rem);
-          margin-bottom: 20px;
-          line-height: 1.6
-        }
-
-        .wedding-content-card .btn {
-          padding: 10px 25px;
-          font-size: .85rem
-        }
-      }
-
-      @media (max-width:480px) {
-        .about-image-caption {
-          left: 15px;
-          right: 15px;
-          bottom: 15px;
-          max-width: 200px;
-          width: auto;
-          padding: 15px;
-          font-size: 1rem;
-          line-height: 1.3;
-          text-align: center
-        }
-
-        .wedding-section-wrapper {
-          min-height: 55vh
-        }
-
-        .wedding-content-card {
-          padding: 30px 20px;
-          max-width: 400px;
-          width: 95%
-        }
-
-        .wedding-content-card h2 {
-          font-size: clamp(1.5rem, 7vw, 2.2rem);
-          margin-bottom: 15px
-        }
-
-        .wedding-content-card .separator {
-          margin: 0 auto 20px;
-          width: 60px
-        }
-
-        .wedding-content-card p {
-          font-size: clamp(.8rem, 3vw, 1rem);
-          margin-bottom: 20px;
-          line-height: 1.6
-        }
-
-        .wedding-content-card .btn {
-          padding: 10px 25px;
-          font-size: .85rem
-        }
-      }
-
-      .contact-section {
-        display: flex;
-        flex-wrap: wrap;
-        background: #fff;
-        padding: 0;
-        min-height: 600px
-      }
-
-      .contact-image-side {
-        flex: 1;
-        min-width: 300px;
-        background: url(https://ik.imagekit.io/TIVCORBETT/1-Tusker%20Riverside%20Resort.webp?tr=w-1600,h-900,q-80,f-auto) center/cover no-repeat;
-        min-height: 400px
-      }
-
-      .contact-form-side {
-        flex: 1;
-        min-width: 300px;
-        padding: clamp(40px, 5vw, 80px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background: #fff
-      }
-
-      .contact-subtitle {
-        font-size: .85rem;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: #8a9a5b;
-        margin-bottom: 15px;
-        font-weight: 600;
-        display: block
-      }
-
-      .contact-title-black {
-        font-family: Georgia, serif;
-        font-size: clamp(2rem, 3.5vw, 3rem);
-        color: #5e6d23;
-        margin-bottom: 30px;
-        font-weight: 400;
-        text-align: left;
-        line-height: 1.2
-      }
-
-      .contact-form {
-        background: 0 0;
-        padding: 0;
-        box-shadow: none;
-        border: none;
-        width: 100%
-      }
-
-      .contact-form h2 {
-        display: none
-      }
-
-      .contact-form h2 {
-        display: none
-      }
-
-      .form-row {
-        display: flex;
-        gap: 30px;
-        margin-bottom: 25px
-      }
-
-      .form-field {
-        flex: 1;
-        margin-bottom: 0
-      }
-
-      .form-field input,
-      .form-field select,
-      .form-field textarea {
-        width: 100%;
-        padding: 12px 0;
-        background: 0 0;
-        border: none;
-        border-bottom: 1px solid #e0e0e0;
-        border-radius: 0;
-        font-size: 1rem;
-        color: #333;
-        font-family: inherit;
-        transition: all .3s ease
-      }
-
-      .form-field input:focus,
-      .form-field select:focus,
-      .form-field textarea:focus {
-        background: 0 0;
-        outline: 0;
-        border-bottom: 1px solid #5e6d23
-      }
-
-      .form-field input::placeholder,
-      .form-field textarea::placeholder {
-        color: #999
-      }
-
-      .form-field textarea {
-        min-height: 80px;
-        resize: vertical;
-        margin-top: 10px
-      }
-
-      .submit-btn {
-        background: 0 0;
-        color: #2a2a2a;
-        padding: 15px 45px;
-        border: 1px solid #5e6d23;
-        border-radius: 0;
-        font-size: .9rem;
-        cursor: pointer;
-        display: inline-block;
-        margin-top: 20px;
-        letter-spacing: 2px;
-        font-weight: 600;
-        text-transform: uppercase;
-        transition: all .3s ease
-      }
-
-      .submit-btn:hover {
-        background: #5e6d23;
-        color: #fff
-      }
-
-      .form-submit-wrapper {
-        text-align: left
-      }
-
-      .form-consent {
-        margin: 10px 0 0;
-        font-size: .82rem;
-        color: #666;
-        line-height: 1.5
-      }
-
-      .consent-label {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        cursor: pointer
-      }
-
-      .consent-label input[type=checkbox] {
-        margin-top: 3px;
-        width: 16px;
-        height: 16px;
-        accent-color: #5e6d23;
-        flex-shrink: 0;
-        cursor: pointer
-      }
-
-      .consent-label a {
-        color: #5e6d23;
-        text-decoration: underline
-      }
-
-      .consent-label a:hover {
-        color: #e8b923
-      }
-
-
-      .form-success-message {
-        padding: 20px;
-        color: #28a745;
-        background: #d4edda;
-        border: 1px solid #c3e6cb;
-        border-radius: 4px;
-        margin-top: 15px
-      }
-
-      .form-error-message {
-        padding: 20px;
-        color: #721c24;
-        background: #f8d7da;
-        border: 1px solid #f5c6cb;
-        border-radius: 4px;
-        margin-top: 15px
-      }
-
-      /* ── Footer ── */
-      .footer {
-        background: #3a3027 url('https://corbettriversideresort.com/wp-content/uploads/footer-bg.png?_t=1787223388') center/cover no-repeat;
-        position: relative;
-        color: #fff;
-        padding: 60px 20px 30px;
-        font-size: .9rem
-      }
-
-      .footer::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(58, 48, 39, .88);
-        pointer-events: none
-      }
-
-      .footer>* {
-        position: relative;
-        z-index: 1
-      }
-
-      .footer-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px
-      }
-
-      .footer-top {
-        display: grid;
-        grid-template-columns: 1.1fr 1fr 1.7fr;
-        gap: 40px;
-        text-align: left
-      }
-
-      .footer-col h4 {
-        color: #e8b923;
-        font-family: Georgia, 'Times New Roman', serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: .85rem;
-        margin-bottom: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(232, 185, 35, .3)
-      }
-
-      .footer-contact-head {
-        text-align: center;
-        margin-bottom: 30px
-      }
-
-      .footer-contact-head h4 {
-        color: #fff;
-        font-family: Georgia, 'Times New Roman', serif;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.15rem;
-        font-weight: 400;
-        margin-bottom: 12px;
-        border-bottom: none;
-        padding-bottom: 0
-      }
-
-      .footer-contact-head span {
-        display: block;
-        width: 70px;
-        height: 3px;
-        background: #e8b923;
-        margin: 0 auto
-      }
-
-      .footer-contact-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px
-      }
-
-      .footer-contact-card {
-        border: 1px solid rgba(255, 255, 255, .18);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, .04);
-        padding: 28px 22px;
-        text-align: center
-      }
-
-      .footer-contact-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        background: #fff;
-        color: #3a3027;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 14px
-      }
-
-      .footer-contact-icon svg {
-        width: 24px;
-        height: 24px
-      }
-
-      .footer-contact-card h5 {
-        color: #e8b923;
-        font-family: Georgia, 'Times New Roman', serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: .8rem;
-        font-weight: 600;
-        margin-bottom: 10px
-      }
-
-      .footer-contact-card p {
-        color: #cfcfcf;
-        font-size: .82rem;
-        line-height: 1.6;
-        margin: 0
-      }
-
-      .footer-contact-card a {
-        color: #cfcfcf
-      }
-
-      .footer-contact-card a:hover {
-        color: #e8b923
-      }
-
-      .footer-listings {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px
-      }
-
-      .footer-listing {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px
-      }
-
-      .footer-badge {
-        flex-shrink: 0;
-        width: 54px;
-        height: 54px;
-        border-radius: 6px;
-        background: #fff;
-        border: 1px solid rgba(232, 185, 35, .5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4px;
-        overflow: hidden
-      }
-
-      .footer-badge amp-img {
-        width: 100% !important;
-        height: 100% !important
-      }
-
-      .footer-badge amp-img img {
-        object-fit: contain
-      }
-
-      .footer-listing-title {
-        display: block;
-        color: #e8b923;
-        font-size: .82rem;
-        font-weight: 600;
-        line-height: 1.35
-      }
-
-      .footer-listing-sub {
-        display: block;
-        color: #cfcfcf;
-        font-size: .74rem;
-        line-height: 1.5
-      }
-
-      .footer-divider {
-        border-top: 1px solid rgba(255, 255, 255, .18);
-        margin: 40px 0
-      }
-
-      .footer-contact {
-        list-style: none;
-        padding: 0;
-        margin: 0
-      }
-
-      .footer-contact-item {
-        break-inside: avoid;
-        margin-bottom: 10px;
-        font-size: .82rem;
-        color: #cfcfcf;
-        line-height: 1.55
-      }
-
-      .footer-contact-label {
-        color: #e8b923;
-        font-size: .72rem;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        margin-bottom: 1px;
-        display: block
-      }
-
-      .footer-contact-item a {
-        color: #cfcfcf;
-        text-decoration: none;
-        transition: color .3s
-      }
-
-      .footer-contact-item a:hover {
-        color: #e8b923
-      }
-
-      .footer-col ul {
-        list-style: none;
-        padding: 0;
-        margin: 0
-      }
-
-      .footer-col ul li {
-        margin-bottom: 10px
-      }
-
-      .footer-col ul li a {
-        color: #cfcfcf;
-        text-decoration: none;
-        font-size: .85rem;
-        transition: color .3s, padding-left .3s
-      }
-
-      .footer-col ul li a:hover {
-        color: #e8b923;
-        padding-left: 6px
-      }
-
-      .footer-social-heading {
-        color: #e8b923;
-        font-family: Georgia, 'Times New Roman', serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: .85rem;
-        margin-bottom: 12px
-      }
-
-      .footer-social-icons {
-        display: flex;
-        gap: 12px
-      }
-
-      .footer-social-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333;
-        text-decoration: none;
-        transition: background .3s
-      }
-
-      .footer-social-icon:hover {
-        background: #e8b923
-      }
-
-      .footer-social-icon svg {
-        width: 18px;
-        height: 18px
-      }
-
-      .footer-disclaimer {
-        max-width: 960px;
-        margin: 40px auto 0;
-        background: #fff;
-        border-radius: 8px;
-        padding: 30px 36px;
-        color: #333;
-        font-size: .82rem;
-        line-height: 1.75;
-        text-align: left
-      }
-
-      .footer-disclaimer p {
-        margin-bottom: 14px
-      }
-
-      .footer-disclaimer p:last-child {
-        margin-bottom: 0
-      }
-
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        border-top: 1px solid rgba(255, 255, 255, .2);
-        margin-top: 40px;
-        padding-top: 20px;
-        font-size: .82rem;
-        color: #bbb
-      }
-
-      .footer-credit a {
-        color: #e8b923
-      }
-
-      @media (max-width: 1024px) {
-        .footer-top {
-          grid-template-columns: 1fr 1fr
-        }
-
-        .footer-col-brand {
-          grid-column: 1 / -1
-        }
-
-        .footer-contact-cards {
-          grid-template-columns: 1fr 1fr
-        }
-      }
-
-      @media (max-width: 768px) {
-        .footer-disclaimer {
-          padding: 24px 20px
-        }
-      }
-
-      @media (max-width: 600px) {
-        .footer-top {
-          grid-template-columns: 1fr;
-          gap: 30px
-        }
-
-        .footer-contact-cards,
-        .footer-listings {
-          grid-template-columns: 1fr
-        }
-
-        .footer-contact {
-          columns: 1
-        }
-
-        .footer-disclaimer {
-          margin-left: 12px;
-          margin-right: 12px
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-          text-align: center
-        }
-      }
-
-      @media (min-width:1920px) {
-        .hero-section {
-          height: 75vh;
-          max-height: 689px
-        }
-
-        .slide-title {
-          font-size: clamp(2.2rem, 3.5vw, 3.8rem)
-        }
-
-        amp-carousel button[class*=amp-carousel-button] {
-          width: 60px;
-          height: 60px
-        }
-
-        amp-carousel button[class*=amp-carousel-button]::before {
-          width: 15px;
-          height: 15px
-        }
-      }
-
-      @media (max-width:1440px) {
-        .hero-section {
-          height: 58.5vh;
-          max-height: 551px
-        }
-      }
-
-      @media (max-width:1024px) {
-        .header {
-          padding: 12px 0
-        }
-
-        .header-inner {
-          gap: 16px
-        }
-
-        .logo-line {
-          font-size: 1.05rem;
-          letter-spacing: 1px
-        }
-
-        .nav {
-          display: none
-        }
-
-        .hamburger {
-          display: block;
-          padding: 6px;
-          transform: scale(.85)
-        }
-
-        .hamburger span {
-          width: 22px;
-          height: 2px;
-          margin: 5px 0
-        }
-
-        .brand-owned {
-          display: none
-        }
-
-        .logo-tagline {
-          font-size: .5rem;
-          letter-spacing: 2px
-        }
-
-        .hero-section {
-          height: 45vh;
-          min-height: 221px;
-          max-height: 345px
-        }
-
-        .hero-slide {
-          min-height: 100%
-        }
-
-        .hero-slide amp-img {
-          min-height: 100%;
-          min-width: 100%
-        }
-
-        .hero-slide amp-img img {
-          object-fit: cover;
-          object-position: center 50%;
-          image-rendering: auto;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden
-        }
-
-        amp-carousel [aria-hidden=false] .hero-slide amp-img {
-          transform: scale(1.03);
-          transition: transform 12s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        .slide-title {
-          padding: 0 15px;
-          font-size: clamp(1.1rem, 4vw, 2rem);
-          letter-spacing: .8px
-        }
-
-        .slide-overlay {
-          padding-bottom: clamp(35px, 8vh, 60px);
-          background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .28) 35%, transparent 100%);
-          transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-overlay {
-          transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-title {
-          animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
-          animation-delay: .2s
-        }
-
-        amp-carousel button[class*=amp-carousel-button] {
-          width: 38px;
-          height: 38px;
-          background: rgba(232, 185, 35, .8)
-        }
-
-        amp-carousel button[class*=amp-carousel-button]::before {
-          width: 9px;
-          height: 9px;
-          border-top: 2px solid #fff;
-          border-right: 2px solid #fff
-        }
-
-        amp-carousel button[class*=amp-carousel-button-prev] {
-          left: 5px
-        }
-
-        amp-carousel button[class*=amp-carousel-button-next] {
-          right: 5px
-        }
-
-        .decorative amp-img {
-          width: 50px
-        }
-
-        .contact-section .decorative amp-img {
-          width: 40px
-        }
-
-        .resorts-subtitle {
-          font-size: .65rem;
-          letter-spacing: 2px
-        }
-
-        .resorts-header h2 {
-          font-size: 1.8rem
-        }
-
-        .resorts-grid {
-          gap: 20px
-        }
-
-        .resort-card {
-          width: 100%;
-          height: auto
-        }
-
-        .resort-card amp-img {
-          height: 230px
-        }
-
-        .resort-info {
-          padding: 15px 10px
-        }
-
-        .resort-info h3 {
-          font-size: 1rem
-        }
-
-        .btn {
-          font-size: .6rem;
-          letter-spacing: 1px
-        }
-
-        .wedding-content {
-          padding: 10px 10px
-        }
-
-        .contact-form h2 {
-          padding: 12px 0
-        }
-
-        .form-field input,
-        .form-field select,
-        .form-field textarea {
-          font-size: .75rem;
-          padding: 8px
-        }
-
-        .submit-btn {
-          font-size: .8rem;
-          padding: 9px 20px
-        }
-
-        .contact-image-side {
-          display: none
-        }
-
-        .contact-form-side {
-          padding: 40px 20px
-        }
-
-        .contact-title-black {
-          font-size: 1.8rem
-        }
-
-        .form-row {
-          gap: 20px
-        }
-      }
-
-      @media (max-width:768px) {
-        .top-bar {
-          display: none
-        }
-
-        .header {
-          padding: 10px 0
-        }
-
-        .nav {
-          display: none
-        }
-
-        .hamburger {
-          display: block;
-          padding: 6px;
-          transform: scale(.85)
-        }
-
-        .hamburger span {
-          width: 22px;
-          height: 2px;
-          margin: 5px 0
-        }
-
-        .logo-line {
-          font-size: 1rem
-        }
-
-        .logo-tagline {
-          font-size: .48rem;
-          letter-spacing: 1.5px
-        }
-
-        .hero-section {
-          height: 75h;
-          min-height: 207px;
-          max-height: 311px
-        }
-
-        .hero-slide {
-          min-height: 100%
-        }
-
-        .hero-slide amp-img {
-          min-height: 100%;
-          min-width: 100%
-        }
-
-        .hero-slide amp-img img {
-          object-fit: cover;
-          object-position: center 50%;
-          image-rendering: auto;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden
-        }
-
-        amp-carousel [aria-hidden=false] .hero-slide amp-img {
-          transform: scale(1.03);
-          transition: transform 12s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        .slide-title {
-          padding: 0 10px;
-          font-size: clamp(.95rem, 5.5vw, 1.4rem)
-        }
-
-        .slide-overlay {
-          padding-bottom: 25px;
-          background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .26) 30%, transparent 100%);
-          transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-overlay {
-          transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-title {
-          animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
-          animation-delay: .2s
-        }
-
-        amp-carousel button[class*=amp-carousel-button] {
-          width: 32px;
-          height: 32px
-        }
-
-        amp-carousel button[class*=amp-carousel-button]::before {
-          width: 7px;
-          height: 7px
-        }
-
-        amp-carousel button[class*=amp-carousel-button-prev] {
-          left: 5px
-        }
-
-        amp-carousel button[class*=amp-carousel-button-next] {
-          right: 5px
-        }
-      }
-
-      @media (max-width:480px) {
-        .hero-section {
-          height: 35.1vh;
-          min-height: 207px;
-          max-height: 311px
-        }
-
-        .hero-slide {
-          min-height: 100%
-        }
-
-        .hero-slide amp-img {
-          min-height: 100%;
-          min-width: 100%
-        }
-
-        .hero-slide amp-img img {
-          object-fit: cover;
-          object-position: center 50%;
-          image-rendering: auto;
-          -webkit-backface-visibility: hidden;
-          backface-visibility: hidden
-        }
-
-        amp-carousel [aria-hidden=false] .hero-slide amp-img {
-          transform: scale(1.03);
-          transition: transform 12s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        .slide-title {
-          padding: 0 10px;
-          font-size: clamp(.95rem, 5.5vw, 1.4rem)
-        }
-
-        .slide-overlay {
-          padding-bottom: 25px;
-          background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .26) 30%, transparent 100%);
-          transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-overlay {
-          transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
-        }
-
-        amp-carousel [aria-hidden=false] .slide-title {
-          animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
-          animation-delay: .2s
-        }
-
-        amp-carousel button[class*=amp-carousel-button] {
-          width: 32px;
-          height: 32px
-        }
-
-        amp-carousel button[class*=amp-carousel-button]::before {
-          width: 7px;
-          height: 7px
-        }
-
-        amp-carousel button[class*=amp-carousel-button-prev] {
-          left: 5px
-        }
-
-        amp-carousel button[class*=amp-carousel-button-next] {
-          right: 5px
-        }
-      }
-
-      /* Ratings disclaimer */
-      #ratings-disclaimer .section-title h2 {
-        font-size: clamp(1.04rem, 3.2vw, 1.92rem)
-      }
-
-      .ratings-disclaimer {
-        max-width: 920px;
-        margin: 0 auto;
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        border-top: 3px solid #e8b923;
-        padding: clamp(30px, 5vw, 60px);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, .06)
-      }
-
-      .ratings-disclaimer h3 {
-        font-family: Georgia, serif;
-        color: #2a2a2a;
-        font-size: clamp(0.96rem, 2vw, 1.28rem);
-        margin: 30px 0 15px;
-        line-height: 1.3
-      }
-
-      .ratings-disclaimer h3:first-of-type {
-        margin-top: 0
-      }
-
-      .ratings-disclaimer p {
-        color: #666;
-        font-size: clamp(0.65rem, 0.7rem, 0.75rem);
-        line-height: 1.8;
-        text-align: justify;
-        margin-bottom: 15px
-      }
-
-      .ratings-disclaimer p:last-child {
-        margin-bottom: 0
-      }
-
-      .ratings-disclaimer strong {
-        font-weight: 600;
-        color: #2a2a2a
-      }
-
-      /* Megamenu - Resorts */
-      .nav-dropdown {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-dropdown-toggle {
-        color: #e0e0e0;
-        font-size: .85rem;
-        letter-spacing: 1px;
-        padding: 10px 0;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-      }
-
-      .nav-dropdown-toggle .caret {
-        margin-left: 6px;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 5px solid currentColor;
-        transition: transform .3s ease;
-      }
-
-      .nav-dropdown:hover .nav-dropdown-toggle,
-      .nav-dropdown:focus-within .nav-dropdown-toggle {
-        color: #e8b923;
-      }
-
-      .nav-dropdown:hover .nav-dropdown-toggle::after,
-      .nav-dropdown:focus-within .nav-dropdown-toggle::after {
-        width: 100%;
-      }
-
-      .nav-dropdown:hover .nav-dropdown-toggle .caret {
-        transform: rotate(180deg);
-      }
-
-      .mega-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        transform: translateY(12px);
-        min-width: min(920px, calc(100vw - 80px));
-        background: rgba(34, 34, 34, .97);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        padding: 30px;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity .3s ease, transform .3s ease, visibility .3s;
-        z-index: 1002;
-      }
-
-      .nav-dropdown:hover .mega-menu,
-      .nav-dropdown:focus-within .mega-menu {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-
-      .mega-col h4 {
-        font-family: Georgia, serif;
-        color: #e8b923;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin: 0 0 15px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid rgba(232, 185, 35, .3);
-        font-weight: 400;
-      }
-
-      .mega-col a {
-        display: block;
-        color: #cfcfcf;
-        font-size: .82rem;
-        letter-spacing: .5px;
-        padding: 7px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, .05);
-        transition: color .25s ease, padding-left .25s ease;
-      }
-
-      .mega-col a:hover {
-        color: #e8b923;
-        padding-left: 6px;
-      }
-
-      @media (max-width: 1024px) {
-        .nav-dropdown .mega-menu {
-          display: none;
-        }
-      }
-
-      /* Sidebar Resorts dropdown (mobile) */
-      .sidebar-resorts {
-        width: 100%;
-      }
-
-      .sb-resorts-toggle {
-        display: none;
-      }
-
-      .sb-resorts-label {
-        display: block;
-        color: #ccc;
-        padding: 15px 30px;
-        border-bottom: 1px solid #333;
-        font-size: .95rem;
-        letter-spacing: 1px;
-        cursor: pointer;
-      }
-
-      .sb-resorts-label:hover {
-        color: #e8b923;
-        padding-left: 35px;
-        background: #2a2a2a;
-      }
-
-      .sb-resorts-label .caret {
-        margin-left: 8px;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 5px solid currentColor;
-        display: inline-block;
-        vertical-align: middle;
-        transition: transform .3s ease;
-      }
-
-      .sb-resorts-toggle:checked~.sb-resorts-label .caret {
-        transform: rotate(180deg);
-      }
-
-      .sb-resorts-panel {
-        display: none;
-      }
-
-      .sb-resorts-toggle:checked~.sb-resorts-panel {
-        display: block;
-      }
-
-      .sidebar-group-title {
-        color: #8a9a5b;
-        font-size: .68rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 14px 30px 6px;
-        margin: 0;
-      }
-
-      .sb-resorts-panel a {
-        display: block;
-        color: #ccc;
-        padding: 10px 30px 10px 46px;
-        border-bottom: 1px solid #2a2a2a;
-        font-size: .9rem;
-        letter-spacing: .5px;
-      }
-
-      .sb-resorts-panel a:hover {
-        color: #e8b923;
-        padding-left: 52px;
-        background: #2a2a2a;
-      }
-
-      /* ── Resort Comparison Section ── */
-      .comparison-section {
-        padding: 90px 20px;
-        background: #f5f0e9;
-      }
-
-      .comparison-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .comparison-title .comparison-subtitle {
-        font-size: .75rem;
-        letter-spacing: 3px;
-        color: #e8b923;
-        text-transform: uppercase;
-        margin-bottom: 12px;
-        display: block;
-      }
-
-      .comparison-title h2 {
-        font-family: Georgia, 'Times New Roman', serif;
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
-        color: #2a2a2a;
-        margin: 0;
-        line-height: 1.3;
-      }
-
-      .star-group {
-        margin-bottom: 55px;
-        text-align: center;
-      }
-
-      .star-group:last-child {
-        margin-bottom: 0;
-      }
-
-      .star-group h3 {
-        font-family: Georgia, 'Times New Roman', serif;
-        font-size: 1.05rem;
-        font-weight: 600;
-        color: #e8b923;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        margin-bottom: 20px;
-      }
-
-      .table-scroll {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      table.compare-table {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-        border-collapse: collapse;
-        background: #fff;
-        border: 1px solid #e5e5e5;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, .06);
-      }
-
-      table.compare-table th {
-        background: #3a3027;
-        color: #fff;
-        font-family: Georgia, 'Times New Roman', serif;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: .5px;
-        padding: 14px 16px;
-        text-align: center;
-        border-bottom: 2px solid #e8b923;
-        font-size: .8rem;
-      }
-
-      table.compare-table td {
-        padding: 12px 16px;
-        text-align: center;
-        border-bottom: 1px solid #eee;
-        color: #555;
-        font-size: .9rem;
-      }
-
-      table.compare-table tbody tr:nth-child(even) {
-        background: #fdfcf8;
-      }
-
-      table.compare-table tbody tr:hover {
-        background: #f5f0e9;
-      }
-
-      table.compare-table td:first-child {
-        font-weight: 600;
-        color: #2a2a2a;
-      }
-
-      @media (max-width:768px) {
-        .comparison-section {
-          padding: 60px 15px;
-        }
-      }
-
-      @media (max-width:480px) {
-        .star-group h3 {
-          font-size: .9rem;
-          letter-spacing: 2px;
-        }
-
-        table.compare-table th {
-          font-size: .7rem;
-          padding: 10px 12px;
-        }
-
-        table.compare-table td {
-          font-size: .8rem;
-          padding: 10px 12px;
-        }
-
-        .room-thumb {
-          width: 64px;
-          height: 45px;
-        }
-      }
-
-      /* ── Room Image Thumbnails ── */
-      .room-thumb {
-        width: 80px;
-        height: 56px;
-        object-fit: cover;
-        border: 1px solid #e5e5e5;
-        border-radius: 4px;
-        cursor: pointer;
-        display: inline-block;
-        transition: transform .25s ease, box-shadow .25s ease;
-      }
-
-      .room-thumb:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
-        border-color: #e8b923;
-      }
-
-      amp-img.room-thumb img {
-        object-fit: cover;
-      }
-
-      /* ── Room Image Lightbox (amp-lightbox) ── */
-      .room-lightbox {
-        background: rgba(0, 0, 0, .92);
-      }
-
-      .lightbox-backdrop {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .lightbox-stage {
-        position: relative;
-        width: 68vw;
-        height: 68vh;
-        max-width: 935px;
-        max-height: 68vh;
-      }
-
-      .lightbox-img {
-        width: 100%;
-        height: 100%;
-      }
-
-      .lightbox-img img {
-        object-fit: contain;
-      }
-
-      .lightbox-close {
-        position: absolute;
-        top: 18px;
-        right: 22px;
-        z-index: 10;
-        width: 44px;
-        height: 44px;
-        border: none;
-        border-radius: 50%;
-        background: rgba(232, 185, 35, .92);
-        color: #2a2a2a;
-        font-size: 1.8rem;
-        line-height: 1;
-        font-weight: 700;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
-      }
-
-      .lightbox-close:hover {
-        background: #e8b923;
-      }
+              background: #2f3a1c;
+              padding: 14px 0 0;
+              position: sticky;
+              top: 0;
+              left: 0;
+              right: 0;
+              z-index: 1000;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, .18);
+              transition: all .3s ease
+            }
+
+            .header-inner {
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: clamp(16px, 3vw, 40px);
+              width: 100%
+            }
+
+            .nav {
+              position: relative;
+              display: flex;
+              gap: clamp(16px, 2vw, 32px);
+              align-items: center;
+              margin-left: auto
+            }
+
+            .nav>a,
+            .nav .nav-dropdown-toggle {
+              color: #fff;
+              font-size: .86rem;
+              letter-spacing: 1px;
+              font-weight: 600;
+              text-transform: uppercase;
+              padding: 10px 0;
+              position: relative
+            }
+
+            .nav>a::after,
+            .nav .nav-dropdown-toggle::after {
+              content: '';
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              width: 0;
+              height: 1px;
+              background: #e8b923;
+              transition: width .3s
+            }
+
+            .nav>a:hover,
+            .nav .nav-dropdown-toggle:hover {
+              color: #e8b923
+            }
+
+            .nav>a:hover::after,
+            .nav .nav-dropdown-toggle:hover::after {
+              width: 100%
+            }
+
+            .nav>a:first-child {
+              color: #e8b923
+            }
+
+            .brand {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 5px
+            }
+
+            .logo {
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              color: #fff;
+              font-family: 'Cormorant Garamond', Georgia, serif
+            }
+
+            .logo-ring {
+              flex-shrink: 0
+            }
+
+            .logo-word {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start
+            }
+
+            .logo-line {
+              font-size: clamp(1rem, 1.6vw, 1.4rem);
+              font-weight: 700;
+              line-height: 1.05;
+              letter-spacing: 1.5px;
+              color: #e8b923
+            }
+
+            .logo-line-alt {
+              color: #fff
+            }
+
+            .logo-rule {
+              width: 100%;
+              max-width: 160px;
+              height: 1px;
+              background: #e8b923;
+              margin: 6px 0 5px
+            }
+
+            .logo-tagline {
+              font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+              font-size: .58rem;
+              letter-spacing: 3.5px;
+              color: #cfd6bd
+            }
+
+            .brand-owned {
+              font-size: .62rem;
+              line-height: 1.35;
+              color: rgba(255, 255, 255, .72);
+              text-align: center;
+            }
+
+            .hamburger {
+              display: none;
+              background: 0 0;
+              border: none;
+              cursor: pointer;
+              padding: 10px;
+              position: absolute;
+              right: 20px
+            }
+
+            .hamburger span {
+              display: block;
+              width: 26px;
+              height: 2px;
+              background: #e8b923;
+              margin: 6px 0;
+              transition: .3s
+            }
+
+            amp-sidebar {
+              width: 300px;
+              background: #222;
+              padding: 40px 0
+            }
+
+            amp-sidebar .sidebar-close {
+              position: absolute;
+              top: 15px;
+              right: 20px;
+              font-size: 1.5rem;
+              color: #e8b923;
+              padding: 10px;
+              background: 0 0;
+              border: none;
+              cursor: pointer
+            }
+
+            amp-sidebar nav {
+              display: flex;
+              flex-direction: column
+            }
+
+            amp-sidebar nav a {
+              color: #ccc;
+              padding: 15px 30px;
+              border-bottom: 1px solid #333;
+              font-size: .95rem;
+              letter-spacing: 1px
+            }
+
+            amp-sidebar nav a:hover {
+              color: #e8b923;
+              padding-left: 35px;
+              background: #2a2a2a
+            }
+
+            .hero-section {
+              position: relative;
+              margin-top: 0;
+              height: 75vh;
+              min-height: 345px;
+              max-height: 620px;
+              overflow: hidden;
+              width: 100%
+            }
+
+            amp-carousel {
+              height: 100%;
+              width: 100%;
+              position: relative
+            }
+
+            .hero-slide {
+              height: 100%;
+              width: 100%;
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #1a1a1a
+            }
+
+            .hero-slide amp-img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              transition: transform .8s cubic-bezier(.4, 0, .2, 1);
+              transform: scale(1);
+              will-change: transform
+            }
+
+            .hero-slide amp-img img {
+              object-fit: cover;
+              object-position: center 50%;
+              width: 100%;
+              height: 100%;
+              image-rendering: -webkit-optimize-contrast;
+              image-rendering: auto;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden
+            }
+
+            .voco-slide amp-img img {
+              object-position: center 50%
+            }
+
+            amp-carousel [aria-hidden=false] .hero-slide amp-img {
+              transform: scale(1.03);
+              transition: transform 12s cubic-bezier(.23, 1, .32, 1)
+            }
+
+            .slide-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              display: flex;
+              align-items: flex-end;
+              justify-content: center;
+              padding-bottom: clamp(50px, 8vh, 90px);
+              text-align: center;
+              background: linear-gradient(to top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .2) 38%, transparent 100%);
+              opacity: 0;
+              transition: opacity .6s cubic-bezier(.23, 1, .32, 1);
+              pointer-events: none
+            }
+
+            amp-carousel [aria-hidden=false] .slide-overlay {
+              opacity: 1;
+              transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
+            }
+
+            .slide-title {
+              color: #fff;
+              font-size: clamp(1.4rem, 3vw, 3.2rem);
+              font-weight: 400;
+              font-style: normal;
+              text-shadow: 0 8px 32px rgba(0, 0, 0, .7), 0 4px 16px rgba(0, 0, 0, .5), 0 2px 8px rgba(0, 0, 0, .3);
+              letter-spacing: 1.5px;
+              padding: 0 20px;
+              opacity: 0;
+              will-change: transform, opacity;
+              max-width: 90%;
+              line-height: 1.3
+            }
+
+            amp-carousel [aria-hidden=false] .slide-title {
+              animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
+              animation-delay: .2s
+            }
+
+            amp-carousel [aria-hidden=true] .slide-title {
+              opacity: 0;
+              transform: translateY(20px)
+            }
+
+            @keyframes fadeInTitle {
+              0% {
+                opacity: 0;
+                transform: translateY(20px)
+              }
+
+              100% {
+                opacity: 1;
+                transform: translateY(0)
+              }
+            }
+
+            amp-carousel button[class*=amp-carousel-button] {
+              background: rgba(232, 185, 35, .75);
+              border-radius: 50%;
+              width: clamp(45px, 5vw, 55px);
+              height: clamp(45px, 5vw, 55px);
+              font-size: 0;
+              color: transparent;
+              transition: all .4s cubic-bezier(.4, 0, .2, 1);
+              box-shadow: 0 4px 15px rgba(0, 0, 0, .25);
+              backdrop-filter: blur(4px)
+            }
+
+            amp-carousel button[class*=amp-carousel-button]:hover {
+              background: rgba(232, 185, 35, .95);
+              box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+              transform: scale(1.1)
+            }
+
+            amp-carousel button[class*=amp-carousel-button]:active {
+              transform: scale(.95);
+              transition: all .1s ease
+            }
+
+            amp-carousel button[class*=amp-carousel-button]::before {
+              content: '';
+              display: block;
+              width: clamp(10px, 1.2vw, 14px);
+              height: clamp(10px, 1.2vw, 14px);
+              border-top: 3px solid #fff;
+              border-right: 3px solid #fff;
+              position: absolute;
+              top: 50%;
+              left: 50%
+            }
+
+            amp-carousel button[class*=amp-carousel-button]::after {
+              content: none
+            }
+
+            amp-carousel button[class*=amp-carousel-button-prev]::before {
+              transform: translate(-30%, -50%) rotate(-135deg)
+            }
+
+            amp-carousel button[class*=amp-carousel-button-next]::before {
+              transform: translate(-70%, -50%) rotate(45deg)
+            }
+
+            amp-carousel button[class*=amp-carousel-button] svg,
+            amp-carousel button[class*=amp-carousel-button]>* {
+              display: none
+            }
+
+            amp-carousel .amp-carousel-button::before {
+              display: block
+            }
+
+            .carousel-indicators {
+              position: absolute;
+              bottom: clamp(16px, 3vh, 28px);
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              gap: 8px;
+              z-index: 100;
+              padding: 0;
+              background: 0 0;
+              pointer-events: auto
+            }
+
+            .carousel-indicator {
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, .45);
+              border: 1px solid rgba(255, 255, 255, .2);
+              cursor: pointer;
+              transition: all .3s cubic-bezier(.23, 1, .32, 1);
+              padding: 0;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+              backdrop-filter: blur(2px)
+            }
+
+            .carousel-indicator:hover {
+              background: rgba(255, 255, 255, .8);
+              border-color: rgba(255, 255, 255, .5);
+              transform: scale(1.15)
+            }
+
+            .carousel-indicator[selected] {
+              background: rgba(255, 255, 255, .98);
+              border-color: rgba(255, 255, 255, .6);
+              transform: scale(1.3);
+              box-shadow: 0 3px 12px rgba(255, 255, 255, .3)
+            }
+
+            .carousel-indicator:active {
+              transform: scale(1.05)
+            }
+
+            amp-selector.carousel-indicators {
+              display: flex
+            }
+
+            .section {
+              padding: 40px 20px;
+              position: relative
+            }
+
+            .section-cream {
+              background: #fdfcf8;
+              position: relative;
+              overflow: hidden
+            }
+
+            .section-white {
+              background: #fff
+            }
+
+            .section-title {
+              text-align: center;
+              margin-bottom: 40px;
+              max-width: 900px;
+              margin-left: auto;
+              margin-right: auto
+            }
+
+            .section-title h2 {
+              font-size: clamp(1.3rem, 4vw, 2.4rem);
+              color: #222;
+              margin-bottom: 20px;
+              line-height: 1.4
+            }
+
+            .decorative {
+              display: flex;
+              justify-content: center;
+              margin: 20px 0
+            }
+
+            .decorative amp-img {
+              width: 80px opacity: 1
+            }
+
+            .company-intro {
+              max-width: 800px;
+              margin: 0 auto;
+              color: #666;
+              font-size: 1.05rem;
+              line-height: 1.8
+            }
+
+            .about-section {
+              display: flex;
+              gap: 60px;
+              align-items: center;
+              max-width: 1200px;
+              margin: 0 auto
+            }
+
+            .about-content {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start
+            }
+
+            .content-dash {
+              width: 60px;
+              height: 3px;
+              background-color: #e8b923;
+              display: block
+            }
+
+            .about-content h2 {
+              font-size: clamp(2rem, 4vw, 2.8rem);
+              font-family: Georgia, serif;
+              font-weight: 400;
+              color: #2a2a2a;
+              margin-bottom: 25px;
+              line-height: 1.3;
+              text-align: left
+            }
+
+            .about-content p {
+              color: #666;
+              font-size: 1.05rem;
+              margin-bottom: 20px;
+              text-align: justify
+            }
+
+            .about-content p:first-of-type::first-letter {
+              font-size: 4.5rem;
+              font-weight: 400;
+              line-height: .85;
+              float: left;
+              margin: .1em .15em 0 0;
+              font-family: Georgia, serif;
+              color: #e8b923
+            }
+
+            .about-content strong {
+              font-weight: 600
+            }
+
+            .about-story-btn {
+              display: inline-block;
+              color: #2a2a2a;
+              text-decoration: none;
+              font-family: inherit;
+              cursor: pointer;
+              font-size: .85rem;
+              letter-spacing: 2px;
+              font-weight: 600;
+              margin-top: 25px;
+              padding: 14px 35px;
+              border: 1px solid #e8b923;
+              background: 0 0;
+              position: relative;
+              z-index: 1;
+              overflow: hidden;
+              transition: color .4s ease;
+              text-transform: uppercase
+            }
+
+            .about-story-btn::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              height: 100%;
+              background: #e8b923;
+              z-index: -1;
+              transition: width .4s cubic-bezier(.4, 0, .2, 1)
+            }
+
+            .about-story-btn:hover {
+              color: #fff;
+              border-color: #e8b923
+            }
+
+            .about-story-btn:hover::before {
+              width: 100%
+            }
+
+            .about-more {
+              width: 100%;
+              margin-top: 25px
+            }
+
+            .about-more h3 {
+              font-family: Georgia, serif;
+              font-weight: 400;
+              color: #2a2a2a;
+              font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+              margin: 28px 0 12px;
+              line-height: 1.3;
+              text-align: left
+            }
+
+            .about-more h3:first-child {
+              margin-top: 0
+            }
+
+            .about-more p {
+              color: #666;
+              font-size: 1.05rem;
+              margin-bottom: 18px;
+              text-align: justify
+            }
+
+            .about-image {
+              flex: 1;
+              position: relative;
+              overflow: visible;
+              margin-top: 20px
+            }
+
+            .about-image amp-img {
+              border-radius: 0;
+              box-shadow: none
+            }
+
+            .about-image-caption {
+              position: absolute;
+              z-index: 10;
+              background: rgba(42, 42, 42, .95);
+              color: #fff;
+              line-height: 1.4;
+              bottom: 20px;
+              left: 20px;
+              padding: 20px;
+              max-width: 220px;
+              font-size: 1.1rem;
+              font-weight: 700
+            }
+
+            @media (min-width:900px) {
+              .about-image-caption {
+                bottom: 0;
+                left: 0;
+                transform: translate(-15%, 15%);
+                padding: 30px;
+                max-width: 300px;
+                font-size: 1.3rem;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, .2)
+              }
+            }
+
+            .about-image::before {
+              display: none
+            }
+
+            .resorts-header {
+              text-align: center;
+              max-width: 900px;
+              margin: 0 auto 80px
+            }
+
+            .resorts-subtitle {
+              font-size: .75rem;
+              letter-spacing: 3px;
+              color: #999;
+              font-weight: 600;
+              text-transform: uppercase;
+              margin-bottom: 15px
+            }
+
+            .resorts-header h2 {
+              font-size: clamp(2rem, 4vw, 2.8rem);
+              font-family: Georgia, serif;
+              font-weight: 400;
+              color: #2a2a2a;
+              margin-bottom: 0
+            }
+
+            .resorts-header p {
+              display: none
+            }
+
+            .resorts-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 40px;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+              align-items: start
+            }
+
+            .resorts-grid .resort-card:nth-child(2) {
+              margin-top: 40px
+            }
+
+            .resorts-grid .resort-card:nth-child(n+4):nth-child(3n+1),
+            .resorts-grid .resort-card:nth-child(n+6):nth-child(3n) {
+              margin-top: -40px
+            }
+
+            .resort-card {
+              background: #fff;
+              border: 1px solid #e5e5e5;
+              overflow: hidden;
+              transition: all .3s ease;
+              display: flex;
+              flex-direction: column;
+              min-height: 500px
+            }
+
+            .resort-card:hover {
+              box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+              transform: translateY(-5px)
+            }
+
+            .resort-card amp-img {
+              width: 100%;
+              height: 320px;
+              display: block;
+              flex-shrink: 0
+            }
+
+            .resort-card amp-img img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%
+            }
+
+            .resort-info {
+              padding: 30px 25px;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0
+            }
+
+            .resort-info h3 {
+              font-size: 1.4rem;
+              font-family: Georgia, serif;
+              font-weight: 600;
+              margin: 0 0 15px 0;
+              line-height: 1.3;
+              color: #2a2a2a
+            }
+
+            .resort-info h3 a {
+              color: #2a2a2a;
+              transition: color .3s
+            }
+
+            .resort-info h3a:hover {
+              color: #5e6d23
+            }
+
+            .resort-info p {
+              display: block;
+              color: #666;
+              font-size: .9rem;
+              margin-bottom: 20px;
+              text-align: center;
+              padding: 0 5px
+            }
+
+            .resort-card-carousel {
+              width: 100%;
+              height: 360px;
+              position: relative;
+              overflow: hidden
+            }
+
+            .resort-card-carousel amp-carousel {
+              width: 100%;
+              height: 100%
+            }
+
+            .resort-card-carousel .carousel-slide {
+              height: 100%;
+              width: 100%;
+              position: relative;
+              overflow: hidden
+            }
+
+            .resort-card-carousel .carousel-slide amp-img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0
+            }
+
+            .resort-card-carousel .carousel-slide amp-img img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button] {
+              background: rgba(232, 185, 35, .75);
+              border-radius: 50%;
+              width: 36px;
+              height: 36px;
+              font-size: 0;
+              color: transparent;
+              transition: all .3s cubic-bezier(.4, 0, .2, 1);
+              box-shadow: 0 2px 10px rgba(0, 0, 0, .2)
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button]:hover {
+              background: rgba(232, 185, 35, .95);
+              transform: scale(1.1)
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button]::before {
+              content: '';
+              display: block;
+              width: 8px;
+              height: 8px;
+              border-top: 2px solid #fff;
+              border-right: 2px solid #fff;
+              position: absolute;
+              top: 50%;
+              left: 50%
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button]::after {
+              content: none
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button-prev]::before {
+              transform: translate(-40%, -50%) rotate(-135deg)
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button-next]::before {
+              transform: translate(-60%, -50%) rotate(45deg)
+            }
+
+            .resort-card-carousel button[class*=amp-carousel-button] svg,
+            .resort-card-carousel button[class*=amp-carousel-button]>* {
+              display: none
+            }
+
+            .resort-card-carousel .amp-carousel-button::before {
+              display: block
+            }
+
+            .resort-card-carousel .carousel-indicators {
+              position: absolute;
+              bottom: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              gap: 6px;
+              z-index: 10;
+              padding: 0;
+              background: 0 0
+            }
+
+            .resort-card-carousel .carousel-indicator {
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, .5);
+              border: 1px solid rgba(255, 255, 255, .3);
+              cursor: pointer;
+              transition: all .3s ease;
+              padding: 0
+            }
+
+            .resort-card-carousel .carousel-indicator:hover {
+              background: rgba(255, 255, 255, .8);
+              transform: scale(1.1)
+            }
+
+            .resort-card-carousel .carousel-indicator[selected] {
+              background: rgba(255, 255, 255, .95);
+              transform: scale(1.2)
+            }
+
+            .resort-card-carousel amp-selector.carousel-indicators {
+              display: flex
+            }
+
+            .btn {
+              display: inline-block;
+              color: #2a2a2a;
+              background: 0 0;
+              padding: 12px 28px;
+              border: none;
+              border-bottom: 2px solid #2a2a2a;
+              font-size: .85rem;
+              letter-spacing: 1.5px;
+              font-weight: 600;
+              text-transform: uppercase;
+              cursor: pointer;
+              transition: all .3s;
+              margin-top: 0
+            }
+
+            .btn:hover {
+              color: #5e6d23;
+              border-bottom-color: #5e6d23;
+              background: 0 0
+            }
+
+            .faq-section {
+              max-width: 1100px;
+              margin: 0 auto
+            }
+
+            amp-accordion section {
+              border: none;
+              border-bottom: 1px solid #eee;
+              background: #f5f0e9;
+              margin-bottom: 10px;
+              border-radius: 5px;
+              overflow: hidden
+            }
+
+            amp-accordion section h4 {
+              padding: 20px 40px 20px 20px;
+              background: #f5f0e9;
+              border: none;
+              font-size: 1.1rem;
+              color: #333;
+              font-weight: 500;
+              cursor: pointer;
+              position: relative;
+              margin: 0
+            }
+
+            amp-accordion section h4:hover {
+              color: #d4af37
+            }
+
+            amp-accordion section h4::after {
+              content: '+';
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translateY(-50%);
+              font-size: 1.5rem;
+              color: #e8b923;
+              font-weight: 300
+            }
+
+            amp-accordion section[expanded] h4 {
+              color: #d4af37
+            }
+
+            amp-accordion section[expanded] h4::after {
+              content: '-'
+            }
+
+            amp-accordion section p {
+              padding: 20px;
+              color: #666;
+              line-height: 1.8;
+              background: #f8f8f8;
+              margin: 0
+            }
+
+            amp-accordion section ul {
+              padding: 20px 20px 20px 45px;
+              background: #f8f8f8;
+              color: #666;
+              line-height: 1.8;
+              margin: 0
+            }
+
+            amp-accordion section ul li {
+              margin-bottom: 12px
+            }
+
+            amp-accordion section ul li:last-child {
+              margin-bottom: 0
+            }
+
+            .wedding-section-wrapper {
+              position: relative;
+              min-height: 65vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              margin-bottom: 24px
+            }
+
+            .wedding-section-wrapper::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: url(https://corbettriversideresort.com/wp-content/uploads/2025/06/Untitled-design-2025-06-16T160321.397.jpg) center/cover no-repeat;
+              z-index: 1
+            }
+
+            .wedding-content-card {
+              position: relative;
+              z-index: 3;
+              background: rgba(42, 80, 42, .92);
+              padding: 60px 40px;
+              max-width: 800px;
+              width: 90%;
+              text-align: center;
+              box-shadow: 0 20px 40px rgba(0, 0, 0, .3)
+            }
+
+            .wedding-content-card h2 {
+              color: #d4af37;
+              font-family: Georgia, serif;
+              font-size: clamp(2.2rem, 5vw, 3.5rem);
+              margin-bottom: 20px;
+              font-weight: 400
+            }
+
+            .wedding-content-card .separator {
+              width: 80px;
+              height: 3px;
+              background-color: #d4af37;
+              margin: 0 auto 30px
+            }
+
+            .wedding-content-card p {
+              color: #fff;
+              font-size: clamp(1rem, 2vw, 1.2rem);
+              margin-bottom: 30px;
+              line-height: 1.8
+            }
+
+            .wedding-content-card .btn {
+              color: #fff;
+              border: 2px solid #fff;
+              padding: 14px 40px;
+              font-size: 1rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              transition: all .3s ease
+            }
+
+            .wedding-content-card .btn:hover {
+              background: #fff;
+              color: #2a502a
+            }
+
+            @media (max-width:1024px) {
+              .wedding-section-wrapper {
+                min-height: 75vh
+              }
+
+              .wedding-content-card {
+                padding: 50px 30px;
+                max-width: 700px
+              }
+
+              .resorts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px
+              }
+
+              .resorts-grid .resort-card:nth-child(2) {
+                margin-top: 0
+              }
+
+              .resorts-grid .resort-card:nth-child(n+4):nth-child(3n+1),
+              .resorts-grid .resort-card:nth-child(n+6):nth-child(3n) {
+                margin-top: 0
+              }
+            }
+
+            @media (max-width:900px) {
+              .about-section {
+                flex-direction: column;
+                gap: 40px
+              }
+
+              .about-content {
+                width: 100%
+              }
+
+              .about-image {
+                width: 100%;
+                margin-top: 10px
+              }
+
+              .about-image-caption {
+                max-width: 300px;
+                padding: 25px
+              }
+
+              .wedding-section-wrapper {
+                min-height: 65vh
+              }
+
+              .wedding-content-card {
+                padding: 40px 25px;
+                max-width: 600px;
+                width: 95%
+              }
+
+              .wedding-content-card h2 {
+                font-size: clamp(1.8rem, 6vw, 2.8rem)
+              }
+
+              .wedding-content-card .btn {
+                padding: 12px 30px;
+                font-size: .9rem
+              }
+            }
+
+            @media (max-width:768px) {
+              .wedding-section-wrapper {
+                min-height: 60vh
+              }
+
+              .wedding-content-card {
+                padding: 40px 20px;
+                max-width: 500px;
+                width: 95%
+              }
+
+              .wedding-content-card h2 {
+                font-size: clamp(1.6rem, 5vw, 2.4rem)
+              }
+
+              .wedding-content-card p {
+                font-size: clamp(.85rem, 2.5vw, 1rem);
+                margin-bottom: 20px;
+                line-height: 1.6
+              }
+
+              .wedding-content-card .btn {
+                padding: 10px 25px;
+                font-size: .85rem
+              }
+            }
+
+            @media (max-width:480px) {
+              .about-image-caption {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                max-width: 200px;
+                width: auto;
+                padding: 15px;
+                font-size: 1rem;
+                line-height: 1.3;
+                text-align: center
+              }
+
+              .wedding-section-wrapper {
+                min-height: 55vh
+              }
+
+              .wedding-content-card {
+                padding: 30px 20px;
+                max-width: 400px;
+                width: 95%
+              }
+
+              .wedding-content-card h2 {
+                font-size: clamp(1.5rem, 7vw, 2.2rem);
+                margin-bottom: 15px
+              }
+
+              .wedding-content-card .separator {
+                margin: 0 auto 20px;
+                width: 60px
+              }
+
+              .wedding-content-card p {
+                font-size: clamp(.8rem, 3vw, 1rem);
+                margin-bottom: 20px;
+                line-height: 1.6
+              }
+
+              .wedding-content-card .btn {
+                padding: 10px 25px;
+                font-size: .85rem
+              }
+            }
+
+            .contact-section {
+              display: flex;
+              flex-wrap: wrap;
+              background: #fff;
+              padding: 0;
+              min-height: 600px
+            }
+
+            .contact-image-side {
+              flex: 1;
+              min-width: 300px;
+              background: url(https://ik.imagekit.io/TIVCORBETT/1-Tusker%20Riverside%20Resort.webp?tr=w-1600,h-900,q-80,f-auto) center/cover no-repeat;
+              min-height: 400px
+            }
+
+            .contact-form-side {
+              flex: 1;
+              min-width: 300px;
+              padding: clamp(40px, 5vw, 80px);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              background: #fff
+            }
+
+            .contact-subtitle {
+              font-size: .85rem;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #8a9a5b;
+              margin-bottom: 15px;
+              font-weight: 600;
+              display: block
+            }
+
+            .contact-title-black {
+              font-family: Georgia, serif;
+              font-size: clamp(2rem, 3.5vw, 3rem);
+              color: #5e6d23;
+              margin-bottom: 30px;
+              font-weight: 400;
+              text-align: left;
+              line-height: 1.2
+            }
+
+            .contact-form {
+              background: 0 0;
+              padding: 0;
+              box-shadow: none;
+              border: none;
+              width: 100%
+            }
+
+            .contact-form h2 {
+              display: none
+            }
+
+            .contact-form h2 {
+              display: none
+            }
+
+            .form-row {
+              display: flex;
+              gap: 30px;
+              margin-bottom: 25px
+            }
+
+            .form-field {
+              flex: 1;
+              margin-bottom: 0
+            }
+
+            .form-field input,
+            .form-field select,
+            .form-field textarea {
+              width: 100%;
+              padding: 12px 0;
+              background: 0 0;
+              border: none;
+              border-bottom: 1px solid #e0e0e0;
+              border-radius: 0;
+              font-size: 1rem;
+              color: #333;
+              font-family: inherit;
+              transition: all .3s ease
+            }
+
+            .form-field input:focus,
+            .form-field select:focus,
+            .form-field textarea:focus {
+              background: 0 0;
+              outline: 0;
+              border-bottom: 1px solid #5e6d23
+            }
+
+            .form-field input::placeholder,
+            .form-field textarea::placeholder {
+              color: #999
+            }
+
+            .form-field textarea {
+              min-height: 80px;
+              resize: vertical;
+              margin-top: 10px
+            }
+
+            .submit-btn {
+              background: 0 0;
+              color: #2a2a2a;
+              padding: 15px 45px;
+              border: 1px solid #5e6d23;
+              border-radius: 0;
+              font-size: .9rem;
+              cursor: pointer;
+              display: inline-block;
+              margin-top: 20px;
+              letter-spacing: 2px;
+              font-weight: 600;
+              text-transform: uppercase;
+              transition: all .3s ease
+            }
+
+            .submit-btn:hover {
+              background: #5e6d23;
+              color: #fff
+            }
+
+            .form-submit-wrapper {
+              text-align: left
+            }
+
+            .form-consent {
+              margin: 10px 0 0;
+              font-size: .82rem;
+              color: #666;
+              line-height: 1.5
+            }
+
+            .consent-label {
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              cursor: pointer
+            }
+
+            .consent-label input[type=checkbox] {
+              margin-top: 3px;
+              width: 16px;
+              height: 16px;
+              accent-color: #5e6d23;
+              flex-shrink: 0;
+              cursor: pointer
+            }
+
+            .consent-label a {
+              color: #5e6d23;
+              text-decoration: underline
+            }
+
+            .consent-label a:hover {
+              color: #e8b923
+            }
+
+            .form-success-message {
+              padding: 20px;
+              color: #28a745;
+              background: #d4edda;
+              border: 1px solid #c3e6cb;
+              border-radius: 4px;
+              margin-top: 15px
+            }
+
+            .form-error-message {
+              padding: 20px;
+              color: #721c24;
+              background: #f8d7da;
+              border: 1px solid #f5c6cb;
+              border-radius: 4px;
+              margin-top: 15px
+            }
+
+            /* ── Footer ── */
+            .footer {
+              background: #3a3027 url('https://corbettriversideresort.com/wp-content/uploads/footer-bg.png?_t=1787223388') center/cover no-repeat;
+              position: relative;
+              color: #fff;
+              padding: 60px 20px 30px;
+              font-size: .9rem
+            }
+
+            .footer::before {
+              content: '';
+              position: absolute;
+              inset: 0;
+              background: rgba(58, 48, 39, .88);
+              pointer-events: none
+            }
+
+            .footer>* {
+              position: relative;
+              z-index: 1
+            }
+
+            .footer-inner {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px
+            }
+
+            .footer-top {
+              display: grid;
+              grid-template-columns: 1.1fr 1fr 1.7fr;
+              gap: 40px;
+              text-align: left
+            }
+
+            .footer-col h4 {
+              color: #e8b923;
+              font-family: Georgia, 'Times New Roman', serif;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: .85rem;
+              margin-bottom: 16px;
+              padding-bottom: 10px;
+              border-bottom: 1px solid rgba(232, 185, 35, .3)
+            }
+
+            .footer-contact-head {
+              text-align: center;
+              margin-bottom: 30px
+            }
+
+            .footer-contact-head h4 {
+              color: #fff;
+              font-family: Georgia, 'Times New Roman', serif;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              font-size: 1.15rem;
+              font-weight: 400;
+              margin-bottom: 12px;
+              border-bottom: none;
+              padding-bottom: 0
+            }
+
+            .footer-contact-head span {
+              display: block;
+              width: 70px;
+              height: 3px;
+              background: #e8b923;
+              margin: 0 auto
+            }
+
+            .footer-contact-cards {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 24px
+            }
+
+            .footer-contact-card {
+              border: 1px solid rgba(255, 255, 255, .18);
+              border-radius: 10px;
+              background: rgba(255, 255, 255, .04);
+              padding: 28px 22px;
+              text-align: center
+            }
+
+            .footer-contact-icon {
+              width: 52px;
+              height: 52px;
+              border-radius: 50%;
+              background: #fff;
+              color: #3a3027;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 14px
+            }
+
+            .footer-contact-icon svg {
+              width: 24px;
+              height: 24px
+            }
+
+            .footer-contact-card h5 {
+              color: #e8b923;
+              font-family: Georgia, 'Times New Roman', serif;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: .8rem;
+              font-weight: 600;
+              margin-bottom: 10px
+            }
+
+            .footer-contact-card p {
+              color: #cfcfcf;
+              font-size: .82rem;
+              line-height: 1.6;
+              margin: 0
+            }
+
+            .footer-contact-card a {
+              color: #cfcfcf
+            }
+
+            .footer-contact-card a:hover {
+              color: #e8b923
+            }
+
+            .footer-listings {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 18px
+            }
+
+            .footer-listing {
+              display: flex;
+              align-items: flex-start;
+              gap: 12px
+            }
+
+            .footer-badge {
+              flex-shrink: 0;
+              width: 54px;
+              height: 54px;
+              border-radius: 6px;
+              background: #fff;
+              border: 1px solid rgba(232, 185, 35, .5);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 4px;
+              overflow: hidden
+            }
+
+            .footer-badge amp-img {
+              width: 100% !important;
+              height: 100% !important
+            }
+
+            .footer-badge amp-img img {
+              object-fit: contain
+            }
+
+            .footer-listing-title {
+              display: block;
+              color: #e8b923;
+              font-size: .82rem;
+              font-weight: 600;
+              line-height: 1.35
+            }
+
+            .footer-listing-sub {
+              display: block;
+              color: #cfcfcf;
+              font-size: .74rem;
+              line-height: 1.5
+            }
+
+            .footer-divider {
+              border-top: 1px solid rgba(255, 255, 255, .18);
+              margin: 40px 0
+            }
+
+            .footer-contact {
+              list-style: none;
+              padding: 0;
+              margin: 0
+            }
+
+            .footer-contact-item {
+              break-inside: avoid;
+              margin-bottom: 10px;
+              font-size: .82rem;
+              color: #cfcfcf;
+              line-height: 1.55
+            }
+
+            .footer-contact-label {
+              color: #e8b923;
+              font-size: .72rem;
+              text-transform: uppercase;
+              letter-spacing: .5px;
+              margin-bottom: 1px;
+              display: block
+            }
+
+            .footer-contact-item a {
+              color: #cfcfcf;
+              text-decoration: none;
+              transition: color .3s
+            }
+
+            .footer-contact-item a:hover {
+              color: #e8b923
+            }
+
+            .footer-col ul {
+              list-style: none;
+              padding: 0;
+              margin: 0
+            }
+
+            .footer-col ul li {
+              margin-bottom: 10px
+            }
+
+            .footer-col ul li a {
+              color: #cfcfcf;
+              text-decoration: none;
+              font-size: .85rem;
+              transition: color .3s, padding-left .3s
+            }
+
+            .footer-col ul li a:hover {
+              color: #e8b923;
+              padding-left: 6px
+            }
+
+            .footer-social-heading {
+              color: #e8b923;
+              font-family: Georgia, 'Times New Roman', serif;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: .85rem;
+              margin-bottom: 12px
+            }
+
+            .footer-social-icons {
+              display: flex;
+              gap: 12px
+            }
+
+            .footer-social-icon {
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              background: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #333;
+              text-decoration: none;
+              transition: background .3s
+            }
+
+            .footer-social-icon:hover {
+              background: #e8b923
+            }
+
+            .footer-social-icon svg {
+              width: 18px;
+              height: 18px
+            }
+
+            .footer-disclaimer {
+              max-width: 960px;
+              margin: 40px auto 0;
+              background: #fff;
+              border-radius: 8px;
+              padding: 30px 36px;
+              color: #333;
+              font-size: .82rem;
+              line-height: 1.75;
+              text-align: left
+            }
+
+            .footer-disclaimer p {
+              margin-bottom: 14px
+            }
+
+            .footer-disclaimer p:last-child {
+              margin-bottom: 0
+            }
+
+            .footer-bottom {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 10px;
+              border-top: 1px solid rgba(255, 255, 255, .2);
+              margin-top: 40px;
+              padding-top: 20px;
+              font-size: .82rem;
+              color: #bbb
+            }
+
+            .footer-credit a {
+              color: #e8b923
+            }
+
+            @media (max-width: 1024px) {
+              .footer-top {
+                grid-template-columns: 1fr 1fr
+              }
+
+              .footer-col-brand {
+                grid-column: 1 / -1
+              }
+
+              .footer-contact-cards {
+                grid-template-columns: 1fr 1fr
+              }
+            }
+
+            @media (max-width: 768px) {
+              .footer-disclaimer {
+                padding: 24px 20px
+              }
+            }
+
+            @media (max-width: 600px) {
+              .footer-top {
+                grid-template-columns: 1fr;
+                gap: 30px
+              }
+
+              .footer-contact-cards,
+              .footer-listings {
+                grid-template-columns: 1fr
+              }
+
+              .footer-contact {
+                columns: 1
+              }
+
+              .footer-disclaimer {
+                margin-left: 12px;
+                margin-right: 12px
+              }
+
+              .footer-bottom {
+                flex-direction: column;
+                text-align: center
+              }
+            }
+
+            @media (min-width:1920px) {
+              .hero-section {
+                height: 75vh;
+                max-height: 689px
+              }
+
+              .slide-title {
+                font-size: clamp(2.2rem, 3.5vw, 3.8rem)
+              }
+
+              amp-carousel button[class*=amp-carousel-button] {
+                width: 60px;
+                height: 60px
+              }
+
+              amp-carousel button[class*=amp-carousel-button]::before {
+                width: 15px;
+                height: 15px
+              }
+            }
+
+            @media (max-width:1440px) {
+              .hero-section {
+                height: 58.5vh;
+                max-height: 551px
+              }
+            }
+
+            @media (max-width:1024px) {
+              .header {
+                padding: 12px 0 0
+              }
+
+              .header-inner {
+                gap: 16px
+              }
+
+              .logo-line {
+                font-size: 1.05rem;
+                letter-spacing: 1px
+              }
+
+              .nav {
+                display: none
+              }
+
+              .hamburger {
+                display: block;
+                padding: 6px;
+                transform: scale(.85)
+              }
+
+              .hamburger span {
+                width: 22px;
+                height: 2px;
+                margin: 5px 0
+              }
+
+              .logo-tagline {
+                font-size: .5rem;
+                letter-spacing: 2px
+              }
+
+              .hero-section {
+                height: 45vh;
+                min-height: 221px;
+                max-height: 345px
+              }
+
+              .hero-slide {
+                min-height: 100%
+              }
+
+              .hero-slide amp-img {
+                min-height: 100%;
+                min-width: 100%
+              }
+
+              .hero-slide amp-img img {
+                object-fit: cover;
+                object-position: center 50%;
+                image-rendering: auto;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden
+              }
+
+              amp-carousel [aria-hidden=false] .hero-slide amp-img {
+                transform: scale(1.03);
+                transition: transform 12s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              .slide-title {
+                padding: 0 15px;
+                font-size: clamp(1.1rem, 4vw, 2rem);
+                letter-spacing: .8px
+              }
+
+              .slide-overlay {
+                padding-bottom: clamp(35px, 8vh, 60px);
+                background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .28) 35%, transparent 100%);
+                transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-overlay {
+                transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-title {
+                animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
+                animation-delay: .2s
+              }
+
+              amp-carousel button[class*=amp-carousel-button] {
+                width: 38px;
+                height: 38px;
+                background: rgba(232, 185, 35, .8)
+              }
+
+              amp-carousel button[class*=amp-carousel-button]::before {
+                width: 9px;
+                height: 9px;
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff
+              }
+
+              amp-carousel button[class*=amp-carousel-button-prev] {
+                left: 5px
+              }
+
+              amp-carousel button[class*=amp-carousel-button-next] {
+                right: 5px
+              }
+
+              .decorative amp-img {
+                width: 50px
+              }
+
+              .contact-section .decorative amp-img {
+                width: 40px
+              }
+
+              .resorts-subtitle {
+                font-size: .65rem;
+                letter-spacing: 2px
+              }
+
+              .resorts-header h2 {
+                font-size: 1.8rem
+              }
+
+              .resorts-grid {
+                gap: 20px
+              }
+
+              .resort-card {
+                width: 100%;
+                height: auto
+              }
+
+              .resort-card amp-img {
+                height: 230px
+              }
+
+              .resort-info {
+                padding: 15px 10px
+              }
+
+              .resort-info h3 {
+                font-size: 1rem
+              }
+
+              .btn {
+                font-size: .6rem;
+                letter-spacing: 1px
+              }
+
+              .wedding-content {
+                padding: 10px 10px
+              }
+
+              .contact-form h2 {
+                padding: 12px 0
+              }
+
+              .form-field input,
+              .form-field select,
+              .form-field textarea {
+                font-size: .75rem;
+                padding: 8px
+              }
+
+              .submit-btn {
+                font-size: .8rem;
+                padding: 9px 20px
+              }
+
+              .contact-image-side {
+                display: none
+              }
+
+              .contact-form-side {
+                padding: 40px 20px
+              }
+
+              .contact-title-black {
+                font-size: 1.8rem
+              }
+
+              .form-row {
+                gap: 20px
+              }
+            }
+
+            @media (max-width:768px) {
+              .top-bar {
+                display: none
+              }
+
+              .header {
+                padding: 10px 0 0
+              }
+
+              .nav {
+                display: none
+              }
+
+              .hamburger {
+                display: block;
+                padding: 6px;
+                transform: scale(.85)
+              }
+
+              .hamburger span {
+                width: 22px;
+                height: 2px;
+                margin: 5px 0
+              }
+
+              .logo-line {
+                font-size: 1rem
+              }
+
+              .logo-tagline {
+                font-size: .48rem;
+                letter-spacing: 1.5px
+              }
+
+              .hero-section {
+                height: 75h;
+                min-height: 207px;
+                max-height: 311px
+              }
+
+              .hero-slide {
+                min-height: 100%
+              }
+
+              .hero-slide amp-img {
+                min-height: 100%;
+                min-width: 100%
+              }
+
+              .hero-slide amp-img img {
+                object-fit: cover;
+                object-position: center 50%;
+                image-rendering: auto;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden
+              }
+
+              amp-carousel [aria-hidden=false] .hero-slide amp-img {
+                transform: scale(1.03);
+                transition: transform 12s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              .slide-title {
+                padding: 0 10px;
+                font-size: clamp(.95rem, 5.5vw, 1.4rem)
+              }
+
+              .slide-overlay {
+                padding-bottom: 25px;
+                background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .26) 30%, transparent 100%);
+                transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-overlay {
+                transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-title {
+                animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
+                animation-delay: .2s
+              }
+
+              amp-carousel button[class*=amp-carousel-button] {
+                width: 32px;
+                height: 32px
+              }
+
+              amp-carousel button[class*=amp-carousel-button]::before {
+                width: 7px;
+                height: 7px
+              }
+
+              amp-carousel button[class*=amp-carousel-button-prev] {
+                left: 5px
+              }
+
+              amp-carousel button[class*=amp-carousel-button-next] {
+                right: 5px
+              }
+            }
+
+            @media (max-width:480px) {
+              .hero-section {
+                height: 35.1vh;
+                min-height: 207px;
+                max-height: 311px
+              }
+
+              .hero-slide {
+                min-height: 100%
+              }
+
+              .hero-slide amp-img {
+                min-height: 100%;
+                min-width: 100%
+              }
+
+              .hero-slide amp-img img {
+                object-fit: cover;
+                object-position: center 50%;
+                image-rendering: auto;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden
+              }
+
+              amp-carousel [aria-hidden=false] .hero-slide amp-img {
+                transform: scale(1.03);
+                transition: transform 12s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              .slide-title {
+                padding: 0 10px;
+                font-size: clamp(.95rem, 5.5vw, 1.4rem)
+              }
+
+              .slide-overlay {
+                padding-bottom: 25px;
+                background: linear-gradient(to top, rgba(0, 0, 0, .6) 0, rgba(0, 0, 0, .26) 30%, transparent 100%);
+                transition: opacity .6s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-overlay {
+                transition: opacity .8s cubic-bezier(.23, 1, .32, 1)
+              }
+
+              amp-carousel [aria-hidden=false] .slide-title {
+                animation: fadeInTitle 1.2s cubic-bezier(.23, 1, .32, 1) forwards;
+                animation-delay: .2s
+              }
+
+              amp-carousel button[class*=amp-carousel-button] {
+                width: 32px;
+                height: 32px
+              }
+
+              amp-carousel button[class*=amp-carousel-button]::before {
+                width: 7px;
+                height: 7px
+              }
+
+              amp-carousel button[class*=amp-carousel-button-prev] {
+                left: 5px
+              }
+
+              amp-carousel button[class*=amp-carousel-button-next] {
+                right: 5px
+              }
+            }
+
+            /* Ratings disclaimer */
+            #ratings-disclaimer .section-title h2 {
+              font-size: clamp(1.04rem, 3.2vw, 1.92rem)
+            }
+
+            .ratings-disclaimer {
+              max-width: 920px;
+              margin: 0 auto;
+              background: #fff;
+              border: 1px solid #e5e5e5;
+              border-top: 3px solid #e8b923;
+              padding: clamp(30px, 5vw, 60px);
+              box-shadow: 0 10px 40px rgba(0, 0, 0, .06)
+            }
+
+            .ratings-disclaimer h3 {
+              font-family: Georgia, serif;
+              color: #2a2a2a;
+              font-size: clamp(0.96rem, 2vw, 1.28rem);
+              margin: 30px 0 15px;
+              line-height: 1.3
+            }
+
+            .ratings-disclaimer h3:first-of-type {
+              margin-top: 0
+            }
+
+            .ratings-disclaimer p {
+              color: #666;
+              font-size: clamp(0.65rem, 0.7rem, 0.75rem);
+              line-height: 1.8;
+              text-align: justify;
+              margin-bottom: 15px
+            }
+
+            .ratings-disclaimer p:last-child {
+              margin-bottom: 0
+            }
+
+            .ratings-disclaimer strong {
+              font-weight: 600;
+              color: #2a2a2a
+            }
+
+            /* Megamenu - Resorts */
+            .nav-dropdown {
+              display: flex;
+              align-items: center;
+            }
+
+            .nav-dropdown-toggle {
+              color: #e0e0e0;
+              font-size: .85rem;
+              letter-spacing: 1px;
+              padding: 10px 0;
+              position: relative;
+              display: inline-flex;
+              align-items: center;
+            }
+
+            .nav-dropdown-toggle .caret {
+              margin-left: 6px;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              border-top: 5px solid currentColor;
+              transition: transform .3s ease;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-toggle,
+            .nav-dropdown:focus-within .nav-dropdown-toggle {
+              color: #e8b923;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-toggle::after,
+            .nav-dropdown:focus-within .nav-dropdown-toggle::after {
+              width: 100%;
+            }
+
+            .nav-dropdown:hover .nav-dropdown-toggle .caret {
+              transform: rotate(180deg);
+            }
+
+            .mega-menu {
+              position: absolute;
+              top: 100%;
+              right: 0;
+              transform: translateY(12px);
+              min-width: min(920px, calc(100vw - 80px));
+              background: rgba(34, 34, 34, .97);
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 30px;
+              padding: 30px;
+              opacity: 0;
+              visibility: hidden;
+              pointer-events: none;
+              transition: opacity .3s ease, transform .3s ease, visibility .3s;
+              z-index: 1002;
+            }
+
+            .nav-dropdown:hover .mega-menu,
+            .nav-dropdown:focus-within .mega-menu {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+              transform: translateY(0);
+            }
+
+            .mega-col h4 {
+              font-family: Georgia, serif;
+              color: #e8b923;
+              font-size: 1rem;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin: 0 0 15px;
+              padding-bottom: 8px;
+              border-bottom: 1px solid rgba(232, 185, 35, .3);
+              font-weight: 400;
+            }
+
+            .mega-col a {
+              display: block;
+              color: #cfcfcf;
+              font-size: .82rem;
+              letter-spacing: .5px;
+              padding: 7px 0;
+              border-bottom: 1px solid rgba(255, 255, 255, .05);
+              transition: color .25s ease, padding-left .25s ease;
+            }
+
+            .mega-col a:hover {
+              color: #e8b923;
+              padding-left: 6px;
+            }
+
+            @media (max-width: 1024px) {
+              .nav-dropdown .mega-menu {
+                display: none;
+              }
+            }
+
+            /* Sidebar Resorts dropdown (mobile) */
+            .sidebar-resorts {
+              width: 100%;
+            }
+
+            .sb-resorts-toggle {
+              display: none;
+            }
+
+            .sb-resorts-label {
+              display: block;
+              color: #ccc;
+              padding: 15px 30px;
+              border-bottom: 1px solid #333;
+              font-size: .95rem;
+              letter-spacing: 1px;
+              cursor: pointer;
+            }
+
+            .sb-resorts-label:hover {
+              color: #e8b923;
+              padding-left: 35px;
+              background: #2a2a2a;
+            }
+
+            .sb-resorts-label .caret {
+              margin-left: 8px;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              border-top: 5px solid currentColor;
+              display: inline-block;
+              vertical-align: middle;
+              transition: transform .3s ease;
+            }
+
+            .sb-resorts-toggle:checked~.sb-resorts-label .caret {
+              transform: rotate(180deg);
+            }
+
+            .sb-resorts-panel {
+              display: none;
+            }
+
+            .sb-resorts-toggle:checked~.sb-resorts-panel {
+              display: block;
+            }
+
+            .sidebar-group-title {
+              color: #8a9a5b;
+              font-size: .68rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              padding: 14px 30px 6px;
+              margin: 0;
+            }
+
+            .sb-resorts-panel a {
+              display: block;
+              color: #ccc;
+              padding: 10px 30px 10px 46px;
+              border-bottom: 1px solid #2a2a2a;
+              font-size: .9rem;
+              letter-spacing: .5px;
+            }
+
+            .sb-resorts-panel a:hover {
+              color: #e8b923;
+              padding-left: 52px;
+              background: #2a2a2a;
+            }
+
+            /* ── Resort Comparison Section ── */
+            .comparison-section {
+              padding: 90px 20px;
+              background: #f5f0e9;
+            }
+
+            .comparison-title {
+              text-align: center;
+              margin-bottom: 50px;
+            }
+
+            .comparison-title .comparison-subtitle {
+              font-size: .75rem;
+              letter-spacing: 3px;
+              color: #e8b923;
+              text-transform: uppercase;
+              margin-bottom: 12px;
+              display: block;
+            }
+
+            .comparison-title h2 {
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: clamp(1.6rem, 4vw, 2.4rem);
+              color: #2a2a2a;
+              margin: 0;
+              line-height: 1.3;
+            }
+
+            .star-group {
+              margin-bottom: 55px;
+              text-align: center;
+            }
+
+            .star-group:last-child {
+              margin-bottom: 0;
+            }
+
+            .star-group h3 {
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: 1.05rem;
+              font-weight: 600;
+              color: #e8b923;
+              text-transform: uppercase;
+              letter-spacing: 2.5px;
+              margin-bottom: 20px;
+            }
+
+            .table-scroll {
+              width: 100%;
+              overflow-x: auto;
+              -webkit-overflow-scrolling: touch;
+            }
+
+            table.compare-table {
+              width: 100%;
+              max-width: 900px;
+              margin: 0 auto;
+              border-collapse: collapse;
+              background: #fff;
+              border: 1px solid #e5e5e5;
+              box-shadow: 0 10px 40px rgba(0, 0, 0, .06);
+            }
+
+            table.compare-table th {
+              background: #3a3027;
+              color: #fff;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-weight: 600;
+              text-transform: uppercase;
+              letter-spacing: .5px;
+              padding: 14px 16px;
+              text-align: center;
+              border-bottom: 2px solid #e8b923;
+              font-size: .8rem;
+            }
+
+            table.compare-table td {
+              padding: 12px 16px;
+              text-align: center;
+              border-bottom: 1px solid #eee;
+              color: #555;
+              font-size: .9rem;
+            }
+
+            table.compare-table tbody tr:nth-child(even) {
+              background: #fdfcf8;
+            }
+
+            table.compare-table tbody tr:hover {
+              background: #f5f0e9;
+            }
+
+            table.compare-table td:first-child {
+              font-weight: 600;
+              color: #2a2a2a;
+            }
+
+            @media (max-width:768px) {
+              .comparison-section {
+                padding: 60px 15px;
+              }
+            }
+
+            @media (max-width:480px) {
+              .star-group h3 {
+                font-size: .9rem;
+                letter-spacing: 2px;
+              }
+
+              table.compare-table th {
+                font-size: .7rem;
+                padding: 10px 12px;
+              }
+
+              table.compare-table td {
+                font-size: .8rem;
+                padding: 10px 12px;
+              }
+
+              .room-thumb {
+                width: 64px;
+                height: 45px;
+              }
+            }
+
+            /* ── Room Image Thumbnails ── */
+            .room-thumb {
+              width: 80px;
+              height: 56px;
+              object-fit: cover;
+              border: 1px solid #e5e5e5;
+              border-radius: 4px;
+              cursor: pointer;
+              display: inline-block;
+              transition: transform .25s ease, box-shadow .25s ease;
+            }
+
+            .room-thumb:hover {
+              transform: scale(1.05);
+              box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+              border-color: #e8b923;
+            }
+
+            amp-img.room-thumb img {
+              object-fit: cover;
+            }
+
+            /* ── Room Image Lightbox (amp-lightbox) ── */
+            .room-lightbox {
+              background: rgba(0, 0, 0, .92);
+            }
+
+            .lightbox-backdrop {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .lightbox-stage {
+              position: relative;
+              width: 68vw;
+              height: 68vh;
+              max-width: 935px;
+              max-height: 68vh;
+            }
+
+            .lightbox-img {
+              width: 100%;
+              height: 100%;
+            }
+
+            .lightbox-img img {
+              object-fit: contain;
+            }
+
+            .lightbox-close {
+              position: absolute;
+              top: 18px;
+              right: 22px;
+              z-index: 10;
+              width: 44px;
+              height: 44px;
+              border: none;
+              border-radius: 50%;
+              background: rgba(232, 185, 35, .92);
+              color: #2a2a2a;
+              font-size: 1.8rem;
+              line-height: 1;
+              font-weight: 700;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
+            }
+
+            .lightbox-close:hover {
+              background: #e8b923;
+            }
     </style>
     <link
       href="https://ik.imagekit.io/TIVCORBETT/1-Infinity%20Resort.webp?tr=w-1600,h-900,q-80,f-auto"
@@ -2972,28 +2978,12 @@
             class="logo"
             aria-label="Jim Corbett Riverside Resorts home"
           >
-            <svg
-              class="logo-ring"
-              width="46"
-              height="46"
-              viewBox="0 0 46 46"
-              aria-hidden="true"
-            >
-              <circle
-                cx="23"
-                cy="23"
-                r="18"
-                fill="none"
-                stroke="#e8b923"
-                stroke-width="5"
-              />
-            </svg>
-            <span class="logo-word">
-              <span class="logo-line">Jim Corbett</span>
-              <span class="logo-line logo-line-alt">Riverside Resorts</span>
-              <span class="logo-rule"></span>
-              <span class="logo-tagline">Wilderness Unplugged</span>
-            </span>
+            <img
+              src="https://theindianvoyage.com/wp-content/uploads/2025/08/logo.png"
+              alt="Jim Corbett Riverside Resorts"
+              class="logo-img"
+              style="height: 48px; width: auto; display: block"
+            />
           </a>
           <p class="brand-owned">
             Owned and managed by<br />Green View Voyage Private Limited
@@ -3116,6 +3106,13 @@
           <a href="/contact-us">Contact Us</a>
         </nav>
       </div>
+      <div class="notice-bar">
+        <span
+          >This is not a official website of any of resort mentioned in this
+          website, This website is owned and operated by Green View Voyage
+          Private Limited</span
+        >
+      </div>
     </header>
     <section class="hero-section">
       <amp-carousel
@@ -3137,7 +3134,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Infinity Resort</h1>
+            <h1 class="slide-title">
+              Plan Infinity Resort Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3149,7 +3148,10 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Corbett River Creek Resort</h1>
+            <h1 class="slide-title">
+              Plan Corbett River Creek Resort Safari Package with The Indian
+              Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3161,7 +3163,10 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Manu Maharani Corbett</h1>
+            <h1 class="slide-title">
+              Plan Manu Maharani Corbett Resort Safari Package with The Indian
+              Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3173,7 +3178,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Tarangi Kosi Resort</h1>
+            <h1 class="slide-title">
+              Plan Tarangi Kosi Resort Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3185,7 +3192,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">River View Retreat</h1>
+            <h1 class="slide-title">
+              Plan River View Retreat Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3197,7 +3206,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Namah Corbett</h1>
+            <h1 class="slide-title">
+              Plan Namah Corbett Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide voco-slide">
@@ -3209,7 +3220,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Voco by IHG</h1>
+            <h1 class="slide-title">
+              Plan Voco Resort Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
         <div class="hero-slide">
@@ -3233,7 +3246,9 @@
             layout="fill"
           ></amp-img>
           <div class="slide-overlay">
-            <h1 class="slide-title">Bella Monde Riverside Resort Corbett</h1>
+            <h1 class="slide-title">
+              Plan Bella Monde Resort Safari Package with The Indian Voyage
+            </h1>
           </div>
         </div>
       </amp-carousel>
@@ -6064,28 +6079,20 @@
         <!-- Centered disclaimer box -->
         <div class="footer-disclaimer">
           <p>
-            We are not the official website of Corbett Tiger Reserve, Forest
-            Department of Uttarakhand, or any Government authority. The Indian
-            Voyage (a unit of Green View Voyage Pvt. Ltd.) is an independent
-            private travel company and does not represent, operate, or act on
-            behalf of any government agency, wildlife reserve, or statutory
-            authority.
+            This is not the official website of any resort featured on this
+            website, nor is it affiliated with Corbett Tiger Reserve. This
+            website is an independent destination portal owned and operated by
+            Green View Voyage Private Limited, using The Indian Voyage as its
+            trade name. Instead, it serves as a resource providing basic
+            information about accommodations near Jim Corbett National Park.
           </p>
           <p>
-            We specialise in designing and operating complete, end-to-end
-            wildlife tour packages that may include resort accommodation, jungle
-            safari permits, local transportation, sightseeing, and other
-            travel-related services. Rather than offering standalone resort
-            bookings or standalone safari permit bookings, we arrange these
-            services as integral components of our comprehensive tour packages,
-            providing our guests with a seamless wildlife travel experience.
-          </p>
-          <p>
-            All tour packages featured on this website are independently curated
-            and managed by The Indian Voyage. All booking inquiries, package
-            customization, customer support, payment processing, and legal
-            contracts are handled exclusively by Green View Voyage Pvt. Ltd.
-            (CIN: U63040DL2010PTC201816).
+            As a private tour operator, The Indian Voyage specializes in
+            creating customized safari packages that can combine resort stays,
+            jungle safari permits, transfers, and other travel-related services
+            into a seamless itinerary. For complete convenience and flexibility,
+            direct contact details for the resorts are also provided so visitors
+            can choose to book directly with the properties if they prefer
           </p>
         </div>
 
